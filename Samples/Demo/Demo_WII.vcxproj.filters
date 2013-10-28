@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Demo.cpp" />
+    <ClCompile Include="src\Controllers\ConveyorBelt.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controllers\FanRotator.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controllers\LogoFader.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controllers\SplineCamera.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Demo.h" />
+    <ClInclude Include="src\Controllers\ConveyorBelt.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controllers\FanRotator.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controllers\LogoFader.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controllers\SplineCamera.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{b34fc8e2-5d68-4d9d-8e53-ed74506c96b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

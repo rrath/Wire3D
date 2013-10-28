@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="Importer"
+	ProjectGUID="{04C5CFBE-AAC1-4536-AD3A-32523B0BFD17}"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="build/$(ConfigurationName)"
+			ConfigurationType="0"
+			BuildLogFile="BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make clean&#x0D;&#x0A;make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make clean"
+				Output=""
+				PreprocessorDefinitions="WIRE_WII;NDEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="build/$(ConfigurationName)"
+			ConfigurationType="0"
+			BuildLogFile="BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make WIRE_DEBUG=y clean&#x0D;&#x0A;make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make WIRE_DEBUG=y clean"
+				Output=""
+				PreprocessorDefinitions="WIRE_WII;NDEBUG;WIRE_DEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Header Files"
+			>
+			<File
+				RelativePath=".\src\CharacterController.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\CollisionObjectController.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Importer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PhysicsController.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PhysicsWorld.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PicoPNG.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\rapidxml.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\RigidBodyController.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Inline Files"
+			>
+			<File
+				RelativePath=".\src\PhysicsWorld.inl"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Source Files"
+			>
+			<File
+				RelativePath=".\src\CharacterController.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\CollisionObjectController.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Importer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PhysicsController.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PhysicsWorld.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\PicoPNG.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\RigidBodyController.cpp"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

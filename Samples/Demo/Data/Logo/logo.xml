@@ -1,0 +1,19 @@
+<Node Name="Root">
+  <AlphaState Enabled="1" SrcBlendMode="SRC_ALPHA" DstBlendMode="ONE_MINUS_SRC_ALPHA" />
+  <ZBufferState Enabled="0" Writable="0" CmpFunc="LEQUAL" />
+  <Light Type="Point" Ambient="1, 1, 1" Color="1, 1, 1" />
+  <Node Name="Camera" Static="1">
+    <Camera Fov="0" Near="0.3" Far="1000" />
+  </Node>
+  <Node Name="Logo">
+    <MaterialState Ambient="1, 1, 1, 1" />
+    <Mesh Name="Quad_0001E0FA_1_1_0_0">
+      <Vertices Name="Quad_0001E0FA.vtx" LittleEndian="1" />
+      <Indices Name="Quad_0001E0FA.idx" LittleEndian="1" />
+      <Uv0 Name="Quad_0001E0FA.uv0" LittleEndian="1" />
+    </Mesh>
+    <Material Name="LogoMaterial">
+      <Texture Name="logo2_0001E0E4.png" FilterMode="Point" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" BlendMode="Modulate" />
+    </Material>
+  </Node>
+</Node>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="Demo"
+	ProjectGUID="{7EAB4BE4-E6BE-4212-AA0D-5630DF1A6142}"
+	RootNamespace="Demo"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="build/$(ConfigurationName)"
+			ConfigurationType="0"
+			BuildLogFile="BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make clean&#x0D;&#x0A;make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make clean"
+				Output=""
+				PreprocessorDefinitions="WIRE_WII;NDEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="build/$(ConfigurationName)"
+			ConfigurationType="0"
+			BuildLogFile="BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make WIRE_DEBUG=y clean&#x0D;&#x0A;make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make WIRE_DEBUG=y clean"
+				Output=""
+				PreprocessorDefinitions="WIRE_WII;NDEBUG;WIRE_DEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Controllers"
+			>
+			<File
+				RelativePath=".\src\Controllers\ConveyorBelt.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\ConveyorBelt.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\FanRotator.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\FanRotator.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\LogoFader.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\LogoFader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\SplineCamera.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Controllers\SplineCamera.h"
+				>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\src\Demo.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\src\Demo.h"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

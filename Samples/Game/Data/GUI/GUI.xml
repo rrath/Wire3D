@@ -1,0 +1,28 @@
+<Node Name="Root" Pos="0, 0, 0" Rot="1, 0, 0, 0" Scale="1, 1, 1">
+  <AlphaState Enabled="1" SrcBlendMode="SRC_ALPHA" DstBlendMode="ONE_MINUS_SRC_ALPHA" />
+  <ZBufferState Enabled="0" Writable="0" CmpFunc="LEQUAL" />
+  <Camera Fov="0" Near="0.3" Far="1000" />
+  <Light Type="Point" Ambient="1, 1, 1" Color="1, 1, 1" />
+  <Node Name="Crosshair" Pos="0, 0, 0" Rot="1, 0, 0, 0" Scale="0.0625, 0.125, 1">
+    <Mesh Name="Quad_0001E0FA_1_1_0_0">
+      <Vertices Name="Quad_0001E0FA.vtx" LittleEndian="1" />
+      <Indices Name="Quad_0001E0FA.idx" LittleEndian="1" />
+      <Uv0 Name="Quad_0001E0FA.uv0" LittleEndian="1" />
+    </Mesh>
+    <Material Name="CrosshairMaterial">
+      <Texture Name="crosshair.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" BlendMode="Replace" />
+    </Material>
+  </Node>
+  <Node Name="RedHealthBar" Pos="-1.2, 0.8, 0" Rot="1, 0, 0, 0" Scale="0.005, 0.000625, 1">
+    <ZBufferState Enabled="1" Writable="1" CmpFunc="LEQUAL" />
+    <Mesh Name="Quad_0001E0FA_1_1_0_0">
+      <Vertices Name="Quad_0001E0FA.vtx" LittleEndian="1" />
+      <Indices Name="Quad_0001E0FA.idx" LittleEndian="1" />
+      <Uv0 Name="Quad_0001E0FA.uv0" LittleEndian="1" />
+    </Mesh>
+    <Material Name="RedHealthBarMaterial">
+      <Texture Name="redHealthBar.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" BlendMode="Modulate" />
+  	  <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+  </Node>
+</Node>

@@ -1,0 +1,940 @@
+<Assets>
+  <Lights>
+      <Light Name="Directional Light Blue" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.2662745, 0.3019608, 0.2635294" Mask="FFFFFCFF" Baked="1" />
+      <Light Name="Directional Light Platform only" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.9843137, 0.9960784, 0.9294118" Mask="100" Baked="1" />
+      <Light Name="Directional Light Yellow" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.8268235, 0.8367059, 0.7807059" Mask="FFFFFCFF" Baked="1" />
+      <Light Name="Point light" Type="Point" Range="10" Ambient="0, 0, 0" Color="1, 0.9215686, 0.6666667" Mask="FFFFFDFF" />
+  </Lights>
+  <Meshes>
+    <Mesh Name="Sphere002">
+      <Vertices Name="Sphere002.vtx" />
+      <Indices Name="Sphere002.idx" 16bit="1" />
+      <Normals Name="Sphere002.nm" />
+      <Uv0 Name="Sphere002.uv0" />
+    </Mesh>
+    <Mesh Name="Assault Rifle">
+      <Vertices Name="Assault Rifle.vtx" />
+      <Indices Name="Assault Rifle.idx" 16bit="1" />
+      <Normals Name="Assault Rifle.nm" />
+      <Uv0 Name="Assault Rifle.uv0" />
+    </Mesh>
+    <Mesh Name="polySurface6">
+      <Vertices Name="polySurface6.vtx" />
+      <Indices Name="polySurface6.idx" 16bit="1" />
+      <Normals Name="polySurface6.nm" />
+      <Uv0 Name="polySurface6.uv0" />
+      <Uv1 Name="polySurface6.uv1" />
+    </Mesh>
+    <Mesh Name="Cube">
+      <Vertices Name="Cube.vtx" />
+      <Indices Name="Cube.idx" 16bit="1" />
+      <Normals Name="Cube.nm" />
+      <Uv0 Name="Cube.uv0" />
+      <Uv1 Name="Cube.uv1" />
+    </Mesh>
+    <Mesh Name="Combined Mesh (root Courtyard)">
+      <SubMeshes>
+        <SubMesh Index="0" StartIndex="0" IndexCount="1146" />
+        <SubMesh Index="1" StartIndex="1146" IndexCount="3774" />
+        <SubMesh Index="2" StartIndex="4920" IndexCount="816" />
+        <SubMesh Index="3" StartIndex="5736" IndexCount="798" />
+        <SubMesh Index="4" StartIndex="6534" IndexCount="318" />
+        <SubMesh Index="5" StartIndex="6852" IndexCount="798" />
+        <SubMesh Index="6" StartIndex="7650" IndexCount="798" />
+        <SubMesh Index="7" StartIndex="8448" IndexCount="792" />
+        <SubMesh Index="8" StartIndex="9240" IndexCount="792" />
+        <SubMesh Index="9" StartIndex="10032" IndexCount="798" />
+        <SubMesh Index="10" StartIndex="10830" IndexCount="798" />
+        <SubMesh Index="11" StartIndex="11628" IndexCount="318" />
+        <SubMesh Index="12" StartIndex="11946" IndexCount="318" />
+        <SubMesh Index="13" StartIndex="12264" IndexCount="318" />
+        <SubMesh Index="14" StartIndex="12582" IndexCount="318" />
+        <SubMesh Index="15" StartIndex="12900" IndexCount="318" />
+        <SubMesh Index="16" StartIndex="13218" IndexCount="318" />
+        <SubMesh Index="17" StartIndex="13536" IndexCount="318" />
+        <SubMesh Index="18" StartIndex="13854" IndexCount="318" />
+        <SubMesh Index="19" StartIndex="14172" IndexCount="318" />
+        <SubMesh Index="20" StartIndex="14490" IndexCount="798" />
+        <SubMesh Index="21" StartIndex="15288" IndexCount="798" />
+        <SubMesh Index="22" StartIndex="16086" IndexCount="318" />
+        <SubMesh Index="23" StartIndex="16404" IndexCount="978" />
+        <SubMesh Index="24" StartIndex="17382" IndexCount="624" />
+        <SubMesh Index="25" StartIndex="18006" IndexCount="1644" />
+        <SubMesh Index="26" StartIndex="19650" IndexCount="78" />
+        <SubMesh Index="27" StartIndex="19728" IndexCount="78" />
+        <SubMesh Index="28" StartIndex="19806" IndexCount="78" />
+        <SubMesh Index="29" StartIndex="19884" IndexCount="78" />
+        <SubMesh Index="30" StartIndex="19962" IndexCount="78" />
+        <SubMesh Index="31" StartIndex="20040" IndexCount="78" />
+        <SubMesh Index="32" StartIndex="20118" IndexCount="78" />
+        <SubMesh Index="33" StartIndex="20196" IndexCount="168" />
+        <SubMesh Index="34" StartIndex="20364" IndexCount="900" />
+        <SubMesh Index="35" StartIndex="21264" IndexCount="216" />
+        <SubMesh Index="36" StartIndex="21480" IndexCount="6" />
+        <SubMesh Index="37" StartIndex="21486" IndexCount="252" />
+        <SubMesh Index="38" StartIndex="21738" IndexCount="1332" />
+        <SubMesh Index="39" StartIndex="23070" IndexCount="2508" />
+        <SubMesh Index="40" StartIndex="25578" IndexCount="1656" />
+        <SubMesh Index="41" StartIndex="27234" IndexCount="1980" />
+        <SubMesh Index="42" StartIndex="29214" IndexCount="540" />
+        <SubMesh Index="43" StartIndex="29754" IndexCount="1980" />
+        <SubMesh Index="44" StartIndex="31734" IndexCount="540" />
+        <SubMesh Index="45" StartIndex="32274" IndexCount="4818" />
+        <SubMesh Index="46" StartIndex="37092" IndexCount="780" />
+        <SubMesh Index="47" StartIndex="37872" IndexCount="36" />
+        <SubMesh Index="48" StartIndex="37908" IndexCount="18" />
+        <SubMesh Index="49" StartIndex="37926" IndexCount="18" />
+        <SubMesh Index="50" StartIndex="37944" IndexCount="18" />
+        <SubMesh Index="51" StartIndex="37962" IndexCount="12" />
+        <SubMesh Index="52" StartIndex="37974" IndexCount="36" />
+        <SubMesh Index="53" StartIndex="38010" IndexCount="18" />
+        <SubMesh Index="54" StartIndex="38028" IndexCount="1803" />
+        <SubMesh Index="55" StartIndex="39831" IndexCount="1803" />
+        <SubMesh Index="56" StartIndex="41634" IndexCount="636" />
+        <SubMesh Index="57" StartIndex="42270" IndexCount="120" />
+        <SubMesh Index="58" StartIndex="42390" IndexCount="114" />
+        <SubMesh Index="59" StartIndex="42504" IndexCount="1596" />
+        <SubMesh Index="60" StartIndex="44100" IndexCount="1764" />
+        <SubMesh Index="61" StartIndex="45864" IndexCount="1764" />
+        <SubMesh Index="62" StartIndex="47628" IndexCount="1764" />
+        <SubMesh Index="63" StartIndex="49392" IndexCount="1764" />
+        <SubMesh Index="64" StartIndex="51156" IndexCount="666" />
+        <SubMesh Index="65" StartIndex="51822" IndexCount="666" />
+        <SubMesh Index="66" StartIndex="52488" IndexCount="666" />
+        <SubMesh Index="67" StartIndex="53154" IndexCount="666" />
+      </SubMeshes>
+      <Vertices Name="Combined Mesh (root Courtyard).vtx" />
+      <Indices Name="Combined Mesh (root Courtyard).idx" 16bit="1" />
+      <Normals Name="Combined Mesh (root Courtyard).nm" />
+      <Uv0 Name="Combined Mesh (root Courtyard).uv0" />
+      <Uv1 Name="Combined Mesh (root Courtyard).uv1" />
+    </Mesh>
+    <Mesh Name="Sphere">
+      <Vertices Name="Sphere.vtx" />
+      <Indices Name="Sphere.idx" 16bit="1" />
+      <Normals Name="Sphere.nm" />
+      <Uv0 Name="Sphere.uv0" />
+      <Uv1 Name="Sphere.uv1" />
+    </Mesh>
+    <Mesh Name="polySurface673">
+      <Vertices Name="polySurface673.vtx" />
+      <Indices Name="polySurface673.idx" 16bit="1" />
+    </Mesh>
+    <Mesh Name="polySurface674">
+      <Vertices Name="polySurface674.vtx" />
+      <Indices Name="polySurface674.idx" 16bit="1" />
+    </Mesh>
+    <Mesh Name="polySurface675">
+      <Vertices Name="polySurface675.vtx" />
+      <Indices Name="polySurface675.idx" 16bit="1" />
+    </Mesh>
+  </Meshes>
+  <Materials>
+    <Material Name="Probe Robot_lit">
+      <Texture Name="Probe Robot.png" FilterMode="Trilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="9" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="0.588, 0.588, 0.588, 1" />
+    </Material>
+    <Material Name="Assault Rifle_lit">
+      <Texture Name="Assault Rifle.png" FilterMode="Trilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="11" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="muzzleFlash">
+      <Texture Name="muzzleFlash.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="0.9411765, 0.8235294, 0.6666667, 1" />
+    </Material>
+    <Material Name="mainsqr_floor_big_diff3_layersTGA_lit">
+      <Texture Name="mainsq_floor_small_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house1_column_diff_layerstga_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsquare_column2_diff_layersTGA.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="8" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house6_diff_layerstga_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="house5_diff_layersTGA.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsq_floor_bases_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsq_floor_bases_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="arc01_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="arc01_diff_layersTGA.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="passage_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="passage_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="stairs_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="stairs_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsquare_column2_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="flowerpots2_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="airvent_diff_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="airvent_diff.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsq_floor_small_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsqr_floor_big_diff3_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsqr_floor_big_diff3_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsq_floor_small_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsquare_column_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsquare_column_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house2_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="scnd_wall_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="1" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house1_diff_layerstga_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="house1_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house4_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="house4_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="wall_deco1_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="wall_deco1_diff_layersTGA.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Repeat" Mipmaps="1" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="passage_diff_layersTGA_1_lit">
+      <Texture Name="LightmapFar-1.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="passage_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsquare_wall_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="mainsquare_wall_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="house7_diff_layersTGA_0_lit">
+      <Texture Name="LightmapFar-0.png" FilterMode="Bilinear" AnisoLevel="3" WrapMode="Clamp" Mipmaps="1" BlendMode="Add" Usage="STATIC_DISCARD_ON_BIND" />
+      <Texture Name="house2_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsq_floor_small_diff_layersTGA_lit">
+      <Texture Name="mainsqr_floor_big_diff3_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+    <Material Name="mainsq_floor_bases_diff_layersTGA_lit">
+      <Texture Name="mainsq_floor_bases_diff_layersTGA.png" FilterMode="Trilinear" AnisoLevel="4" WrapMode="Repeat" Mipmaps="10" BlendMode="Modulate" Usage="STATIC_DISCARD_ON_BIND" />
+      <MaterialState Ambient="1, 1, 1, 1" />
+    </Material>
+  </Materials>
+</Assets>
+<Node Name="Scene">
+  <FogState Enabled="1" Color="0.5921569, 0.7333333, 0.5686275" Start="0" End="300" Mode="EXPSQR" />
+  <Node Name="Boxstack North" Pos="0.7351524, 13.36697, -24.2028">
+    <Node Name="Cube" Pos="-8.66, -7.856319, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="7.5" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.46, -6.856319, -14.72396">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="7.5" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -5.856319, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="7.5" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.46, -4.856319, -14.72396">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="7.5" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Sphere" Pos="-8.46, -3.856319, -14.72396">
+      <Collider Shape="Sphere" Center="-5.960464E-08, 0, -8.940697E-08" Radius="0.5000001" />
+      <RigidBody Mass="3.5" Drag="0.3" AngularDrag="0.8" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Sphere" />
+      <Material Name="mainsq_floor_bases_diff_layersTGA_lit" />
+    </Node>
+  </Node>
+  <Node Name="Boxstacks South" Pos="4, 15.89625, 27.86">
+    <Node Name="Boxes" Pos="9.2, 0, 0">
+      <Node Name="Cube" Pos="-8.66, -8.22455, -14.92419">
+        <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+        <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Cube" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+      </Node>
+      <Node Name="Cube" Pos="-8.66, -7.22455, -14.92419">
+        <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+        <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Cube" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+      </Node>
+      <Node Name="Cube" Pos="-8.66, -5.22455, -14.92419">
+        <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+        <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Cube" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+      </Node>
+      <Node Name="Cube" Pos="-8.66, -6.22455, -14.92419">
+        <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+        <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Cube" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+      </Node>
+      <Node Name="Cube" Pos="-8.66, -4.224549, -14.92419">
+        <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+        <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Cube" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+      </Node>
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -8.22455, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -7.22455, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -6.22455, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -5.22455, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Long Cube" Pos="-4.05, -3.624549, -14.92419" Scale="10, 0.2, 0.5">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="10" Drag="0.8" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_bases_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Cube" Pos="-8.66, -4.224549, -14.92419">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+      <RigidBody Mass="15" Drag="0.3" AngularDrag="0.05" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsq_floor_small_diff_layersTGA_lit" />
+    </Node>
+    <Node Name="Sphere" Pos="-4, -3.024549, -14.92419">
+      <Collider Shape="Sphere" Center="-5.960464E-08, 0, -8.940697E-08" Radius="0.5000001" />
+      <RigidBody Mass="5" Drag="0.3" AngularDrag="0.8" />
+      <Light Name="Directional Light Blue" />
+      <Light Name="Directional Light Yellow" />
+      <Light Name="Point light" />
+      <Mesh Name="Sphere" />
+      <Material Name="mainsq_floor_bases_diff_layersTGA_lit" />
+    </Node>
+  </Node>
+  <Node Name="Colliders" Static="1">
+    <Node Name="Collider for Eastern Building 3 (Low)" Static="1">
+      <Collider Shape="Box" Center="57.1, 8, 3.9" Size="12.71072, 6, 34" />
+    </Node>
+    <Node Name="Collider for Eastern Building 2 (North)" Pos="49.41477, 15.23038, -27.7" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="12.71072, 21.61729, 27.7" />
+    </Node>
+    <Node Name="Collider for Eastern Building 2 (South)" Pos="51.5, 15.23038, -56.5" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="8.3, 21.61729, 30.1" />
+    </Node>
+    <Node Name="Collider for Eastern Stairs (1)" Pos="38.8, 8.518629, -28.58608" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1.3, 7.288703, 24.00212" />
+    </Node>
+    <Node Name="Collider for Fountain (6)" Pos="0, 7.01, -23.65023" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="10, 1.2, 10" />
+    </Node>
+    <Node Name="Collider for Fountain (7)" Pos="0, 7.6, -23.65023" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="1.68, 1.6, 2.14" />
+    </Node>
+    <Node Name="Collider for Northern Building 2 (Lower)" Pos="15.7543, 8.2, -84.1" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="50.1, 6.25, 17.2" />
+    </Node>
+    <Node Name="Collider for Northern Building 2 (Upper)" Pos="15.7543, 23.1, -83.01181" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="52.59677, 26, 22.37" />
+    </Node>
+    <Node Name="Collider for Southern Building (Behind)" Pos="0, 37.74085, 27.5" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="25.1, 67.35164, 13.7" />
+    </Node>
+    <Node Name="Collider for Southern Building (Front)" Pos="0, 37.74085, 19.85" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="21.9, 67.35164, 2" />
+    </Node>
+    <Node Name="Collider for Southern Wall (Left)" Pos="10, 20, 22.6" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="104.3, 30.00002, 3.27" />
+    </Node>
+    <Node Name="Collider for Southern Wall (In Between)" Pos="-42.9, 20, 17" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="2.5, 30, 10.8" />
+    </Node>
+    <Node Name="Collider for Southern Wall (Right)" Pos="-53, 20, 12.78" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="18, 30, 2.5" />
+    </Node>
+    <Node Name="Collider for Western Building 2 (Upper)" Pos="-47.58213, 24.5, -13.66149" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="25.62226, 26, 42.28049" />
+    </Node>
+    <Node Name="Collider for Western Building 2 (Lower)" Pos="-50.6, 8.2, -17.2" Static="1">
+      <Collider Shape="Box" Center="0, 0, 0" Size="17.6, 6.3, 34.6" />
+    </Node>
+    <Node Name="Courtyard Stair Colliders" Static="1">
+      <Node Name="polySurface673" Pos="0, 6.061055, 16.60201" Static="1">
+        <Collider Shape="Mesh" Mesh="polySurface673" />
+      </Node>
+      <Node Name="polySurface674" Pos="0, 5.798523, -23.65024" Static="1">
+        <Collider Shape="Mesh" Mesh="polySurface674" />
+      </Node>
+      <Node Name="polySurface675" Pos="40.99108, 7.857093, -28.69081" Static="1">
+        <Collider Shape="Mesh" Mesh="polySurface675" />
+      </Node>
+    </Node>
+  </Node>
+  <Node Name="Courtyard" Static="1">
+    <Node Name="Column 1" Static="1">
+      <Collider Shape="Box" Center="-8.910089, 7.5, -72.22499" Size="0.7494316, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="12" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 2" Static="1">
+      <Collider Shape="Box" Center="-4.022929, 7.5, -72.22499" Size="0.7494321, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="4" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 3" Static="1">
+      <Collider Shape="Box" Center="0.9347175, 7.5, -72.22499" Size="0.7494309, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="11" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 4" Static="1">
+      <Collider Shape="Box" Center="5.868589, 7.5, -72.22499" Size="0.7494321, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="16" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 5" Static="1">
+      <Collider Shape="Box" Center="10.81103, 7.5, -72.22499" Size="0.7494307, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="17" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 6" Static="1">
+      <Collider Shape="Box" Center="15.74489, 7.5, -72.22499" Size="0.7494297, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="15" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 7" Static="1">
+      <Collider Shape="Box" Center="20.67514, 7.5, -72.22499" Size="0.7494297, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="13" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 8" Static="1">
+      <Collider Shape="Box" Center="25.609, 7.5, -72.22499" Size="0.7494316, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="14" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 9" Static="1">
+      <Collider Shape="Box" Center="30.56141, 7.5, -72.22499" Size="0.7494297, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="22" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 10" Static="1">
+      <Collider Shape="Box" Center="35.49528, 7.5, -72.22499" Size="0.7494316, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="19" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 11" Static="1">
+      <Collider Shape="Box" Center="40.42929, 7.5, -72.22499" Size="0.7494278, 5, 0.7494278" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="18" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 12" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.2, -33.60355" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="20" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 13" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.481933, -25.78058" Size="2, 7.046554, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="21" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 14" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.481933, -18.00697" Size="2, 7.046554, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="6" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 15" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.2, -10.0554" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="7" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 16" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.2, -2.449232" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="5" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 17" Static="1">
+      <Collider Shape="Box" Center="-37.51536, 8.2, 5.393307" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="3" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 18" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.66655, -12.23803" Size="1.16819, 5.359941, 1.50154" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="28" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 19" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, -6.859371" Size="1.16819, 5.327739, 1.501544" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="29" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 20" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, -1.476119" Size="1.16819, 5.327739, 1.501544" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="26" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 21" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, 3.896408" Size="1.16819, 5.327739, 1.501544" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="27" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 22" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, 9.268936" Size="1.16819, 5.327739, 1.501547" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="32" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 23" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, 14.64146" Size="1.16819, 5.327739, 1.50154" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="31" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 24" Static="1">
+      <Collider Shape="Box" Center="46.40652, 7.65045, 20.01398" Size="1.16819, 5.327739, 1.501549" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="30" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 25" Static="1">
+      <Collider Shape="Box" Center="-54.58144, 8.2, 5.393307" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="8" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 26" Static="1">
+      <Collider Shape="Box" Center="-48.64951, 8.2, 5.393307" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="9" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Column 27" Static="1">
+      <Collider Shape="Box" Center="-42.93632, 8.2, 5.393307" Size="2, 6.4, 2" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="10" />
+      <Material Name="house1_column_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Doors" Static="1">
+      <Collider Shape="Box" Center="-2.95639E-05, 9.691204, 18.85264" Size="9.766867, 5.074593, 0.6746407" />
+      <Light Name="Point light" />
+      <Node Name="Doors" Static="1">
+        <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="37" />
+        <Material Name="mainsq_floor_bases_diff_layersTGA_0_lit" />
+      </Node>
+      <Node Name="Doors" Static="1">
+        <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="38" />
+        <Material Name="arc01_diff_layersTGA_0_lit" />
+      </Node>
+    </Node>
+    <Node Name="Eastern Building 1" Static="1">
+      <Collider Shape="Box" Center="50.68404, 15.37782, -84.03005" Size="8.191002, 21.07069, 8.190979" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="58" />
+      <Material Name="passage_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Eastern Building 2" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="56" />
+      <Material Name="passage_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Eastern Building 3" Static="1">
+      <Collider Shape="Box" Center="53.2, 22.4, 3.748385" Size="16.6, 23, 34.1" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="25" />
+      <Material Name="house6_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Eastern Stairs" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="0" />
+      <Material Name="stairs_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Eastern Tomb" Static="1">
+      <Collider Shape="Box" Center="18.15073, 6.011418, -23.63658" Size="2.889589, 2.193216, 7.19112" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="60" />
+      <Material Name="mainsquare_column2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Eastern Window" Static="1">
+      <Collider Shape="Box" Center="26.87593, 12.49293, 21.38869" Size="6.409021, 8.460966, 1.457329" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="55" />
+      <Material Name="airvent_diff_0_lit" />
+    </Node>
+    <Node Name="Fountain" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="1" />
+      <Material Name="stairs_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Ground" Static="1">
+      <Collider Shape="Box" Center="-2.488575, 4.834459, -35.52983" Size="114.1659, 0.3926039, 119.1431" />
+      <Light Name="Point light" />
+      <Node Name="Ground" Static="1">
+        <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="33" />
+        <Material Name="mainsq_floor_small_diff_layersTGA_0_lit" />
+      </Node>
+      <Node Name="Ground" Static="1">
+        <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="34" />
+        <Material Name="mainsqr_floor_big_diff3_layersTGA_0_lit" />
+      </Node>
+      <Node Name="Ground" Static="1">
+        <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="35" />
+        <Material Name="mainsq_floor_bases_diff_layersTGA_0_lit" />
+      </Node>
+    </Node>
+    <Node Name="North Eastern Pillar" Static="1">
+      <Collider Shape="Box" Center="17.56022, 15.98359, -41.30874" Size="5.28529, 22.05539, 5.285282" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="66" />
+      <Material Name="mainsquare_column_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="North Wall" Static="1">
+      <Collider Shape="Box" Center="1.061594, 12.77554, -97.70872" Size="51.20039, 15.90566, 9.194145" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="51" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="North Western Pillar" Static="1">
+      <Collider Shape="Box" Center="-17.47567, 15.98359, -41.30874" Size="5.285281, 22.05539, 5.285282" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="67" />
+      <Material Name="mainsquare_column_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Northern Building 1" Static="1">
+      <Collider Shape="Box" Center="-40.39596, 16.60042, -97.34807" Size="32.94284, 23.54395, 21.38577" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="39" />
+      <Material Name="house1_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Northern Building 2" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="45" />
+      <Material Name="house4_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Northern Ornament 1" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="41" />
+      <Material Name="wall_deco1_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Northern Ornament 2" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="43" />
+      <Material Name="wall_deco1_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Northern Tomb" Static="1">
+      <Collider Shape="Box" Center="0, 6.011418, -41.20383" Size="7.191124, 2.193216, 2.889591" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="63" />
+      <Material Name="mainsquare_column2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object002" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="57" />
+      <Material Name="passage_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object016" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="36" />
+      <Material Name="mainsq_floor_bases_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object074" Static="1">
+      <Collider Shape="Box" Center="-47.60173, 15.77563, -37.02843" Size="0.8802414, 21.8945, 6.208233" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="52" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object075" Static="1">
+      <Collider Shape="Box" Center="-55.40659, 15.77563, -84.04155" Size="0.880249, 21.8945, 6.452354" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="53" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object076" Static="1">
+      <Collider Shape="Box" Center="43.30439, 12.78204, -84.31756" Size="9.158203, 15.70313, 2.205322" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="48" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object077" Static="1">
+      <Collider Shape="Box" Center="50.91581, 12.78204, -75.77429" Size="2.205322, 15.70313, 9.158203" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="47" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object078" Static="1">
+      <Collider Shape="Box" Center="52.14269, 14.98275, -13.19368" Size="0.8802376, 20.14718, 6.208231" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="50" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Object079" Static="1">
+      <Collider Shape="Box" Center="52.14269, 14.98275, 22.44847" Size="0.8802376, 20.14718, 6.208229" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="49" />
+      <Material Name="house2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Sourthern Stairs" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="2" />
+      <Material Name="stairs_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="South Eastern Pillar" Static="1">
+      <Collider Shape="Box" Center="17.56022, 15.98359, -5.536584" Size="5.28529, 22.05539, 5.285285" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="65" />
+      <Material Name="mainsquare_column_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="South Western Pillar" Static="1">
+      <Collider Shape="Box" Center="-17.72328, 15.98359, -5.589886" Size="5.28529, 22.05539, 5.285285" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="64" />
+      <Material Name="mainsquare_column_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Southern Building" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="59" />
+      <Material Name="passage_diff_layersTGA_1_lit" />
+    </Node>
+    <Node Name="Southern Tomb" Static="1">
+      <Collider Shape="Box" Center="0, 6.011418, -5.675186" Size="7.191124, 2.193216, 2.889588" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="62" />
+      <Material Name="mainsquare_column2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Southern Wall" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="23" />
+      <Material Name="mainsquare_wall_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Building 1" Static="1">
+      <Collider Shape="Box" Center="-50.9, 19.17618, -60.33698" Size="20.6, 28.81022, 43.54035" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="46" />
+      <Material Name="house7_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Building 2" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="40" />
+      <Material Name="house1_diff_layerstga_0_lit" />
+    </Node>
+    <Node Name="Western Ornament 1" Static="1">
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="44" />
+      <Material Name="wall_deco1_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Ornament 2" Static="1">
+      <Collider Shape="Box" Center="47.46095, 10.60906, -63.8404" Size="0.5296478, 3.844779, 2.494072" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="42" />
+      <Material Name="wall_deco1_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Tomb" Static="1">
+      <Collider Shape="Box" Center="-17.54782, 6.011418, -23.63658" Size="2.889591, 2.193216, 7.19112" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="61" />
+      <Material Name="mainsquare_column2_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Wall" Static="1">
+      <Collider Shape="Box" Center="-60.8, 20.00237, -28" Size="2.4, 29.99528, 80" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="24" />
+      <Material Name="mainsquare_wall_diff_layersTGA_0_lit" />
+    </Node>
+    <Node Name="Western Window" Static="1">
+      <Collider Shape="Box" Center="-27.106, 12.49293, 21.38869" Size="6.409021, 8.460966, 1.457329" />
+      <Light Name="Point light" />
+      <Mesh Name="Combined Mesh (root Courtyard)" SubMesh="54" />
+      <Material Name="airvent_diff_0_lit" />
+    </Node>
+  </Node>
+  <Node Name="Directional Light Blue" Pos="0, 10, 0" Rot="0.1481229, 0.1481228, 0.8752192, 0.4360169" Scale="1, 1, 1" Static="1">
+    <LightNode>
+      <Light Name="Directional Light Blue" />
+    </LightNode>
+  </Node>
+  <Node Name="Directional Light Platform only" Pos="0, 10, 0" Rot="0.8473976, 0.4317706, -0.2753362, 0.1402908" Scale="1, 1, 1" Static="1">
+    <LightNode>
+      <Light Name="Directional Light Platform only" />
+    </LightNode>
+  </Node>
+  <Node Name="Directional Light Yellow" Pos="0, 10, 0" Rot="0.8473976, 0.4317706, -0.2753362, 0.1402908" Scale="1, 1, 1" Static="1">
+    <LightNode>
+      <Light Name="Directional Light Yellow" />
+    </LightNode>
+  </Node>
+  <Node Name="Platform" Pos="32.225, 4.925, 3.75" Scale="5, 0.15, 4.9" Layer="8">
+    <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
+    <RigidBody Mass="1" Kinematic="1" AngularDrag="0.05" />
+    <Light Name="Directional Light Platform only" />
+    <Light Name="Point light" />
+    <Mesh Name="Cube" />
+    <Material Name="mainsqr_floor_big_diff3_layersTGA_lit" />
+  </Node>
+  <Node Name="Player" Pos="0, 10, -50">
+    <Camera Fov="60" Near="0.15" Far="1000" />
+    <Collider Shape="Character" Height="0" Radius="1.5" Slope="45" Step="0.5" Center="0, 0, 0" />
+    <Node Name="Gun" Pos="-0.5, -0.5, 0.75" Rot="0.9952466, -0.0434534, -0.08707278, -0.00380168" Scale="0.0254, 0.0254, 0.0254">
+      <Node Name="Gun">
+        <Light Name="Directional Light Blue" />
+        <Light Name="Directional Light Yellow" />
+        <Light Name="Point light" />
+        <Mesh Name="Assault Rifle" />
+        <Material Name="Assault Rifle_lit" />
+      </Node>
+      <Node Name="muzzleFlash" Pos="0.01292884, 4.708735, 39.29217" Scale="30, 30, 30" Layer="9">
+        <Mesh Name="polySurface6" />
+        <Material Name="muzzleFlash" />
+      </Node>
+      <Node Name="Point light" Pos="4.61, 11.5, 36.37944">
+        <LightNode>
+          <Light Name="Point light" />
+        </LightNode>
+      </Node>
+    </Node>
+  </Node>
+  <Node Name="Probe Robot" Pos="0, 10, 10" Rot="1, 2.185569E-08, 0, 0">
+    <Collider Shape="Character" Height="2.1" Radius="1.41" Slope="45" Step="0.3" Center="0, -1.15, 0.3" />
+    <Collider Enabled="0" Shape="Capsule" Center="0, -0.8, 0" Radius="1.31" Height="0.8800001" Direction="Y" />
+    <RigidBody Mass="40" Drag="0.2" AngularDrag="0.85" />
+    <Light Name="Directional Light Blue" />
+    <Light Name="Directional Light Yellow" />
+    <Light Name="Point light" />
+    <Mesh Name="Sphere002" />
+    <Material Name="Probe Robot_lit" />
+  </Node>
+  <Skybox>
+    <MaterialState Ambient="0.5, 0.5, 0.5, 0.5" />
+    <PosZ>
+      <Texture Name="Front.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </PosZ>
+    <NegZ>
+      <Texture Name="Back.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </NegZ>
+    <PosX>
+      <Texture Name="Right.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </PosX>
+    <NegX>
+      <Texture Name="Left.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </NegX>
+    <PosY>
+      <Texture Name="Top.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </PosY>
+    <NegY>
+      <Texture Name="Bottom.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+    </NegY>
+  <FogState Enabled="0" />
+  </Skybox>
+</Node>
