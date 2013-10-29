@@ -94,3 +94,8 @@ Samples/Sample8/Sample8.exe
 Samples/Sample8/Sample8d.exe
 Samples/Sample9_WIN32/Sample9.exe
 Samples/Sample9_WIN32/Sample9d.exe
+Tools/bullet-2.77/msvc2005/BulletCollision/BulletCollision.dir/
+Tools/bullet-2.77/msvc2005/BulletDynamics/BulletDynamics.dir/
+Tools/bullet-2.77/msvc2005/BulletSoftBody/BulletSoftBody.dir/
+Tools/bullet-2.77/msvc2005/LinearMath/LinearMath.dir/
+*.ncb
