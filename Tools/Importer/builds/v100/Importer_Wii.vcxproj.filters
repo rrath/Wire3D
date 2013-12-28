@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\CharacterController.cpp">
+    <ClCompile Include="..\..\src\CharacterController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CollisionObjectController.cpp">
+    <ClCompile Include="..\..\src\CollisionObjectController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Importer.cpp">
+    <ClCompile Include="..\..\src\Importer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\PhysicsWorld.cpp">
+    <ClCompile Include="..\..\src\PhysicsWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\PicoPNG.cpp">
+    <ClCompile Include="..\..\src\PicoPNG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RigidBodyController.cpp">
+    <ClCompile Include="..\..\src\RigidBodyController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\PhysicsController.cpp">
+    <ClCompile Include="..\..\src\PhysicsController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CharacterController.h">
+    <ClInclude Include="..\..\src\CharacterController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CollisionObjectController.h">
+    <ClInclude Include="..\..\src\CollisionObjectController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Importer.h">
+    <ClInclude Include="..\..\src\Importer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\PhysicsWorld.h">
+    <ClInclude Include="..\..\src\PhysicsWorld.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\PicoPNG.h">
+    <ClInclude Include="..\..\src\PicoPNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RigidBodyController.h">
+    <ClInclude Include="..\..\src\RigidBodyController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\rapidxml.hpp">
+    <ClInclude Include="..\..\src\rapidxml.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\PhysicsController.h">
+    <ClInclude Include="..\..\src\PhysicsController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,7 +61,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\PhysicsWorld.inl">
+    <None Include="..\..\src\PhysicsWorld.inl">
       <Filter>Inline Files</Filter>
     </None>
   </ItemGroup>
