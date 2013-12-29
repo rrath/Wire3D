@@ -1,0 +1,419 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v100\Wire_Wii.vcxproj", "{F95787AD-C522-4532-98F2-107E57D5019C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{82FD657C-67AE-4115-AECC-A59001AAD6B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bullet-2.77", "Bullet-2.77", "{6F2125A9-4AFF-4720-B74E-332E85F9E336}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\btBulletCollisionCommon.h = ..\..\Tools\bullet-2.77\src\btBulletCollisionCommon.h
+		..\..\Tools\bullet-2.77\src\btBulletDynamicsCommon.h = ..\..\Tools\bullet-2.77\src\btBulletDynamicsCommon.h
+		..\..\Tools\bullet-2.77\src\Bullet-C-Api.h = ..\..\Tools\bullet-2.77\src\Bullet-C-Api.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletCollision", "BulletCollision", "{B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletDynamics", "BulletDynamics", "{88811287-400F-4AA4-8ED0-41197D0D7E41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletSoftBody", "BulletSoftBody", "{8CFC91D4-0702-4972-8276-1CC562B2FF31}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBody.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBody.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyHelpers.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyHelpers.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyInternals.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyInternals.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftRigidDynamicsWorld.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftRigidDynamicsWorld.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletSoftBody\btSparseSDF.h = ..\..\Tools\bullet-2.77\src\BulletSoftBody\btSparseSDF.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinearMath", "LinearMath", "{6C97C3FD-AFD0-4EA6-B1A3-05E1AEF0826A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\LinearMath\btAabbUtil2.h = ..\..\Tools\bullet-2.77\src\LinearMath\btAabbUtil2.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btAlignedAllocator.h = ..\..\Tools\bullet-2.77\src\LinearMath\btAlignedAllocator.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btAlignedObjectArray.h = ..\..\Tools\bullet-2.77\src\LinearMath\btAlignedObjectArray.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btConvexHull.h = ..\..\Tools\bullet-2.77\src\LinearMath\btConvexHull.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btDefaultMotionState.h = ..\..\Tools\bullet-2.77\src\LinearMath\btDefaultMotionState.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btGeometryUtil.h = ..\..\Tools\bullet-2.77\src\LinearMath\btGeometryUtil.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btHashMap.h = ..\..\Tools\bullet-2.77\src\LinearMath\btHashMap.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btIDebugDraw.h = ..\..\Tools\bullet-2.77\src\LinearMath\btIDebugDraw.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btList.h = ..\..\Tools\bullet-2.77\src\LinearMath\btList.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btMatrix3x3.h = ..\..\Tools\bullet-2.77\src\LinearMath\btMatrix3x3.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btMinMax.h = ..\..\Tools\bullet-2.77\src\LinearMath\btMinMax.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btMotionState.h = ..\..\Tools\bullet-2.77\src\LinearMath\btMotionState.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btPoolAllocator.h = ..\..\Tools\bullet-2.77\src\LinearMath\btPoolAllocator.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btQuadWord.h = ..\..\Tools\bullet-2.77\src\LinearMath\btQuadWord.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btQuaternion.h = ..\..\Tools\bullet-2.77\src\LinearMath\btQuaternion.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btQuickprof.h = ..\..\Tools\bullet-2.77\src\LinearMath\btQuickprof.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btRandom.h = ..\..\Tools\bullet-2.77\src\LinearMath\btRandom.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btScalar.h = ..\..\Tools\bullet-2.77\src\LinearMath\btScalar.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btSerializer.h = ..\..\Tools\bullet-2.77\src\LinearMath\btSerializer.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btStackAlloc.h = ..\..\Tools\bullet-2.77\src\LinearMath\btStackAlloc.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btTransform.h = ..\..\Tools\bullet-2.77\src\LinearMath\btTransform.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btTransformUtil.h = ..\..\Tools\bullet-2.77\src\LinearMath\btTransformUtil.h
+		..\..\Tools\bullet-2.77\src\LinearMath\btVector3.h = ..\..\Tools\bullet-2.77\src\LinearMath\btVector3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Character", "Character", "{9FAB8F90-4B50-41C7-B3F5-A73CC79D976D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Character\btCharacterControllerInterface.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Character\btCharacterControllerInterface.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Character\btKinematicCharacterController.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Character\btKinematicCharacterController.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConstraintSolver", "ConstraintSolver", "{562E96C3-CA0F-4912-9753-AC697FBAA5A8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btConstraintSolver.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btConstraintSolver.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btContactConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btContactConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btContactSolverInfo.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btContactSolverInfo.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btHingeConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btHingeConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btJacobianEntry.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btJacobianEntry.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSliderConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSliderConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolverBody.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolverBody.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolverConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btSolverConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btTypedConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btTypedConstraint.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamics", "Dynamics", "{775C6C12-0C4D-4FF2-87FD-92881D6C65DF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btActionInterface.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btActionInterface.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btDynamicsWorld.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btDynamicsWorld.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btRigidBody.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btRigidBody.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vehicle", "Vehicle", "{629FC796-3C5D-4905-B712-5070C2D79AE6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btRaycastVehicle.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btRaycastVehicle.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btVehicleRaycaster.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btVehicleRaycaster.h
+		..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btWheelInfo.h = ..\..\Tools\bullet-2.77\src\BulletDynamics\Vehicle\btWheelInfo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BroadphaseCollision", "BroadphaseCollision", "{3A1B34C6-30BD-48A1-833E-644F4A696571}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btAxisSweep3.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btAxisSweep3.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDbvt.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDbvt.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDispatcher.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btDispatcher.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btQuantizedBvh.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btQuantizedBvh.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h = ..\..\Tools\bullet-2.77\src\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CollisionDispatch", "CollisionDispatch", "{A9AF3CC9-0D1D-44E1-86A7-CC681B81DB93}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBoxBoxDetector.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btBoxBoxDetector.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionConfiguration.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionConfiguration.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionDispatcher.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionDispatcher.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionObject.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionObject.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionWorld.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCollisionWorld.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btGhostObject.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btGhostObject.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btManifoldResult.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btManifoldResult.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSimulationIslandManager.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSimulationIslandManager.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btUnionFind.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\btUnionFind.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\SphereTriangleDetector.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionDispatch\SphereTriangleDetector.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CollisionShapes", "CollisionShapes", "{EA9482C6-934C-4613-B5EC-F0270705B9D9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBox2dShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBox2dShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBoxShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBoxShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCapsuleShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCapsuleShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCollisionMargin.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCollisionMargin.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCollisionShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCollisionShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCompoundShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCompoundShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConcaveShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConcaveShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConeShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConeShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvex2dShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvex2dShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexHullShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexHullShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexInternalShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexInternalShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexPointCloudShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexPointCloudShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCylinderShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btCylinderShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btEmptyShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btEmptyShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMaterial.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMaterial.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMinkowskiSumShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMinkowskiSumShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMultiSphereShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btMultiSphereShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btOptimizedBvh.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btOptimizedBvh.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btShapeHull.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btShapeHull.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btSphereShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btSphereShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btStaticPlaneShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btStaticPlaneShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btStridingMeshInterface.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btStridingMeshInterface.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTetrahedronShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTetrahedronShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleBuffer.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleBuffer.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleCallback.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleCallback.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleInfoMap.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleInfoMap.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleMesh.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleMesh.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleMeshShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleMeshShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btTriangleShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btUniformScalingShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\CollisionShapes\btUniformScalingShape.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gimpact", "Gimpact", "{CE439A26-61A3-4021-A81B-B11357C0BCA7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btBoxCollision.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btBoxCollision.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btClipPolygon.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btClipPolygon.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btContactProcessing.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btContactProcessing.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGenericPoolAllocator.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGenericPoolAllocator.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGeometryOperations.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGeometryOperations.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactBvh.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactBvh.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactMassUtil.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactMassUtil.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactQuantizedBvh.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactQuantizedBvh.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactShape.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btGImpactShape.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btQuantization.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btQuantization.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btTriangleShapeEx.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\btTriangleShapeEx.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_array.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_array.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_basic_geometry_operations.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_basic_geometry_operations.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_bitset.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_bitset.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_box_collision.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_box_collision.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_box_set.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_box_set.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_clip_polygon.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_clip_polygon.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_contact.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_contact.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_geom_types.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_geom_types.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_geometry.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_geometry.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_hash_table.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_hash_table.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_linear_math.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_linear_math.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_math.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_math.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_memory.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_memory.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_radixsort.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_radixsort.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_tri_collision.h = ..\..\Tools\bullet-2.77\src\BulletCollision\Gimpact\gim_tri_collision.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NarrowPhaseCollision", "NarrowPhaseCollision", "{77C33049-C05B-4C2A-9FA2-CE3DF71D96AF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btConvexCast.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btConvexCast.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btPointCollector.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btPointCollector.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h
+		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\wii\freetype_WII.vcxproj", "{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample0 - User Application", "..\..\Samples\Sample0\builds\v100\Sample0_Wii.vcxproj", "{535A54C5-0304-4361-A168-A8EC5BE41313}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1 - Basic Rendering", "..\..\Samples\Sample1\builds\v100\Sample1_Wii.vcxproj", "{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample2 - Scene Graph", "..\..\Samples\Sample2\builds\v100\Sample2_Wii.vcxproj", "{63E8E87E-548C-460A-9B0E-FA0365C263F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample3 - Level of Detail", "..\..\Samples\Sample3\builds\v100\Sample3_Wii.vcxproj", "{5B8835D8-A708-4650-9C67-D0599D9A8899}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample4 - Multitexturing", "..\..\Samples\Sample4\builds\v100\Sample4_Wii.vcxproj", "{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample5 - Lighting", "..\..\Samples\Sample5\builds\v100\Sample5_Wii.vcxproj", "{0F5C00B3-991B-44E6-832A-F76E6F3360A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample6 - Custom Nodes", "..\..\Samples\Sample6\builds\v100\Sample6_Wii.vcxproj", "{B3F7B708-87F9-44D9-841E-B1154446BEAC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample7 - Dynamic Buffers", "..\..\Samples\Sample7\builds\v100\Sample7_Wii.vcxproj", "{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics Integration", "..\..\Samples\Sample8\builds\v100\Sample8_Wii.vcxproj", "{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample9 - Custom Main", "..\..\Samples\Sample9_WII\builds\v100\Sample9_Wii.vcxproj", "{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample10 - Material Sorting", "..\..\Samples\Sample10\builds\v100\Sample10_Wii.vcxproj", "{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample11 - Input", "..\..\Samples\Sample11\builds\v100\Sample11_Wii.vcxproj", "{1A21949F-EF98-4ABD-A91C-39182829F15D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Importer\builds\v100\Importer_Wii.vcxproj", "{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD} = {399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo", "..\..\Samples\Demo\builds\v100\Demo_Wii.vcxproj", "{1473F0E0-E3E7-41BA-A094-279965497DE4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Samples\Game\builds\v100\Game_Wii.vcxproj", "{30A5849F-209A-4716-8F8D-C5912D9D6EE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
+		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F95787AD-C522-4532-98F2-107E57D5019C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F95787AD-C522-4532-98F2-107E57D5019C}.Debug|Win32.Build.0 = Debug|Win32
+		{F95787AD-C522-4532-98F2-107E57D5019C}.Release|Win32.ActiveCfg = Release|Win32
+		{F95787AD-C522-4532-98F2-107E57D5019C}.Release|Win32.Build.0 = Release|Win32
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}.Debug|Win32.Build.0 = Debug|Win32
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}.Release|Win32.ActiveCfg = Release|Win32
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}.Release|Win32.Build.0 = Release|Win32
+		{535A54C5-0304-4361-A168-A8EC5BE41313}.Debug|Win32.ActiveCfg = Debug|Win32
+		{535A54C5-0304-4361-A168-A8EC5BE41313}.Debug|Win32.Build.0 = Debug|Win32
+		{535A54C5-0304-4361-A168-A8EC5BE41313}.Release|Win32.ActiveCfg = Release|Win32
+		{535A54C5-0304-4361-A168-A8EC5BE41313}.Release|Win32.Build.0 = Release|Win32
+		{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}.Debug|Win32.Build.0 = Debug|Win32
+		{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}.Release|Win32.ActiveCfg = Release|Win32
+		{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}.Release|Win32.Build.0 = Release|Win32
+		{63E8E87E-548C-460A-9B0E-FA0365C263F5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{63E8E87E-548C-460A-9B0E-FA0365C263F5}.Debug|Win32.Build.0 = Debug|Win32
+		{63E8E87E-548C-460A-9B0E-FA0365C263F5}.Release|Win32.ActiveCfg = Release|Win32
+		{63E8E87E-548C-460A-9B0E-FA0365C263F5}.Release|Win32.Build.0 = Release|Win32
+		{5B8835D8-A708-4650-9C67-D0599D9A8899}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5B8835D8-A708-4650-9C67-D0599D9A8899}.Debug|Win32.Build.0 = Debug|Win32
+		{5B8835D8-A708-4650-9C67-D0599D9A8899}.Release|Win32.ActiveCfg = Release|Win32
+		{5B8835D8-A708-4650-9C67-D0599D9A8899}.Release|Win32.Build.0 = Release|Win32
+		{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}.Debug|Win32.Build.0 = Debug|Win32
+		{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}.Release|Win32.ActiveCfg = Release|Win32
+		{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}.Release|Win32.Build.0 = Release|Win32
+		{0F5C00B3-991B-44E6-832A-F76E6F3360A7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0F5C00B3-991B-44E6-832A-F76E6F3360A7}.Debug|Win32.Build.0 = Debug|Win32
+		{0F5C00B3-991B-44E6-832A-F76E6F3360A7}.Release|Win32.ActiveCfg = Release|Win32
+		{0F5C00B3-991B-44E6-832A-F76E6F3360A7}.Release|Win32.Build.0 = Release|Win32
+		{B3F7B708-87F9-44D9-841E-B1154446BEAC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B3F7B708-87F9-44D9-841E-B1154446BEAC}.Debug|Win32.Build.0 = Debug|Win32
+		{B3F7B708-87F9-44D9-841E-B1154446BEAC}.Release|Win32.ActiveCfg = Release|Win32
+		{B3F7B708-87F9-44D9-841E-B1154446BEAC}.Release|Win32.Build.0 = Release|Win32
+		{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}.Debug|Win32.Build.0 = Debug|Win32
+		{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}.Release|Win32.ActiveCfg = Release|Win32
+		{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}.Release|Win32.Build.0 = Release|Win32
+		{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}.Debug|Win32.Build.0 = Debug|Win32
+		{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}.Release|Win32.ActiveCfg = Release|Win32
+		{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}.Release|Win32.Build.0 = Release|Win32
+		{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}.Debug|Win32.Build.0 = Debug|Win32
+		{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}.Release|Win32.ActiveCfg = Release|Win32
+		{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}.Release|Win32.Build.0 = Release|Win32
+		{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}.Debug|Win32.Build.0 = Debug|Win32
+		{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}.Release|Win32.ActiveCfg = Release|Win32
+		{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}.Release|Win32.Build.0 = Release|Win32
+		{1A21949F-EF98-4ABD-A91C-39182829F15D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A21949F-EF98-4ABD-A91C-39182829F15D}.Debug|Win32.Build.0 = Debug|Win32
+		{1A21949F-EF98-4ABD-A91C-39182829F15D}.Release|Win32.ActiveCfg = Release|Win32
+		{1A21949F-EF98-4ABD-A91C-39182829F15D}.Release|Win32.Build.0 = Release|Win32
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}.Debug|Win32.Build.0 = Debug|Win32
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}.Release|Win32.ActiveCfg = Release|Win32
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}.Release|Win32.Build.0 = Release|Win32
+		{1473F0E0-E3E7-41BA-A094-279965497DE4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1473F0E0-E3E7-41BA-A094-279965497DE4}.Debug|Win32.Build.0 = Debug|Win32
+		{1473F0E0-E3E7-41BA-A094-279965497DE4}.Release|Win32.ActiveCfg = Release|Win32
+		{1473F0E0-E3E7-41BA-A094-279965497DE4}.Release|Win32.Build.0 = Release|Win32
+		{30A5849F-209A-4716-8F8D-C5912D9D6EE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{30A5849F-209A-4716-8F8D-C5912D9D6EE8}.Debug|Win32.Build.0 = Debug|Win32
+		{30A5849F-209A-4716-8F8D-C5912D9D6EE8}.Release|Win32.ActiveCfg = Release|Win32
+		{30A5849F-209A-4716-8F8D-C5912D9D6EE8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F2125A9-4AFF-4720-B74E-332E85F9E336} = {82FD657C-67AE-4115-AECC-A59001AAD6B3}
+		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD} = {82FD657C-67AE-4115-AECC-A59001AAD6B3}
+		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {82FD657C-67AE-4115-AECC-A59001AAD6B3}
+		{B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6} = {6F2125A9-4AFF-4720-B74E-332E85F9E336}
+		{88811287-400F-4AA4-8ED0-41197D0D7E41} = {6F2125A9-4AFF-4720-B74E-332E85F9E336}
+		{8CFC91D4-0702-4972-8276-1CC562B2FF31} = {6F2125A9-4AFF-4720-B74E-332E85F9E336}
+		{6C97C3FD-AFD0-4EA6-B1A3-05E1AEF0826A} = {6F2125A9-4AFF-4720-B74E-332E85F9E336}
+		{3A1B34C6-30BD-48A1-833E-644F4A696571} = {B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}
+		{A9AF3CC9-0D1D-44E1-86A7-CC681B81DB93} = {B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}
+		{EA9482C6-934C-4613-B5EC-F0270705B9D9} = {B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}
+		{CE439A26-61A3-4021-A81B-B11357C0BCA7} = {B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}
+		{77C33049-C05B-4C2A-9FA2-CE3DF71D96AF} = {B4E4CE9C-8998-4ABC-B2EC-7E861923D9B6}
+		{9FAB8F90-4B50-41C7-B3F5-A73CC79D976D} = {88811287-400F-4AA4-8ED0-41197D0D7E41}
+		{562E96C3-CA0F-4912-9753-AC697FBAA5A8} = {88811287-400F-4AA4-8ED0-41197D0D7E41}
+		{775C6C12-0C4D-4FF2-87FD-92881D6C65DF} = {88811287-400F-4AA4-8ED0-41197D0D7E41}
+		{629FC796-3C5D-4905-B712-5070C2D79AE6} = {88811287-400F-4AA4-8ED0-41197D0D7E41}
+	EndGlobalSection
+EndGlobal
