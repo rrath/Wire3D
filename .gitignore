@@ -7,7 +7,7 @@
 *.pdb
 *.ilk
 *.ncb
-msvc/msvc2010_v100/ipch
+builds/msvc2010_v100/ipch
 Wire/builds/v100/build
 Wire/build_wii_debug/
 Wire/build_wii_release/
@@ -71,10 +71,10 @@ Samples/Sample0/Sample0_v100.exe
 Samples/Sample0/Sample0d_v100.exe
 Samples/Sample1/Sample1_v100.exe
 Samples/Sample1/Sample1d_v100.exe
-Samples/Sample10/Sample10.exe
-Samples/Sample10/Sample10d.exe
-Samples/Sample11/Sample11.exe
-Samples/Sample11/Sample11d.exe
+Samples/Sample10/Sample10_v100.exe
+Samples/Sample10/Sample10d_v100.exe
+Samples/Sample11/Sample11_v100.exe
+Samples/Sample11/Sample11d_v100.exe
 Samples/Sample2/Sample2_v100.exe
 Samples/Sample2/Sample2d_v100.exe
 Samples/Sample3/Sample3_v100.exe
