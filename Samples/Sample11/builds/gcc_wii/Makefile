@@ -142,7 +142,7 @@ DEPENDS	:=	$(OFILES:.o=.d)
 # main targets
 #---------------------------------------------------------------------------------
 $(OUTPUT).dol: $(OUTPUT).elf
-$(OUTPUT).elf: $(OFILES) $(LIBWIRE_LIB)/$(LIBWIRE) $(IMPORTERLIB)/libImporter$(BUILDPOSTFIX).a
+$(OUTPUT).elf: $(OFILES) $(LIBWIRE_LIB)/$(LIBWIRE) $(LIBIMPORTER_LIB)/libImporter$(BUILDPOSTFIX).a
 
 -include $(DEPENDS)
 

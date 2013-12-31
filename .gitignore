@@ -14,10 +14,10 @@ Wire/builds/v100/build
 Wire/builds/gcc_wii/Debug
 Wire/builds/gcc_wii/Release/
 Wire/lib/
-Samples/Demo/Debug/
-Samples/Demo/Release/
-Samples/Game/Debug/
-Samples/Game/Release/
+Samples/Demo/builds/gcc_wii/Debug
+Samples/Demo/builds/gcc_wii/Release
+Samples/Game/builds/gcc_wii/Debug
+Samples/Game/builds/gcc_wii/Release
 Samples/Sample0/builds/gcc_wii/Debug
 Samples/Sample0/builds/gcc_wii/Release
 Samples/Sample1/builds/gcc_wii/Debug

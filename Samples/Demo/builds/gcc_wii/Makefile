@@ -15,13 +15,13 @@ include $(DEVKITPPC)/wii_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-WIREDIR			:=  ../../../Wire
-IMPORTERDIR		:=	../../../Tools/Importer
-FREETYPEDIR		:=	../../../Tools/freetype
-BULLETDIR		:=  ../../../Tools/bullet-2.77
-TARGET			:=	$(notdir $(CURDIR))
-SOURCES			:=	src \
-					src/Controllers
+WIREDIR			:=  ../../../../../Wire
+IMPORTERDIR		:=	../../../../../Tools/Importer
+FREETYPEDIR		:=	../../../../../Tools/freetype
+BULLETDIR		:=  ../../../../../Tools/bullet-2.77
+TARGET			:=	Demo
+SOURCES			:=	../../src \
+					../../src/Controllers
 DATA			:=	data2
 INCLUDES		:=
 LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib
@@ -109,7 +109,6 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 					-I$(IMPORTERDIR)/src \
 					-I$(BULLETDIR)/src
 
-
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
@@ -123,11 +122,14 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib/gcc_wii/$(BUILD)) \
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@cp $(OUTPUT).dol ../..
 
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
 	@rm -f $(BUILD)/*.* $(OUTPUT).elf $(OUTPUT).dol
+	@rm -f ../../$(TARGET)$(BUILDPOSTFIX).dol
+
 #---------------------------------------------------------------------------------
 run:
 	wiiload $(OUTPUT).dol
