@@ -15,21 +15,22 @@ include $(DEVKITPPC)/wii_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-WIREDIR			:=  ../../../Wire
-TARGET			:=	$(notdir $(CURDIR))
-SOURCES			:=	src
+WIREDIR			:=  ../../../../../Wire
+BULLETDIR		:=  ../../../../../Tools/bullet-2.77
+TARGET			:=	Sample8
+SOURCES			:=	../../src
 DATA			:=	data  
 INCLUDES		:=
-LIBWIRE_LIB 	:=	$(WIREDIR)/lib
 ifeq ($(WIRE_DEBUG),y)
-BUILD			:=	build_wii_debug
+BUILD			:=	Debug
 LIBWIRE			:=	libWired.a
 BUILDPOSTFIX	:=	d
 else
-BUILD			:=	build_wii_release
+BUILD			:=	Release
 LIBWIRE			:=	libWire.a
 BUILDPOSTFIX	:=
 endif
+LIBWIRE_LIB 	:=	$(WIREDIR)/lib/gcc_wii/$(BUILD)
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -46,7 +47,7 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lWire$(BUILDPOSTFIX) -lwiiuse -lbte -lfat -logc -lm
+LIBS	:=	-lBulletDynamics -lBulletCollision -lLinearMath -lWire$(BUILDPOSTFIX) -lwiiuse -lbte -lfat -logc -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -98,17 +99,16 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 					-I$(CURDIR)/$(BUILD) \
 					-I$(LIBOGC_INC) \
 					-I$(WIREDIR)/Foundation \
-					-I$(WIREDIR)/Foundation/Wii \
 					-I$(WIREDIR)/Engine \
 					-I$(WIREDIR)/Renderer \
-					-I$(WIREDIR)/Renderer/GX \
-					-I$(WIREDIR)/InputSystem
+					-I$(WIREDIR)/InputSystem \
+					-I$(BULLETDIR)/src
 
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
-					-L$(LIBOGC_LIB) -L$(WIREDIR)
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib/gcc_wii/$(BUILD)) \
+					-L$(LIBOGC_LIB) -L$(WIREDIR) -L$(BULLETDIR)/lib/wii
 
 .PHONY: $(BUILD) clean
 
@@ -116,11 +116,14 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@cp $(OUTPUT).dol ../..
 
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
 	@rm -f $(BUILD)/*.* $(OUTPUT).elf $(OUTPUT).dol
+	@rm -f ../../$(TARGET)$(BUILDPOSTFIX).dol
+
 #---------------------------------------------------------------------------------
 run:
 	wiiload $(OUTPUT).dol

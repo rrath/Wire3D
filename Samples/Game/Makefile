@@ -24,17 +24,17 @@ SOURCES			:=	src \
 					src/Controllers
 DATA			:=	data2
 INCLUDES		:=
-LIBWIRE_LIB 	:=	$(WIREDIR)/lib
 LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib
 ifeq ($(WIRE_DEBUG),y)
-BUILD			:=	build_wii_debug
+BUILD			:=	Debug
 LIBWIRE			:=	libWired.a
 BUILDPOSTFIX	:=	d
 else
-BUILD			:=	build_wii_release
+BUILD			:=	Release
 LIBWIRE			:=	libWire.a
 BUILDPOSTFIX	:=
 endif
+LIBWIRE_LIB 	:=	$(WIREDIR)/lib/gcc_wii/$(BUILD)
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -114,8 +114,8 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
-					-L$(LIBOGC_LIB) -L$(WIREDIR) -L$(IMPORTERDIR) -L$(FREETYPEDIR) \
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib/gcc_wii/$(BUILD)) \
+					-L$(LIBOGC_LIB) -L$(WIREDIR) -L$(LIBIMPORTER_LIB) -L$(FREETYPEDIR) \
 					-L$(BULLETDIR)/lib/wii
 
 .PHONY: $(BUILD) clean

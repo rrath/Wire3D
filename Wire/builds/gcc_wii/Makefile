@@ -15,20 +15,28 @@ include $(DEVKITPPC)/wii_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-WIREDIR			:=  ../../../Wire
-TARGET			:=	$(notdir $(CURDIR))
-SOURCES			:=	src
-DATA			:=	data  
-INCLUDES		:=
-LIBWIRE_LIB 	:=	$(WIREDIR)/lib
+TARGET		:=	$(notdir $(CURDIR))
+SOURCES		:=	../../Foundation \
+				../../Foundation/Wii \
+				../../Engine \
+				../../Renderer \
+				../../Renderer/GX \
+				../../InputSystem/ \
+				../../InputSystem/Wii
+DATA		:=	data  
+INCLUDES	:=	../../Foundation \
+				../../Engine \
+				../../Renderer \
+				../../Renderer/GX \
+				../../InputSystem/ \
+				../../InputSystem/Wii
+
 ifeq ($(WIRE_DEBUG),y)
-BUILD			:=	build_wii_debug
-LIBWIRE			:=	libWired.a
-BUILDPOSTFIX	:=	d
+BUILD		:=	Debug
+LIBWIRE		:=	libWired.a
 else
-BUILD			:=	build_wii_release
-LIBWIRE			:=	libWire.a
-BUILDPOSTFIX	:=
+BUILD		:=	Release
+LIBWIRE		:=	libWire.a
 endif
 
 #---------------------------------------------------------------------------------
@@ -46,13 +54,13 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lWire$(BUILDPOSTFIX) -lwiiuse -lbte -lfat -logc -lm
+LIBS	:=	-lwiiuse -lbte -lfat -logc -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(WIREDIR)
+LIBDIRS	:=
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -61,7 +69,7 @@ LIBDIRS	:= $(WIREDIR)
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
 
-export OUTPUT	:=	$(CURDIR)/$(TARGET)$(BUILDPOSTFIX)
+export OUTPUT	:=	$(CURDIR)/$(TARGET)
 
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
@@ -96,32 +104,31 @@ export OFILES	:=	$(addsuffix .o,$(BINFILES)) \
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 					$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 					-I$(CURDIR)/$(BUILD) \
-					-I$(LIBOGC_INC) \
-					-I$(WIREDIR)/Foundation \
-					-I$(WIREDIR)/Engine \
-					-I$(WIREDIR)/Renderer \
-					-I$(WIREDIR)/InputSystem
+					-I$(LIBOGC_INC)
 
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
 export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
-					-L$(LIBOGC_LIB) -L$(WIREDIR)
+					-L$(LIBOGC_LIB)
 
+export OUTPUT	:=	$(CURDIR)/$(TARGET)
 .PHONY: $(BUILD) clean
 
 #---------------------------------------------------------------------------------
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@mkdir -p ../../lib/gcc_wii/$(BUILD)
+	@cp -p $(BUILD)/$(LIBWIRE) ../../lib/gcc_wii/$(BUILD)/$(LIBWIRE)
 
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
-	@rm -f $(BUILD)/*.* $(OUTPUT).elf $(OUTPUT).dol
+	@rm -f $(BUILD)/*.*
+	@rm -f ../../lib/gcc_wii/$(BUILD)/$(LIBWIRE)
 #---------------------------------------------------------------------------------
-run:
-	wiiload $(OUTPUT).dol
+lib: $(LIBWIRE)
 
 #---------------------------------------------------------------------------------
 else
@@ -131,8 +138,7 @@ DEPENDS	:=	$(OFILES:.o=.d)
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-$(OUTPUT).dol: $(OUTPUT).elf
-$(OUTPUT).elf: $(OFILES) $(LIBWIRE_LIB)/$(LIBWIRE)
+$(LIBWIRE): $(OFILES)
 
 -include $(DEPENDS)
 
