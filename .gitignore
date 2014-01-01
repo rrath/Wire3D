@@ -43,8 +43,8 @@ Samples/Sample11/builds/gcc_wii/Release
 Samples/Sample9_WII/builds/gcc_wii/Debug
 Samples/Sample9_WII/builds/gcc_wii/Release
 Tools/Importer/builds/v100/build
-Tools/Importer/build_wii_debug/
-Tools/Importer/build_wii_release/
+Tools/Importer/builds/gcc_wii/Debug
+Tools/Importer/builds/gcc_wii/Release
 Tools/Importer/lib/
 Tools/freetype/*.o
 Tools/freetype/ftmodule.h

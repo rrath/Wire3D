@@ -24,7 +24,6 @@ SOURCES			:=	../../src \
 					../../src/Controllers
 DATA			:=	data2
 INCLUDES		:=
-LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib
 ifeq ($(WIRE_DEBUG),y)
 BUILD			:=	Debug
 LIBWIRE			:=	libWired.a
@@ -35,6 +34,7 @@ LIBWIRE			:=	libWire.a
 BUILDPOSTFIX	:=
 endif
 LIBWIRE_LIB 	:=	$(WIREDIR)/lib/gcc_wii/$(BUILD)
+LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib/gcc_wii/$(BUILD)
 
 #---------------------------------------------------------------------------------
 # options for code generation

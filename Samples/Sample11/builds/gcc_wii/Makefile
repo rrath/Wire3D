@@ -33,7 +33,7 @@ LIBWIRE			:=	libWire.a
 BUILDPOSTFIX	:=
 endif
 LIBWIRE_LIB 	:=	$(WIREDIR)/lib/gcc_wii/$(BUILD)
-LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib
+LIBIMPORTER_LIB	:=	$(IMPORTERDIR)/lib/gcc_wii/$(BUILD)
 
 #---------------------------------------------------------------------------------
 # options for code generation
