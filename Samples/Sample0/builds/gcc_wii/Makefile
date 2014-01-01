@@ -18,7 +18,7 @@ include $(DEVKITPPC)/wii_rules
 WIREDIR			:=  ../../../../../Wire
 TARGET			:=	Sample0
 SOURCES			:=	../../src
-DATA			:=	data  
+DATA			:=
 INCLUDES		:=
 ifeq ($(WIRE_DEBUG),y)
 BUILD			:=	Debug
@@ -52,7 +52,7 @@ LIBS	:=	-lWire$(BUILDPOSTFIX) -lwiiuse -lbte -lfat -logc -lm
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(WIREDIR)
+LIBDIRS	:=
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -106,8 +106,8 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib/gcc_wii/$(BUILD)) \
-					-L$(LIBOGC_LIB) -L$(WIREDIR)
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
+					-L$(LIBOGC_LIB) -L$(LIBWIRE_LIB)
 
 .PHONY: $(BUILD) clean
 

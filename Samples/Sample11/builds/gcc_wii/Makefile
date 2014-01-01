@@ -21,7 +21,7 @@ FREETYPEDIR		:=	../../../../../Tools/freetype
 BULLETDIR		:=  ../../../../../Tools/bullet-2.77
 TARGET			:=	Sample11
 SOURCES			:=	../../src
-DATA			:=	data  
+DATA			:=
 INCLUDES		:=
 ifeq ($(WIRE_DEBUG),y)
 BUILD			:=	Debug
@@ -56,7 +56,7 @@ LIBS	:=	-lImporter$(BUILDPOSTFIX) -lBulletDynamics -lBulletCollision -lLinearMat
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(WIREDIR) $(IMPORTERDIR)
+LIBDIRS	:=
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -111,8 +111,8 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib/gcc_wii/$(BUILD)) \
-					-L$(LIBOGC_LIB) -L$(WIREDIR) -L$(LIBIMPORTER_LIB) -L$(FREETYPEDIR) \
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
+					-L$(LIBOGC_LIB) -L$(LIBWIRE_LIB) -L$(LIBIMPORTER_LIB) -L$(FREETYPEDIR) \
 					-L$(BULLETDIR)/lib/wii
 
 .PHONY: $(BUILD) clean

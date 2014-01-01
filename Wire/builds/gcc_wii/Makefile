@@ -23,7 +23,7 @@ SOURCES		:=	../../Foundation \
 				../../Renderer/GX \
 				../../InputSystem/ \
 				../../InputSystem/Wii
-DATA		:=	data  
+DATA			:=
 INCLUDES	:=	../../Foundation \
 				../../Engine \
 				../../Renderer \
