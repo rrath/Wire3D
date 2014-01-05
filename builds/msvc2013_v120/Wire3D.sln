@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{186E178E-1223-467E-AC65-181D35D01B1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bullet-2.77", "bullet-2.77", "{9562DF43-952A-46B1-AA31-9201D47B7CB2}"
@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bullet-2.77", "bullet-2.77"
 		..\..\Tools\bullet-2.77\src\Bullet-C-Api.h = ..\..\Tools\bullet-2.77\src\Bullet-C-Api.h
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\win32\vc2010\freetype.vcxproj", "{78B079BD-9FC7-4B9E-B4A6-96DA0F00248B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\win32\v120\freetype.vcxproj", "{78B079BD-9FC7-4B9E-B4A6-96DA0F00248B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v120\Wire.vcxproj", "{B0895837-1F40-4F57-8F36-1DF861114254}"
 EndProject
