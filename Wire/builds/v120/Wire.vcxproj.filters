@@ -1,0 +1,1156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Foundation">
+      <UniqueIdentifier>{79db8613-ff00-4acf-aa1c-a7f31d43242b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Foundation\Inline Files">
+      <UniqueIdentifier>{de040b27-9c1f-4279-8591-f16680de3f29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Foundation\Platforms">
+      <UniqueIdentifier>{dfbf8112-3ae9-49a3-94cd-f9fa6bfa8f72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Wii">
+      <UniqueIdentifier>{fb28a268-4016-4a24-afcd-29d70082bc08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Wii\Header Files">
+      <UniqueIdentifier>{763a786d-d1c0-4ddf-9d72-0df70e370eb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Wii\Inline Files">
+      <UniqueIdentifier>{7ac1ac7e-45a2-4124-ac49-44b7dcf05550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Wii\Source Files">
+      <UniqueIdentifier>{ed5c62ca-0801-4f48-b8d3-ab8d984f0b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Dx9">
+      <UniqueIdentifier>{882b64a6-0f0e-4714-82c7-6d071e740a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Dx9\Header Files">
+      <UniqueIdentifier>{eceae6d8-4bce-4f9f-9cd5-99b165f177a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Dx9\Source Files">
+      <UniqueIdentifier>{3600ca6d-1415-4756-8cb3-292e1ed03087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Platforms\Dx9\Inlines Files">
+      <UniqueIdentifier>{c18d9568-0841-40ca-927b-f7b4d4933609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{9513509b-486b-48a2-92d9-d949f05948ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{540dcd6b-426c-4568-b790-5f76e2266d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Header Files">
+      <UniqueIdentifier>{cea04ee1-4ee6-4e77-8bb2-19fa93cad670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Inline Files">
+      <UniqueIdentifier>{a5c07eed-3743-4e91-a559-282582f3f455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source Files">
+      <UniqueIdentifier>{d8fd3029-0b4b-4846-89b0-1258ba25e210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem">
+      <UniqueIdentifier>{271fb124-7e51-4bb4-af41-2fe75b1f7436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Header Files">
+      <UniqueIdentifier>{1eb5407d-ec47-4a2e-98f8-3ad8247ba214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Source Files">
+      <UniqueIdentifier>{ddd7ac31-737f-4b9d-84ab-1ec8cae9cebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms">
+      <UniqueIdentifier>{f70d0195-5ece-4284-8a2f-7f18008f4d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Win32">
+      <UniqueIdentifier>{439aac4e-94c5-4f3d-81aa-62e531c03e6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Wii">
+      <UniqueIdentifier>{0bf550a7-268b-4622-b139-4e23d6c8f1e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Wii\Header Files">
+      <UniqueIdentifier>{ade90cb9-7a01-4227-a0cb-ef4267f80dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Wii\Source Files">
+      <UniqueIdentifier>{9205aa21-cb0b-4592-8283-a57fbc0c93cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Win32\Header Files">
+      <UniqueIdentifier>{5695aef9-8b0c-42a3-922f-3ecbccdcc5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputSystem\Platforms\Win32\Source Files">
+      <UniqueIdentifier>{e7ca5626-c929-42ef-b07b-3267e2e89d3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Header Files">
+      <UniqueIdentifier>{b79ff314-4999-41f9-ba67-fd65884ebf38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms">
+      <UniqueIdentifier>{50e043eb-2ea8-4ba8-b003-6a8e230b56db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Source Files">
+      <UniqueIdentifier>{151b2099-95c8-430c-a293-2c353f8cc16a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Inline Files">
+      <UniqueIdentifier>{50d667a8-fe5d-4fb4-9913-3b9b79467883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\Dx9">
+      <UniqueIdentifier>{904a53f5-3a30-4b92-b264-500f13c966fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\Dx9\Header Files">
+      <UniqueIdentifier>{008b56ea-722b-406e-aef4-514d0ce1a970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\Dx9\Source Files">
+      <UniqueIdentifier>{def17d82-7eca-471b-a789-f58cbe804ccd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\Dx9\Inline Files">
+      <UniqueIdentifier>{50bc12a8-c208-4d2c-8a2f-a6fb3b60ee60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\GX">
+      <UniqueIdentifier>{5e15c62a-54cf-4144-a573-f811e7b6831e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\GX\Header Files">
+      <UniqueIdentifier>{e58a7985-243a-4d96-a973-b1e76fe4caed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\GX\Source Files">
+      <UniqueIdentifier>{c4875be8-2f8f-4d71-90d5-ce6192a8197a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Platforms\GX\Inline Files">
+      <UniqueIdentifier>{bd39d828-f729-4633-b4f5-8c95223fdaf5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Foundation\WireFoundation.h">
+      <Filter>Foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireApplication.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireBox3.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireColorRGB.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireColorRGBA.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMain.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMath.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMatrix2.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMatrix3.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMatrix34.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMatrix4.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireMemory.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WirePlane3.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireQuaternion.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireRandom.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireSphere3.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireString.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireSystem.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTArray.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTHashSet.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTHashTable.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTList.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTMap.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTStack.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTypes.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireVector2.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireVector3.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireVector4.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\Wii\WireGXApplication.h">
+      <Filter>Foundation\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\Wii\WireOgcDefines.h">
+      <Filter>Foundation\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\Dx9\WireDx9Application.h">
+      <Filter>Foundation\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireEngine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireBoundingVolume.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireBuffer.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireCamera.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireController.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireCuller.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireEffect.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireImage2D.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireIndexBuffer.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireLight.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNode.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireObject.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireRtti.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireSceneObject.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireSmartPointer.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireSpatial.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireSphereBV.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireTexture2D.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireTransformation.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireVertexAttributes.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireVertexBuffer.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireVisibleSet.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateAlpha.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateCull.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateFog.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateMaterial.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateWireframe.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStateZBuffer.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeBillboard.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeDLod.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeLight.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeSwitch.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireState.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireStandardMesh.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireNoisePerlin.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTQueue.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireMaterial.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTInstanceID.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireCullerSorting.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireMesh.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeSkybox.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireColor32.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32EmulatedNunchuk.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32EmulatedWiiMote.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32InputSystem.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedAnalogPad.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedButtons.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedDigitalPad.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedIR.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedShake.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedSwing.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32KeyMappedTilt.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiInputSystem.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMote.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteButtons.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteDigitalPad.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteIR.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteShake.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteSwing.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiMoteTilt.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireAnalogPad.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireButtons.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireDigitalPad.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireInputCapability.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireInputDevice.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireInputDeviceExtension.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireInputSystem.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireIR.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireMainInputDevice.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireShake.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireSwing.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireTilt.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireNunchukAnalogPad.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireNunchukButtons.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireNunchukShake.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireNunchukSwing.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireNunchukTilt.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireInputDataBuffer.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Win32\WireWin32InputDataBuffer.h">
+      <Filter>InputSystem\Platforms\Win32\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\WireRenderer.h">
+      <Filter>Renderer\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXDisplayList.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXIndexBuffer.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXRendererData.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXRendererInput.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXTexture2D.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXVertexBuffer.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9IndexBuffer.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9RendererData.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9RendererInput.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9Texture2D.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9VertexBuffer.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiInputDataBuffer.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\Wii\WireWiiNunchuk.h">
+      <Filter>InputSystem\Platforms\Wii\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InputSystem\WireNunchuk.h">
+      <Filter>InputSystem\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\WireRendererStatistics.h">
+      <Filter>Renderer\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXVertexFormat.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9VertexFormat.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireRenderObject.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXShader.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9Shader.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireShader.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireShaderVariables.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Foundation\WireTPODArray.h">
+      <Filter>Foundation\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireRenderTarget.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\Dx9\WireDx9RenderTarget.h">
+      <Filter>Renderer\Platforms\Dx9\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Renderer\GX\WireGXRenderTarget.h">
+      <Filter>Renderer\Platforms\GX\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeCamera.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\WireRenderText.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Foundation\WireBox3.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireColorRGB.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireColorRGBA.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireMath.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireMatrix2.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireMatrix3.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireMatrix34.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireMatrix4.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WirePlane3.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireQuaternion.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireSphere3.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireString.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTArray.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTHashSet.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTHashTable.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTList.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTMap.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTStack.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireVector2.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireVector3.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireVector4.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\Wii\WireMatrix34Wii.inl">
+      <Filter>Foundation\Platforms\Wii\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\Wii\WireSystemWii.inl">
+      <Filter>Foundation\Platforms\Wii\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\Wii\WireVector3Wii.inl">
+      <Filter>Foundation\Platforms\Wii\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\Dx9\WireSystemDx9.inl">
+      <Filter>Foundation\Platforms\Dx9\Inlines Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireBuffer.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireCamera.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireController.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireCuller.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireImage2D.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireIndexBuffer.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNode.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireObject.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireRtti.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireSceneObject.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireSmartPointer.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireSpatial.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireSphereBV.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireTexture2D.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireTransformation.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireVertexAttributes.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireVertexBuffer.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireVisibleSet.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNodeBillboard.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNodeDLod.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNodeLight.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNodeSwitch.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireNoisePerlin.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTQueue.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireMaterial.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTInstanceID.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireMesh.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireApplication.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireColor32.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\WireRenderer.inl">
+      <Filter>Renderer\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\GX\WireGXDisplayList.inl">
+      <Filter>Renderer\Platforms\GX\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\GX\WireGXIndexBuffer.inl">
+      <Filter>Renderer\Platforms\GX\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\GX\WireGXVertexBuffer.inl">
+      <Filter>Renderer\Platforms\GX\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\Dx9\WireDx9IndexBuffer.inl">
+      <Filter>Renderer\Platforms\Dx9\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\Dx9\WireDx9VertexBuffer.inl">
+      <Filter>Renderer\Platforms\Dx9\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\WireRendererStatistics.inl">
+      <Filter>Renderer\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\GX\WireGXVertexFormat.inl">
+      <Filter>Renderer\Platforms\GX\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Renderer\Dx9\WireDx9VertexFormat.inl">
+      <Filter>Renderer\Platforms\Dx9\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireRenderObject.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireShader.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireShaderVariables.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Foundation\WireTPODArray.inl">
+      <Filter>Foundation\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireRenderTarget.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+    <None Include="..\..\Engine\WireNodeCamera.inl">
+      <Filter>Engine\Inline Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Foundation\WireApplication.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireColorRGB.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireColorRGBA.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMain.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMath.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMatrix2.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMatrix3.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMatrix34.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMatrix4.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireQuaternion.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireRandom.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireString.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireSystem.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireVector2.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireVector3.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireVector4.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\Wii\WireGXApplication.cpp">
+      <Filter>Foundation\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\Dx9\WireDx9Application.cpp">
+      <Filter>Foundation\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireBoundingVolume.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireBuffer.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireCamera.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireController.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireCuller.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireEffect.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireImage2D.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireIndexBuffer.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireLight.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNode.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireObject.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireRtti.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireSceneObject.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireSpatial.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireSphereBV.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireTexture2D.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireTransformation.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireVertexAttributes.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireVertexBuffer.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireVisibleSet.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateAlpha.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateCull.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateFog.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateMaterial.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateWireframe.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStateZBuffer.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeBillboard.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeDLod.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeLight.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeSwitch.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireState.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireStandardMesh.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireNoisePerlin.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireMaterial.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireCullerSorting.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireMesh.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireMemory.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeSkybox.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Foundation\WireColor32.cpp">
+      <Filter>Foundation\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32EmulatedNunchuk.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32EmulatedWiiMote.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32InputSystem.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedAnalogPad.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedButtons.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedDigitalPad.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedIR.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedShake.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedSwing.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32KeyMappedTilt.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiInputSystem.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMote.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteButtons.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteDigitalPad.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteIR.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteShake.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteSwing.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiMoteTilt.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireNunchukAnalogPad.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireNunchukButtons.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireNunchukShake.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireNunchukSwing.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireNunchukTilt.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireInputSystem.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireInputDeviceExtension.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireInputDevice.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireMainInputDevice.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireInputCapability.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireSwing.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireTilt.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireShake.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireIR.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireDigitalPad.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireButtons.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireAnalogPad.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Win32\WireWin32InputDataBuffer.cpp">
+      <Filter>InputSystem\Platforms\Win32\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireInputDataBuffer.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\WireRenderer.cpp">
+      <Filter>Renderer\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXTextureStage.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXDisplayList.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXIndexBuffer.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXLight.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXRenderer.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXStateAlpha.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXStateCull.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXStateFog.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXStateMaterial.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXStateZBuffer.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXTexture2D.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXVertexBuffer.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9TextureStage.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9IndexBuffer.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9Light.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9Renderer.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateAlpha.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateCull.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateFog.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateMaterial.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateWireframe.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9StateZBuffer.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9Texture2D.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9VertexBuffer.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\Wii\WireWiiNunchuk.cpp">
+      <Filter>InputSystem\Platforms\Wii\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InputSystem\WireNunchuk.cpp">
+      <Filter>InputSystem\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\WireRendererStatistics.cpp">
+      <Filter>Renderer\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXVertexFormat.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9VertexFormat.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireRenderObject.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireShader.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9Shader.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireShaderVariables.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireRenderTarget.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\Dx9\WireDx9RenderTarget.cpp">
+      <Filter>Renderer\Platforms\Dx9\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Renderer\GX\WireGXRenderTarget.cpp">
+      <Filter>Renderer\Platforms\GX\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeCamera.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireRenderText.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
