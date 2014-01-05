@@ -12,29 +12,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bullet-2.77", "bullet-2.77"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\win32\vc2010\freetype.vcxproj", "{78B079BD-9FC7-4B9E-B4A6-96DA0F00248B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v100\Wire.vcxproj", "{B0895837-1F40-4F57-8F36-1DF861114254}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v120\Wire.vcxproj", "{B0895837-1F40-4F57-8F36-1DF861114254}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletCollision", "..\..\Tools\bullet-2.77\msvc2010\BulletCollision\BulletCollision.vcxproj", "{3D373D59-7DAC-42EA-A161-05BEAE169BE1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletCollision", "..\..\Tools\bullet-2.77\v120\BulletCollision\BulletCollision.vcxproj", "{3D373D59-7DAC-42EA-A161-05BEAE169BE1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{01410FDF-213A-403A-8012-92185FAC02E3} = {01410FDF-213A-403A-8012-92185FAC02E3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearMath", "..\..\Tools\bullet-2.77\msvc2010\LinearMath\LinearMath.vcxproj", "{01410FDF-213A-403A-8012-92185FAC02E3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearMath", "..\..\Tools\bullet-2.77\v120\LinearMath\LinearMath.vcxproj", "{01410FDF-213A-403A-8012-92185FAC02E3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletDynamics", "..\..\Tools\bullet-2.77\msvc2010\BulletDynamics\BulletDynamics.vcxproj", "{BB1EC392-AC70-4F04-9108-7FDDC54E31D4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletDynamics", "..\..\Tools\bullet-2.77\v120\BulletDynamics\BulletDynamics.vcxproj", "{BB1EC392-AC70-4F04-9108-7FDDC54E31D4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3D373D59-7DAC-42EA-A161-05BEAE169BE1} = {3D373D59-7DAC-42EA-A161-05BEAE169BE1}
 		{01410FDF-213A-403A-8012-92185FAC02E3} = {01410FDF-213A-403A-8012-92185FAC02E3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletSoftBody", "..\..\Tools\bullet-2.77\msvc2010\BulletSoftBody\BulletSoftBody.vcxproj", "{60CF2BBA-43E1-4D88-A5E1-4F935D41207D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletSoftBody", "..\..\Tools\bullet-2.77\v120\BulletSoftBody\BulletSoftBody.vcxproj", "{60CF2BBA-43E1-4D88-A5E1-4F935D41207D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3D373D59-7DAC-42EA-A161-05BEAE169BE1} = {3D373D59-7DAC-42EA-A161-05BEAE169BE1}
 		{BB1EC392-AC70-4F04-9108-7FDDC54E31D4} = {BB1EC392-AC70-4F04-9108-7FDDC54E31D4}
 		{01410FDF-213A-403A-8012-92185FAC02E3} = {01410FDF-213A-403A-8012-92185FAC02E3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Importer\builds\v100\Importer.vcxproj", "{1A1C4391-D9D9-4CB7-90F0-41BAB2585647}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Importer\builds\v120\Importer.vcxproj", "{1A1C4391-D9D9-4CB7-90F0-41BAB2585647}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 		{3D373D59-7DAC-42EA-A161-05BEAE169BE1} = {3D373D59-7DAC-42EA-A161-05BEAE169BE1}
@@ -44,59 +44,59 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Imp
 		{01410FDF-213A-403A-8012-92185FAC02E3} = {01410FDF-213A-403A-8012-92185FAC02E3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo", "..\..\Samples\Demo\builds\v100\Demo.vcxproj", "{C0AA122C-68CA-428A-942A-F1A43EE702C1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo", "..\..\Samples\Demo\builds\v120\Demo.vcxproj", "{C0AA122C-68CA-428A-942A-F1A43EE702C1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 		{1A1C4391-D9D9-4CB7-90F0-41BAB2585647} = {1A1C4391-D9D9-4CB7-90F0-41BAB2585647}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Samples\Game\builds\v100\Game.vcxproj", "{1021E4B8-35FF-4B20-8196-8DDB1AEC5B71}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Samples\Game\builds\v120\Game.vcxproj", "{1021E4B8-35FF-4B20-8196-8DDB1AEC5B71}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 		{1A1C4391-D9D9-4CB7-90F0-41BAB2585647} = {1A1C4391-D9D9-4CB7-90F0-41BAB2585647}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample0 - User Application", "..\..\Samples\Sample0\builds\v100\Sample0.vcxproj", "{4710F372-2A7B-4BCE-B38B-063DF884E17A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample0 - User Application", "..\..\Samples\Sample0\builds\v120\Sample0.vcxproj", "{4710F372-2A7B-4BCE-B38B-063DF884E17A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1 - Basic Rendering", "..\..\Samples\Sample1\builds\v100\Sample1.vcxproj", "{5EF9DCF2-9CD2-4EC6-9E7D-422AC18BE27E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1 - Basic Rendering", "..\..\Samples\Sample1\builds\v120\Sample1.vcxproj", "{5EF9DCF2-9CD2-4EC6-9E7D-422AC18BE27E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample2 - Scene Graph", "..\..\Samples\Sample2\builds\v100\Sample2.vcxproj", "{FCAB5275-8361-4579-9FE8-63BD5F3B854E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample2 - Scene Graph", "..\..\Samples\Sample2\builds\v120\Sample2.vcxproj", "{FCAB5275-8361-4579-9FE8-63BD5F3B854E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample3 - Level of Detail", "..\..\Samples\Sample3\builds\v100\Sample3.vcxproj", "{7FC321A4-570F-41A8-A845-F5A0FE9B5D94}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample3 - Level of Detail", "..\..\Samples\Sample3\builds\v120\Sample3.vcxproj", "{7FC321A4-570F-41A8-A845-F5A0FE9B5D94}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample4 - Multitexturing", "..\..\Samples\Sample4\builds\v100\Sample4.vcxproj", "{E67596B8-DC4A-4A26-B5C7-18DD3A5CE67D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample4 - Multitexturing", "..\..\Samples\Sample4\builds\v120\Sample4.vcxproj", "{E67596B8-DC4A-4A26-B5C7-18DD3A5CE67D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample5 - Lighting", "..\..\Samples\Sample5\builds\v100\Sample5.vcxproj", "{E960AE2F-C29B-452D-A24E-9178843D7E30}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample5 - Lighting", "..\..\Samples\Sample5\builds\v120\Sample5.vcxproj", "{E960AE2F-C29B-452D-A24E-9178843D7E30}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample6 - Custom Nodes", "..\..\Samples\Sample6\builds\v100\Sample6.vcxproj", "{B7E9591C-70B0-425C-B0A9-A7600E412B8B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample6 - Custom Nodes", "..\..\Samples\Sample6\builds\v120\Sample6.vcxproj", "{B7E9591C-70B0-425C-B0A9-A7600E412B8B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample7 - Dynamic Buffers", "..\..\Samples\Sample7\builds\v100\Sample7.vcxproj", "{0A86B173-A63D-418D-ADB2-8AFD1D09278C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample7 - Dynamic Buffers", "..\..\Samples\Sample7\builds\v120\Sample7.vcxproj", "{0A86B173-A63D-418D-ADB2-8AFD1D09278C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics Integration", "..\..\Samples\Sample8\builds\v100\Sample8.vcxproj", "{1788AD0D-546B-4412-A7F5-086923EBA2FB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics Integration", "..\..\Samples\Sample8\builds\v120\Sample8.vcxproj", "{1788AD0D-546B-4412-A7F5-086923EBA2FB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 		{3D373D59-7DAC-42EA-A161-05BEAE169BE1} = {3D373D59-7DAC-42EA-A161-05BEAE169BE1}
@@ -105,17 +105,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics In
 		{01410FDF-213A-403A-8012-92185FAC02E3} = {01410FDF-213A-403A-8012-92185FAC02E3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample9 - Custom Main", "..\..\Samples\Sample9_WIN32\builds\v100\Sample9.vcxproj", "{8483FC51-3EB7-4044-A2B4-A2A65D3F5AD3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample9 - Custom Main", "..\..\Samples\Sample9_WIN32\builds\v120\Sample9.vcxproj", "{8483FC51-3EB7-4044-A2B4-A2A65D3F5AD3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample10 - Material Sorting", "..\..\Samples\Sample10\builds\v100\Sample10.vcxproj", "{BED3FA79-78BD-409B-BBE3-EC9E1E1D25B9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample10 - Material Sorting", "..\..\Samples\Sample10\builds\v120\Sample10.vcxproj", "{BED3FA79-78BD-409B-BBE3-EC9E1E1D25B9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample11 - Input", "..\..\Samples\Sample11\builds\v100\Sample11.vcxproj", "{A8E6550A-4204-4E72-B3BC-001112672E50}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample11 - Input", "..\..\Samples\Sample11\builds\v120\Sample11.vcxproj", "{A8E6550A-4204-4E72-B3BC-001112672E50}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B0895837-1F40-4F57-8F36-1DF861114254} = {B0895837-1F40-4F57-8F36-1DF861114254}
 		{1A1C4391-D9D9-4CB7-90F0-41BAB2585647} = {1A1C4391-D9D9-4CB7-90F0-41BAB2585647}
