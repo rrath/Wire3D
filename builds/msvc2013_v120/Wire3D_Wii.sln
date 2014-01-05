@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v100\Wire_Wii.vcxproj", "{F95787AD-C522-4532-98F2-107E57D5019C}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire", "..\..\Wire\builds\v120\Wire_Wii.vcxproj", "{F95787AD-C522-4532-98F2-107E57D5019C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{82FD657C-67AE-4115-AECC-A59001AAD6B3}"
 EndProject
@@ -239,82 +239,82 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NarrowPhaseCollision", "Nar
 		..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h = ..\..\Tools\bullet-2.77\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\wii\freetype_WII.vcxproj", "{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "..\..\Tools\freetype\builds\wii\freetype_WII_v120.vcxproj", "{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample0 - User Application", "..\..\Samples\Sample0\builds\v100\Sample0_Wii.vcxproj", "{535A54C5-0304-4361-A168-A8EC5BE41313}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample0 - User Application", "..\..\Samples\Sample0\builds\v120\Sample0_Wii.vcxproj", "{535A54C5-0304-4361-A168-A8EC5BE41313}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1 - Basic Rendering", "..\..\Samples\Sample1\builds\v100\Sample1_Wii.vcxproj", "{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1 - Basic Rendering", "..\..\Samples\Sample1\builds\v120\Sample1_Wii.vcxproj", "{DD8DDE23-4C8B-47E5-86E3-725A5B52C3AD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample2 - Scene Graph", "..\..\Samples\Sample2\builds\v100\Sample2_Wii.vcxproj", "{63E8E87E-548C-460A-9B0E-FA0365C263F5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample2 - Scene Graph", "..\..\Samples\Sample2\builds\v120\Sample2_Wii.vcxproj", "{63E8E87E-548C-460A-9B0E-FA0365C263F5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample3 - Level of Detail", "..\..\Samples\Sample3\builds\v100\Sample3_Wii.vcxproj", "{5B8835D8-A708-4650-9C67-D0599D9A8899}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample3 - Level of Detail", "..\..\Samples\Sample3\builds\v120\Sample3_Wii.vcxproj", "{5B8835D8-A708-4650-9C67-D0599D9A8899}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample4 - Multitexturing", "..\..\Samples\Sample4\builds\v100\Sample4_Wii.vcxproj", "{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample4 - Multitexturing", "..\..\Samples\Sample4\builds\v120\Sample4_Wii.vcxproj", "{B5F244AA-B3C6-45DC-831E-3C4AA5C91898}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample5 - Lighting", "..\..\Samples\Sample5\builds\v100\Sample5_Wii.vcxproj", "{0F5C00B3-991B-44E6-832A-F76E6F3360A7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample5 - Lighting", "..\..\Samples\Sample5\builds\v120\Sample5_Wii.vcxproj", "{0F5C00B3-991B-44E6-832A-F76E6F3360A7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample6 - Custom Nodes", "..\..\Samples\Sample6\builds\v100\Sample6_Wii.vcxproj", "{B3F7B708-87F9-44D9-841E-B1154446BEAC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample6 - Custom Nodes", "..\..\Samples\Sample6\builds\v120\Sample6_Wii.vcxproj", "{B3F7B708-87F9-44D9-841E-B1154446BEAC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample7 - Dynamic Buffers", "..\..\Samples\Sample7\builds\v100\Sample7_Wii.vcxproj", "{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample7 - Dynamic Buffers", "..\..\Samples\Sample7\builds\v120\Sample7_Wii.vcxproj", "{4C855CAF-508E-4DEF-B6D5-82D24FDFE64E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics Integration", "..\..\Samples\Sample8\builds\v100\Sample8_Wii.vcxproj", "{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample8 - Bullet Physics Integration", "..\..\Samples\Sample8\builds\v120\Sample8_Wii.vcxproj", "{1C6DEE24-1F60-40B0-92A5-C264AEE84DBB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample9 - Custom Main", "..\..\Samples\Sample9_WII\builds\v100\Sample9_Wii.vcxproj", "{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample9 - Custom Main", "..\..\Samples\Sample9_WII\builds\v120\Sample9_Wii.vcxproj", "{7A7EA69E-5EF7-4F57-93C0-343E31EEB7B0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample10 - Material Sorting", "..\..\Samples\Sample10\builds\v100\Sample10_Wii.vcxproj", "{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample10 - Material Sorting", "..\..\Samples\Sample10\builds\v120\Sample10_Wii.vcxproj", "{0673CD71-783F-40E8-A877-BEF7A4EBBFBC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample11 - Input", "..\..\Samples\Sample11\builds\v100\Sample11_Wii.vcxproj", "{1A21949F-EF98-4ABD-A91C-39182829F15D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample11 - Input", "..\..\Samples\Sample11\builds\v120\Sample11_Wii.vcxproj", "{1A21949F-EF98-4ABD-A91C-39182829F15D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Importer\builds\v100\Importer_Wii.vcxproj", "{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Importer", "..\..\Tools\Importer\builds\v120\Importer_Wii.vcxproj", "{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{399A13A4-9BF7-4D7A-93E1-E40A9476ECCD} = {399A13A4-9BF7-4D7A-93E1-E40A9476ECCD}
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo", "..\..\Samples\Demo\builds\v100\Demo_Wii.vcxproj", "{1473F0E0-E3E7-41BA-A094-279965497DE4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo", "..\..\Samples\Demo\builds\v120\Demo_Wii.vcxproj", "{1473F0E0-E3E7-41BA-A094-279965497DE4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Samples\Game\builds\v100\Game_Wii.vcxproj", "{30A5849F-209A-4716-8F8D-C5912D9D6EE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Samples\Game\builds\v120\Game_Wii.vcxproj", "{30A5849F-209A-4716-8F8D-C5912D9D6EE8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DBEBC556-ED46-4E9A-BBAE-8730B20E92BB} = {DBEBC556-ED46-4E9A-BBAE-8730B20E92BB}
 		{F95787AD-C522-4532-98F2-107E57D5019C} = {F95787AD-C522-4532-98F2-107E57D5019C}
