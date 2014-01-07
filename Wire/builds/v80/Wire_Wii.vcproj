@@ -16,16 +16,16 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(ConfigurationName)"
-			IntermediateDirectory="build/$(ConfigurationName)"
+			OutputDirectory="../gcc_wii/$(ConfigurationName)\"
+			IntermediateDirectory="../gcc_wii/$(ConfigurationName)\"
 			ConfigurationType="0"
-			BuildLogFile="BuildLog.htm"
+			BuildLogFile="../gcc_wii/BuildLog_$(ConfigurationName).htm"
 			>
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
-				ReBuildCommandLine="make clean&#x0D;&#x0A;make -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
-				CleanCommandLine="make clean"
+				BuildCommandLine="make -C ../gcc_wii -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make -C ../gcc_wii clean&#x0D;&#x0A;make -C ../gcc_wii -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make -C ../gcc_wii clean"
 				Output=""
 				PreprocessorDefinitions="WIRE_WII;NDEBUG"
 				IncludeSearchPath=""
@@ -37,16 +37,16 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(ConfigurationName)"
-			IntermediateDirectory="build/$(ConfigurationName)"
+			OutputDirectory="../gcc_wii/$(ConfigurationName)\"
+			IntermediateDirectory="../gcc_wii/$(ConfigurationName)\"
 			ConfigurationType="0"
-			BuildLogFile="BuildLog.htm"
+			BuildLogFile="../gcc_wii/BuildLog_$(ConfigurationName).htm"
 			>
 			<Tool
 				Name="VCNMakeTool"
-				BuildCommandLine="make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
-				ReBuildCommandLine="make WIRE_DEBUG=y clean&#x0D;&#x0A;make WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
-				CleanCommandLine="make WIRE_DEBUG=y clean"
+				BuildCommandLine="make -C ../gcc_wii WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’"
+				ReBuildCommandLine="make -C ../gcc_wii WIRE_DEBUG=y clean&#x0D;&#x0A;make -C ../gcc_wii WIRE_DEBUG=y -r 2&gt;&amp;1 | sed -e &apos;s/\(.[a-zA-Z]\+\):\([0-9]\+\):/\1(\2):/’&#x0D;&#x0A;"
+				CleanCommandLine="make -C ../gcc_wii WIRE_DEBUG=y clean"
 				Output=""
 				PreprocessorDefinitions="WIRE_WII;NDEBUG;WIRE_DEBUG"
 				IncludeSearchPath=""
@@ -531,6 +531,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Engine\WireRenderText.h"
+					>
+				</File>
+				<File
 					RelativePath=".\Engine\WireRtti.h"
 					>
 				</File>
@@ -588,10 +592,6 @@
 				</File>
 				<File
 					RelativePath=".\Engine\WireStateZBuffer.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Engine\WireRenderText.h"
 					>
 				</File>
 				<File
@@ -835,6 +835,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Engine\WireRenderText.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Engine\WireRtti.cpp"
 					>
 				</File>
@@ -888,10 +892,6 @@
 				</File>
 				<File
 					RelativePath=".\Engine\WireStateZBuffer.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Engine\WireRenderText.cpp"
 					>
 				</File>
 				<File
