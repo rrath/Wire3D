@@ -45,7 +45,7 @@
 				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem;..\..\..\..\Tools\Importer\src;&quot;..\..\..\..\Tools\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
-				ExceptionHandling="1"
+				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				RuntimeTypeInfo="false"
