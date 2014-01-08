@@ -242,4 +242,7 @@ Tools/bullet-2.77/v120/BulletSoftBody/BulletSoftBody.dir/
 Tools/bullet-2.77/v120/LinearMath/LinearMath.dir/
 Tools/bullet-2.77/v120/BulletDynamics/BulletDynamics.dir/
 Tools/bullet-2.77/v120/BulletCollision/BulletCollision.dir/
-Tools/bullet-2.77/lib/
+Tools/bullet-2.77/lib/v80
+Tools/bullet-2.77/lib/v100
+Tools/bullet-2.77/lib/v110
+Tools/bullet-2.77/lib/v120
