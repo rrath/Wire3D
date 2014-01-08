@@ -18,6 +18,7 @@ Wire/builds/v120/build
 Wire/builds/gcc_wii/Debug
 Wire/builds/gcc_wii/Release/
 Wire/lib/
+Samples/Game/Unity Project/Library
 Samples/Demo/builds/gcc_wii/Debug
 Samples/Demo/builds/gcc_wii/Release
 Samples/Game/builds/gcc_wii/Debug
