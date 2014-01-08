@@ -62,7 +62,7 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\src\Sample9.cpp"
+			RelativePath="..\..\src\Sample9.cpp"
 			>
 		</File>
 	</Files>

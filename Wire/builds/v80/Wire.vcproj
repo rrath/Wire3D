@@ -4,7 +4,7 @@
 	Version="8,00"
 	Name="Wire"
 	ProjectGUID="{B0895837-1F40-4F57-8F36-1DF861114254}"
-	RootNamespace="Wire_WIN32"
+	RootNamespace="Wire"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="lib\$(ConfigurationName)"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="2"
@@ -39,7 +39,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(DXSDK_DIR)\Include&quot;;Foundation;Engine;Renderer;Renderer/Dx9;InputSystem;InputSystem/Win32"
+				AdditionalIncludeDirectories="&quot;$(DXSDK_DIR)\Include&quot;;..\..\Foundation;..\..\Engine;..\..\Renderer;..\..\Renderer/Dx9;..\..\InputSystem;..\..\InputSystem/Win32"
 				PreprocessorDefinitions="WIRE_WIN;WIN32;_DEBUG;D3D_DEBUG_INFO;WIRE_DEBUG"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -81,7 +81,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="lib\$(ConfigurationName)"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="2"
@@ -104,7 +104,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(DXSDK_DIR)\Include&quot;;Foundation;Engine;Renderer;Renderer/Dx9;InputSystem;InputSystem/Win32"
+				AdditionalIncludeDirectories="&quot;$(DXSDK_DIR)\Include&quot;;..\..\Foundation;..\..\Engine;..\..\Renderer;..\..\Renderer/Dx9;..\..\InputSystem;..\..\InputSystem/Win32"
 				PreprocessorDefinitions="WIRE_WIN;WIN32;NDEBUG"
 				ExceptionHandling="0"
 				RuntimeLibrary="2"
@@ -149,7 +149,7 @@
 			Name="Foundation"
 			>
 			<File
-				RelativePath=".\Foundation\WireFoundation.h"
+				RelativePath="..\..\Foundation\WireFoundation.h"
 				>
 			</File>
 			<Filter
@@ -158,131 +158,131 @@
 				UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 				>
 				<File
-					RelativePath=".\Foundation\WireApplication.h"
+					RelativePath="..\..\Foundation\WireApplication.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireBox3.h"
+					RelativePath="..\..\Foundation\WireBox3.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColor32.h"
+					RelativePath="..\..\Foundation\WireColor32.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGB.h"
+					RelativePath="..\..\Foundation\WireColorRGB.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGBA.h"
+					RelativePath="..\..\Foundation\WireColorRGBA.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMain.h"
+					RelativePath="..\..\Foundation\WireMain.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMath.h"
+					RelativePath="..\..\Foundation\WireMath.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix2.h"
+					RelativePath="..\..\Foundation\WireMatrix2.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix3.h"
+					RelativePath="..\..\Foundation\WireMatrix3.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix34.h"
+					RelativePath="..\..\Foundation\WireMatrix34.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix4.h"
+					RelativePath="..\..\Foundation\WireMatrix4.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMemory.h"
+					RelativePath="..\..\Foundation\WireMemory.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireNoisePerlin.h"
+					RelativePath="..\..\Foundation\WireNoisePerlin.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WirePlane3.h"
+					RelativePath="..\..\Foundation\WirePlane3.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireQuaternion.h"
+					RelativePath="..\..\Foundation\WireQuaternion.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireRandom.h"
+					RelativePath="..\..\Foundation\WireRandom.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireSphere3.h"
+					RelativePath="..\..\Foundation\WireSphere3.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireString.h"
+					RelativePath="..\..\Foundation\WireString.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireSystem.h"
+					RelativePath="..\..\Foundation\WireSystem.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTArray.h"
+					RelativePath="..\..\Foundation\WireTArray.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTHashSet.h"
+					RelativePath="..\..\Foundation\WireTHashSet.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTHashTable.h"
+					RelativePath="..\..\Foundation\WireTHashTable.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTInstanceID.h"
+					RelativePath="..\..\Foundation\WireTInstanceID.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTList.h"
+					RelativePath="..\..\Foundation\WireTList.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTMap.h"
+					RelativePath="..\..\Foundation\WireTMap.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTPODArray.h"
+					RelativePath="..\..\Foundation\WireTPODArray.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTQueue.h"
+					RelativePath="..\..\Foundation\WireTQueue.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTStack.h"
+					RelativePath="..\..\Foundation\WireTStack.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTypes.h"
+					RelativePath="..\..\Foundation\WireTypes.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector2.h"
+					RelativePath="..\..\Foundation\WireVector2.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector3.h"
+					RelativePath="..\..\Foundation\WireVector3.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector4.h"
+					RelativePath="..\..\Foundation\WireVector4.h"
 					>
 				</File>
 			</Filter>
@@ -290,111 +290,111 @@
 				Name="Inline Files"
 				>
 				<File
-					RelativePath=".\Foundation\WireApplication.inl"
+					RelativePath="..\..\Foundation\WireApplication.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireBox3.inl"
+					RelativePath="..\..\Foundation\WireBox3.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColor32.inl"
+					RelativePath="..\..\Foundation\WireColor32.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGB.inl"
+					RelativePath="..\..\Foundation\WireColorRGB.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGBA.inl"
+					RelativePath="..\..\Foundation\WireColorRGBA.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMath.inl"
+					RelativePath="..\..\Foundation\WireMath.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix2.inl"
+					RelativePath="..\..\Foundation\WireMatrix2.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix3.inl"
+					RelativePath="..\..\Foundation\WireMatrix3.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix34.inl"
+					RelativePath="..\..\Foundation\WireMatrix34.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix4.inl"
+					RelativePath="..\..\Foundation\WireMatrix4.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireNoisePerlin.inl"
+					RelativePath="..\..\Foundation\WireNoisePerlin.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WirePlane3.inl"
+					RelativePath="..\..\Foundation\WirePlane3.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireQuaternion.inl"
+					RelativePath="..\..\Foundation\WireQuaternion.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireSphere3.inl"
+					RelativePath="..\..\Foundation\WireSphere3.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireString.inl"
+					RelativePath="..\..\Foundation\WireString.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTArray.inl"
+					RelativePath="..\..\Foundation\WireTArray.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTHashSet.inl"
+					RelativePath="..\..\Foundation\WireTHashSet.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTHashTable.inl"
+					RelativePath="..\..\Foundation\WireTHashTable.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTInstanceID.inl"
+					RelativePath="..\..\Foundation\WireTInstanceID.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTList.inl"
+					RelativePath="..\..\Foundation\WireTList.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTMap.inl"
+					RelativePath="..\..\Foundation\WireTMap.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTPODArray.inl"
+					RelativePath="..\..\Foundation\WireTPODArray.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTQueue.inl"
+					RelativePath="..\..\Foundation\WireTQueue.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireTStack.inl"
+					RelativePath="..\..\Foundation\WireTStack.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector2.inl"
+					RelativePath="..\..\Foundation\WireVector2.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector3.inl"
+					RelativePath="..\..\Foundation\WireVector3.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector4.inl"
+					RelativePath="..\..\Foundation\WireVector4.inl"
 					>
 				</File>
 			</Filter>
@@ -404,79 +404,79 @@
 				UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 				>
 				<File
-					RelativePath=".\Foundation\WireApplication.cpp"
+					RelativePath="..\..\Foundation\WireApplication.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColor32.cpp"
+					RelativePath="..\..\Foundation\WireColor32.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGB.cpp"
+					RelativePath="..\..\Foundation\WireColorRGB.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireColorRGBA.cpp"
+					RelativePath="..\..\Foundation\WireColorRGBA.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMain.cpp"
+					RelativePath="..\..\Foundation\WireMain.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMath.cpp"
+					RelativePath="..\..\Foundation\WireMath.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix2.cpp"
+					RelativePath="..\..\Foundation\WireMatrix2.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix3.cpp"
+					RelativePath="..\..\Foundation\WireMatrix3.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix34.cpp"
+					RelativePath="..\..\Foundation\WireMatrix34.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMatrix4.cpp"
+					RelativePath="..\..\Foundation\WireMatrix4.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireMemory.cpp"
+					RelativePath="..\..\Foundation\WireMemory.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireNoisePerlin.cpp"
+					RelativePath="..\..\Foundation\WireNoisePerlin.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireQuaternion.cpp"
+					RelativePath="..\..\Foundation\WireQuaternion.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireRandom.cpp"
+					RelativePath="..\..\Foundation\WireRandom.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireString.cpp"
+					RelativePath="..\..\Foundation\WireString.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireSystem.cpp"
+					RelativePath="..\..\Foundation\WireSystem.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector2.cpp"
+					RelativePath="..\..\Foundation\WireVector2.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector3.cpp"
+					RelativePath="..\..\Foundation\WireVector3.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Foundation\WireVector4.cpp"
+					RelativePath="..\..\Foundation\WireVector4.cpp"
 					>
 				</File>
 			</Filter>
@@ -490,11 +490,11 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\Foundation\Wii\WireGXApplication.h"
+							RelativePath="..\..\Foundation\Wii\WireGXApplication.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Foundation\Wii\WireOgcDefines.h"
+							RelativePath="..\..\Foundation\Wii\WireOgcDefines.h"
 							>
 						</File>
 					</Filter>
@@ -502,15 +502,15 @@
 						Name="Inline Files"
 						>
 						<File
-							RelativePath=".\Foundation\Wii\WireMatrix34Wii.inl"
+							RelativePath="..\..\Foundation\Wii\WireMatrix34Wii.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Foundation\Wii\WireSystemWii.inl"
+							RelativePath="..\..\Foundation\Wii\WireSystemWii.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Foundation\Wii\WireVector3Wii.inl"
+							RelativePath="..\..\Foundation\Wii\WireVector3Wii.inl"
 							>
 						</File>
 					</Filter>
@@ -518,7 +518,7 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\Foundation\Wii\WireGXApplication.cpp"
+							RelativePath="..\..\Foundation\Wii\WireGXApplication.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -546,7 +546,7 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\Foundation\Dx9\WireDx9Application.h"
+							RelativePath="..\..\Foundation\Dx9\WireDx9Application.h"
 							>
 						</File>
 					</Filter>
@@ -554,7 +554,7 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\Foundation\Dx9\WireDx9Application.cpp"
+							RelativePath="..\..\Foundation\Dx9\WireDx9Application.cpp"
 							>
 						</File>
 					</Filter>
@@ -562,7 +562,7 @@
 						Name="Inlines Files"
 						>
 						<File
-							RelativePath=".\Foundation\Dx9\WireSystemDx9.inl"
+							RelativePath="..\..\Foundation\Dx9\WireSystemDx9.inl"
 							>
 						</File>
 					</Filter>
@@ -576,11 +576,11 @@
 				Name="Header Files"
 				>
 				<File
-					RelativePath=".\Renderer\WireRenderer.h"
+					RelativePath="..\..\Renderer\WireRenderer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Renderer\WireRendererStatistics.h"
+					RelativePath="..\..\Renderer\WireRendererStatistics.h"
 					>
 				</File>
 			</Filter>
@@ -588,11 +588,11 @@
 				Name="Inline Files"
 				>
 				<File
-					RelativePath=".\Renderer\WireRenderer.inl"
+					RelativePath="..\..\Renderer\WireRenderer.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Renderer\WireRendererStatistics.inl"
+					RelativePath="..\..\Renderer\WireRendererStatistics.inl"
 					>
 				</File>
 			</Filter>
@@ -600,11 +600,11 @@
 				Name="Source Files"
 				>
 				<File
-					RelativePath=".\Renderer\WireRenderer.cpp"
+					RelativePath="..\..\Renderer\WireRenderer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Renderer\WireRendererStatistics.cpp"
+					RelativePath="..\..\Renderer\WireRendererStatistics.cpp"
 					>
 				</File>
 			</Filter>
@@ -618,35 +618,35 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9IndexBuffer.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9IndexBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9RendererData.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9RendererData.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9RendererInput.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9RendererInput.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9RenderTarget.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9RenderTarget.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Shader.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Shader.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Texture2D.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Texture2D.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexBuffer.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexFormat.h"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexFormat.h"
 							>
 						</File>
 					</Filter>
@@ -654,63 +654,63 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9IndexBuffer.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9IndexBuffer.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Light.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Light.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Renderer.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Renderer.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9RenderTarget.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9RenderTarget.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Shader.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Shader.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateAlpha.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateAlpha.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateCull.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateCull.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateFog.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateFog.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateMaterial.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateMaterial.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateWireframe.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateWireframe.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9StateZBuffer.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9StateZBuffer.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9Texture2D.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9Texture2D.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9TextureStage.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9TextureStage.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexBuffer.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexBuffer.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexFormat.cpp"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexFormat.cpp"
 							>
 						</File>
 					</Filter>
@@ -718,15 +718,15 @@
 						Name="Inline Files"
 						>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9IndexBuffer.inl"
+							RelativePath="..\..\Renderer\Dx9\WireDx9IndexBuffer.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexBuffer.inl"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexBuffer.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\Dx9\WireDx9VertexFormat.inl"
+							RelativePath="..\..\Renderer\Dx9\WireDx9VertexFormat.inl"
 							>
 						</File>
 					</Filter>
@@ -738,39 +738,39 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\Renderer\GX\WireGXDisplayList.h"
+							RelativePath="..\..\Renderer\GX\WireGXDisplayList.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXIndexBuffer.h"
+							RelativePath="..\..\Renderer\GX\WireGXIndexBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXRendererData.h"
+							RelativePath="..\..\Renderer\GX\WireGXRendererData.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXRendererInput.h"
+							RelativePath="..\..\Renderer\GX\WireGXRendererInput.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXRenderTarget.h"
+							RelativePath="..\..\Renderer\GX\WireGXRenderTarget.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXShader.h"
+							RelativePath="..\..\Renderer\GX\WireGXShader.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXTexture2D.h"
+							RelativePath="..\..\Renderer\GX\WireGXTexture2D.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexBuffer.h"
+							RelativePath="..\..\Renderer\GX\WireGXVertexBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexFormat.h"
+							RelativePath="..\..\Renderer\GX\WireGXVertexFormat.h"
 							>
 						</File>
 					</Filter>
@@ -778,7 +778,7 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\Renderer\GX\WireGXDisplayList.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXDisplayList.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -798,7 +798,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXIndexBuffer.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXIndexBuffer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -818,7 +818,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXLight.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXLight.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -838,7 +838,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXRenderer.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXRenderer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -858,7 +858,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXRenderTarget.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXRenderTarget.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -878,7 +878,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXStateAlpha.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXStateAlpha.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -898,7 +898,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXStateCull.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXStateCull.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -918,7 +918,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXStateFog.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXStateFog.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -938,7 +938,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXStateMaterial.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXStateMaterial.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -958,7 +958,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXStateZBuffer.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXStateZBuffer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -978,7 +978,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXTexture2D.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXTexture2D.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -998,7 +998,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXTextureStage.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXTextureStage.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1018,7 +1018,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexBuffer.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXVertexBuffer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1038,7 +1038,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexFormat.cpp"
+							RelativePath="..\..\Renderer\GX\WireGXVertexFormat.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1062,19 +1062,19 @@
 						Name="Inline Files"
 						>
 						<File
-							RelativePath=".\Renderer\GX\WireGXDisplayList.inl"
+							RelativePath="..\..\Renderer\GX\WireGXDisplayList.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXIndexBuffer.inl"
+							RelativePath="..\..\Renderer\GX\WireGXIndexBuffer.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexBuffer.inl"
+							RelativePath="..\..\Renderer\GX\WireGXVertexBuffer.inl"
 							>
 						</File>
 						<File
-							RelativePath=".\Renderer\GX\WireGXVertexFormat.inl"
+							RelativePath="..\..\Renderer\GX\WireGXVertexFormat.inl"
 							>
 						</File>
 					</Filter>
@@ -1085,182 +1085,182 @@
 			Name="Engine"
 			>
 			<File
-				RelativePath=".\Engine\WireEngine.h"
+				RelativePath="..\..\Engine\WireEngine.h"
 				>
 			</File>
 			<Filter
 				Name="Header Files"
 				>
 				<File
-					RelativePath=".\Engine\WireBoundingVolume.h"
+					RelativePath="..\..\Engine\WireBoundingVolume.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireBuffer.h"
+					RelativePath="..\..\Engine\WireBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCamera.h"
+					RelativePath="..\..\Engine\WireCamera.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireController.h"
+					RelativePath="..\..\Engine\WireController.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCuller.h"
+					RelativePath="..\..\Engine\WireCuller.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCullerSorting.h"
+					RelativePath="..\..\Engine\WireCullerSorting.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireEffect.h"
+					RelativePath="..\..\Engine\WireEffect.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireImage2D.h"
+					RelativePath="..\..\Engine\WireImage2D.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireIndexBuffer.h"
+					RelativePath="..\..\Engine\WireIndexBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireLight.h"
+					RelativePath="..\..\Engine\WireLight.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMaterial.h"
+					RelativePath="..\..\Engine\WireMaterial.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMesh.h"
+					RelativePath="..\..\Engine\WireMesh.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNode.h"
+					RelativePath="..\..\Engine\WireNode.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeBillboard.h"
+					RelativePath="..\..\Engine\WireNodeBillboard.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeCamera.h"
+					RelativePath="..\..\Engine\WireNodeCamera.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeDLod.h"
+					RelativePath="..\..\Engine\WireNodeDLod.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeLight.h"
+					RelativePath="..\..\Engine\WireNodeLight.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeSkybox.h"
+					RelativePath="..\..\Engine\WireNodeSkybox.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeSwitch.h"
+					RelativePath="..\..\Engine\WireNodeSwitch.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireObject.h"
+					RelativePath="..\..\Engine\WireObject.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderObject.h"
+					RelativePath="..\..\Engine\WireRenderObject.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderTarget.h"
+					RelativePath="..\..\Engine\WireRenderTarget.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRtti.h"
+					RelativePath="..\..\Engine\WireRenderText.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSceneObject.h"
+					RelativePath="..\..\Engine\WireRtti.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShader.h"
+					RelativePath="..\..\Engine\WireSceneObject.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShaderVariables.h"
+					RelativePath="..\..\Engine\WireShader.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSmartPointer.h"
+					RelativePath="..\..\Engine\WireShaderVariables.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSpatial.h"
+					RelativePath="..\..\Engine\WireSmartPointer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSphereBV.h"
+					RelativePath="..\..\Engine\WireSpatial.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStandardMesh.h"
+					RelativePath="..\..\Engine\WireSphereBV.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireState.h"
+					RelativePath="..\..\Engine\WireStandardMesh.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateAlpha.h"
+					RelativePath="..\..\Engine\WireState.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateCull.h"
+					RelativePath="..\..\Engine\WireStateAlpha.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateFog.h"
+					RelativePath="..\..\Engine\WireStateCull.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateMaterial.h"
+					RelativePath="..\..\Engine\WireStateFog.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateWireframe.h"
+					RelativePath="..\..\Engine\WireStateMaterial.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateZBuffer.h"
+					RelativePath="..\..\Engine\WireStateWireframe.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderText.h"
+					RelativePath="..\..\Engine\WireStateZBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTexture2D.h"
+					RelativePath="..\..\Engine\WireTexture2D.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTransformation.h"
+					RelativePath="..\..\Engine\WireTransformation.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexAttributes.h"
+					RelativePath="..\..\Engine\WireVertexAttributes.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexBuffer.h"
+					RelativePath="..\..\Engine\WireVertexBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVisibleSet.h"
+					RelativePath="..\..\Engine\WireVisibleSet.h"
 					>
 				</File>
 			</Filter>
@@ -1268,119 +1268,119 @@
 				Name="Inline Files"
 				>
 				<File
-					RelativePath=".\Engine\WireBuffer.inl"
+					RelativePath="..\..\Engine\WireBuffer.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCamera.inl"
+					RelativePath="..\..\Engine\WireCamera.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireController.inl"
+					RelativePath="..\..\Engine\WireController.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCuller.inl"
+					RelativePath="..\..\Engine\WireCuller.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireImage2D.inl"
+					RelativePath="..\..\Engine\WireImage2D.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireIndexBuffer.inl"
+					RelativePath="..\..\Engine\WireIndexBuffer.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMaterial.inl"
+					RelativePath="..\..\Engine\WireMaterial.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMesh.inl"
+					RelativePath="..\..\Engine\WireMesh.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNode.inl"
+					RelativePath="..\..\Engine\WireNode.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeBillboard.inl"
+					RelativePath="..\..\Engine\WireNodeBillboard.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeCamera.inl"
+					RelativePath="..\..\Engine\WireNodeCamera.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeDLod.inl"
+					RelativePath="..\..\Engine\WireNodeDLod.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeLight.inl"
+					RelativePath="..\..\Engine\WireNodeLight.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeSwitch.inl"
+					RelativePath="..\..\Engine\WireNodeSwitch.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireObject.inl"
+					RelativePath="..\..\Engine\WireObject.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderObject.inl"
+					RelativePath="..\..\Engine\WireRenderObject.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderTarget.inl"
+					RelativePath="..\..\Engine\WireRenderTarget.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRtti.inl"
+					RelativePath="..\..\Engine\WireRtti.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSceneObject.inl"
+					RelativePath="..\..\Engine\WireSceneObject.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShader.inl"
+					RelativePath="..\..\Engine\WireShader.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShaderVariables.inl"
+					RelativePath="..\..\Engine\WireShaderVariables.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSmartPointer.inl"
+					RelativePath="..\..\Engine\WireSmartPointer.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSpatial.inl"
+					RelativePath="..\..\Engine\WireSpatial.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSphereBV.inl"
+					RelativePath="..\..\Engine\WireSphereBV.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTexture2D.inl"
+					RelativePath="..\..\Engine\WireTexture2D.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTransformation.inl"
+					RelativePath="..\..\Engine\WireTransformation.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexAttributes.inl"
+					RelativePath="..\..\Engine\WireVertexAttributes.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexBuffer.inl"
+					RelativePath="..\..\Engine\WireVertexBuffer.inl"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVisibleSet.inl"
+					RelativePath="..\..\Engine\WireVisibleSet.inl"
 					>
 				</File>
 			</Filter>
@@ -1388,171 +1388,171 @@
 				Name="Source Files"
 				>
 				<File
-					RelativePath=".\Engine\WireBoundingVolume.cpp"
+					RelativePath="..\..\Engine\WireBoundingVolume.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireBuffer.cpp"
+					RelativePath="..\..\Engine\WireBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCamera.cpp"
+					RelativePath="..\..\Engine\WireCamera.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireController.cpp"
+					RelativePath="..\..\Engine\WireController.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCuller.cpp"
+					RelativePath="..\..\Engine\WireCuller.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireCullerSorting.cpp"
+					RelativePath="..\..\Engine\WireCullerSorting.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireEffect.cpp"
+					RelativePath="..\..\Engine\WireEffect.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireImage2D.cpp"
+					RelativePath="..\..\Engine\WireImage2D.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireIndexBuffer.cpp"
+					RelativePath="..\..\Engine\WireIndexBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireLight.cpp"
+					RelativePath="..\..\Engine\WireLight.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMaterial.cpp"
+					RelativePath="..\..\Engine\WireMaterial.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireMesh.cpp"
+					RelativePath="..\..\Engine\WireMesh.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNode.cpp"
+					RelativePath="..\..\Engine\WireNode.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeBillboard.cpp"
+					RelativePath="..\..\Engine\WireNodeBillboard.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeCamera.cpp"
+					RelativePath="..\..\Engine\WireNodeCamera.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeDLod.cpp"
+					RelativePath="..\..\Engine\WireNodeDLod.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeLight.cpp"
+					RelativePath="..\..\Engine\WireNodeLight.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeSkybox.cpp"
+					RelativePath="..\..\Engine\WireNodeSkybox.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireNodeSwitch.cpp"
+					RelativePath="..\..\Engine\WireNodeSwitch.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireObject.cpp"
+					RelativePath="..\..\Engine\WireObject.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderObject.cpp"
+					RelativePath="..\..\Engine\WireRenderObject.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderTarget.cpp"
+					RelativePath="..\..\Engine\WireRenderTarget.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRtti.cpp"
+					RelativePath="..\..\Engine\WireRenderText.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSceneObject.cpp"
+					RelativePath="..\..\Engine\WireRtti.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShader.cpp"
+					RelativePath="..\..\Engine\WireSceneObject.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireShaderVariables.cpp"
+					RelativePath="..\..\Engine\WireShader.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSpatial.cpp"
+					RelativePath="..\..\Engine\WireShaderVariables.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireSphereBV.cpp"
+					RelativePath="..\..\Engine\WireSpatial.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStandardMesh.cpp"
+					RelativePath="..\..\Engine\WireSphereBV.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireState.cpp"
+					RelativePath="..\..\Engine\WireStandardMesh.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateAlpha.cpp"
+					RelativePath="..\..\Engine\WireState.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateCull.cpp"
+					RelativePath="..\..\Engine\WireStateAlpha.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateFog.cpp"
+					RelativePath="..\..\Engine\WireStateCull.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateMaterial.cpp"
+					RelativePath="..\..\Engine\WireStateFog.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateWireframe.cpp"
+					RelativePath="..\..\Engine\WireStateMaterial.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireStateZBuffer.cpp"
+					RelativePath="..\..\Engine\WireStateWireframe.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireRenderText.cpp"
+					RelativePath="..\..\Engine\WireStateZBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTexture2D.cpp"
+					RelativePath="..\..\Engine\WireTexture2D.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireTransformation.cpp"
+					RelativePath="..\..\Engine\WireTransformation.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexAttributes.cpp"
+					RelativePath="..\..\Engine\WireVertexAttributes.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVertexBuffer.cpp"
+					RelativePath="..\..\Engine\WireVertexBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Engine\WireVisibleSet.cpp"
+					RelativePath="..\..\Engine\WireVisibleSet.cpp"
 					>
 				</File>
 			</Filter>
@@ -1564,59 +1564,59 @@
 				Name="Header Files"
 				>
 				<File
-					RelativePath=".\InputSystem\WireAnalogPad.h"
+					RelativePath="..\..\InputSystem\WireAnalogPad.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireButtons.h"
+					RelativePath="..\..\InputSystem\WireButtons.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireDigitalPad.h"
+					RelativePath="..\..\InputSystem\WireDigitalPad.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputCapability.h"
+					RelativePath="..\..\InputSystem\WireInputCapability.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDataBuffer.h"
+					RelativePath="..\..\InputSystem\WireInputDataBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDevice.h"
+					RelativePath="..\..\InputSystem\WireInputDevice.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDeviceExtension.h"
+					RelativePath="..\..\InputSystem\WireInputDeviceExtension.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputSystem.h"
+					RelativePath="..\..\InputSystem\WireInputSystem.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireIR.h"
+					RelativePath="..\..\InputSystem\WireIR.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireMainInputDevice.h"
+					RelativePath="..\..\InputSystem\WireMainInputDevice.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireNunchuk.h"
+					RelativePath="..\..\InputSystem\WireNunchuk.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireShake.h"
+					RelativePath="..\..\InputSystem\WireShake.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireSwing.h"
+					RelativePath="..\..\InputSystem\WireSwing.h"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireTilt.h"
+					RelativePath="..\..\InputSystem\WireTilt.h"
 					>
 				</File>
 			</Filter>
@@ -1630,63 +1630,63 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukAnalogPad.h"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukAnalogPad.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukButtons.h"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukButtons.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukShake.h"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukShake.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukSwing.h"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukSwing.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukTilt.h"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukTilt.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiInputDataBuffer.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiInputDataBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiInputSystem.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiInputSystem.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMote.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMote.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteButtons.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteButtons.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteDigitalPad.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteDigitalPad.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteIR.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteIR.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteShake.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteShake.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteSwing.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteSwing.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteTilt.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteTilt.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiNunchuk.h"
+							RelativePath="..\..\InputSystem\Wii\WireWiiNunchuk.h"
 							>
 						</File>
 					</Filter>
@@ -1694,7 +1694,7 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukAnalogPad.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukAnalogPad.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1714,7 +1714,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukButtons.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukButtons.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1734,7 +1734,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukShake.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukShake.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1754,7 +1754,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukSwing.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukSwing.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1774,7 +1774,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireNunchukTilt.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireNunchukTilt.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1794,7 +1794,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiInputDataBuffer.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiInputDataBuffer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1814,7 +1814,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiInputSystem.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiInputSystem.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1834,7 +1834,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMote.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMote.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1854,7 +1854,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteButtons.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteButtons.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1874,7 +1874,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteDigitalPad.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteDigitalPad.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1894,7 +1894,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteIR.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteIR.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1914,7 +1914,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteShake.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteShake.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1934,7 +1934,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteSwing.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteSwing.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1954,7 +1954,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiMoteTilt.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiMoteTilt.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -1974,7 +1974,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Wii\WireWiiNunchuk.cpp"
+							RelativePath="..\..\InputSystem\Wii\WireWiiNunchuk.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2002,47 +2002,47 @@
 						Name="Header Files"
 						>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32EmulatedNunchuk.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32EmulatedNunchuk.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32EmulatedWiiMote.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32EmulatedWiiMote.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32InputDataBuffer.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32InputDataBuffer.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32InputSystem.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32InputSystem.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedAnalogPad.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedAnalogPad.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedButtons.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedButtons.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedDigitalPad.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedDigitalPad.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedIR.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedIR.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedShake.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedShake.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedSwing.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedSwing.h"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedTilt.h"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedTilt.h"
 							>
 						</File>
 					</Filter>
@@ -2050,47 +2050,47 @@
 						Name="Source Files"
 						>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32EmulatedNunchuk.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32EmulatedNunchuk.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32EmulatedWiiMote.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32EmulatedWiiMote.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32InputDataBuffer.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32InputDataBuffer.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32InputSystem.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32InputSystem.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedAnalogPad.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedAnalogPad.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedButtons.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedButtons.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedDigitalPad.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedDigitalPad.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedIR.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedIR.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedShake.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedShake.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedSwing.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedSwing.cpp"
 							>
 						</File>
 						<File
-							RelativePath=".\InputSystem\Win32\WireWin32KeyMappedTilt.cpp"
+							RelativePath="..\..\InputSystem\Win32\WireWin32KeyMappedTilt.cpp"
 							>
 						</File>
 					</Filter>
@@ -2100,59 +2100,59 @@
 				Name="Source Files"
 				>
 				<File
-					RelativePath=".\InputSystem\WireAnalogPad.cpp"
+					RelativePath="..\..\InputSystem\WireAnalogPad.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireButtons.cpp"
+					RelativePath="..\..\InputSystem\WireButtons.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireDigitalPad.cpp"
+					RelativePath="..\..\InputSystem\WireDigitalPad.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputCapability.cpp"
+					RelativePath="..\..\InputSystem\WireInputCapability.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDataBuffer.cpp"
+					RelativePath="..\..\InputSystem\WireInputDataBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDevice.cpp"
+					RelativePath="..\..\InputSystem\WireInputDevice.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputDeviceExtension.cpp"
+					RelativePath="..\..\InputSystem\WireInputDeviceExtension.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireInputSystem.cpp"
+					RelativePath="..\..\InputSystem\WireInputSystem.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireIR.cpp"
+					RelativePath="..\..\InputSystem\WireIR.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireMainInputDevice.cpp"
+					RelativePath="..\..\InputSystem\WireMainInputDevice.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireNunchuk.cpp"
+					RelativePath="..\..\InputSystem\WireNunchuk.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireShake.cpp"
+					RelativePath="..\..\InputSystem\WireShake.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireSwing.cpp"
+					RelativePath="..\..\InputSystem\WireSwing.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\InputSystem\WireTilt.cpp"
+					RelativePath="..\..\InputSystem\WireTilt.cpp"
 					>
 				</File>
 			</Filter>

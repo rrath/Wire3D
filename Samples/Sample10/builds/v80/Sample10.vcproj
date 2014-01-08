@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="Game"
-	ProjectGUID="{769C3D4D-4630-4E1A-B3DE-7E1978F18018}"
-	RootNamespace="Game_WIN32"
+	Name="Sample10 - Material Sorting"
+	ProjectGUID="{D46B0F8C-BE11-4926-AE49-92B38846E3A7}"
+	RootNamespace="Sample10"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -42,10 +42,10 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;..\..\Tools\Importer\src;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
-				ExceptionHandling="1"
+				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				RuntimeTypeInfo="false"
@@ -64,9 +64,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Wired.lib Importerd.lib"
-				OutputFile="Gamed.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\debug;..\..\Tools\Importer\lib\debug"
+				AdditionalDependencies="Wired.lib"
+				OutputFile="..\..\Sample10d_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				TargetMachine="1"
@@ -99,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -125,9 +125,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;..\..\Tools\Importer\src;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN"
-				ExceptionHandling="1"
+				ExceptionHandling="0"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="false"
 				WarningLevel="3"
@@ -145,9 +145,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Wire.lib Importer.lib"
-				OutputFile="Game.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\release;..\..\Tools\Importer\lib\release"
+				AdditionalDependencies="Wire.lib"
+				OutputFile="..\..\Sample10_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				OptimizeReferences="2"
@@ -184,50 +184,14 @@
 	<References>
 	</References>
 	<Files>
-		<Filter
-			Name="Header Files"
+		<File
+			RelativePath="..\..\src\Sample10.cpp"
 			>
-			<File
-				RelativePath=".\src\Elevator.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Game.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Player.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\ProbeRobot.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Source Files"
+		</File>
+		<File
+			RelativePath="..\..\src\Sample10.h"
 			>
-			<File
-				RelativePath=".\src\Elevator.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Game.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Player.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\ProbeRobot.cpp"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Inline Files"
-			>
-		</Filter>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

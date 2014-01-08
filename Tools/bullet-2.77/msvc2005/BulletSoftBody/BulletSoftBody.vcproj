@@ -1,188 +1,271 @@
-<?xml version="1.0" encoding = "Windows-1252"?>
+<?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="8,00"
 	Name="BulletSoftBody"
 	ProjectGUID="{60CF2BBA-43E1-4D88-A5E1-4F935D41207D}"
-	Keyword="Win32Proj">
+	Keyword="Win32Proj"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)\"
 			IntermediateDirectory="BulletSoftBody.dir\Debug"
 			ConfigurationType="4"
 			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions=" /Zm1000 /fp:fast"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				BasicRuntimeChecks="3"
-				CompileAs="2"
-				DebugInformationFormat="3"
-				EnableEnhancedInstructionSet="1"
-				ExceptionHandling="1"
-				InlineFunctionExpansion="0"
-				Optimization="0"
-				RuntimeLibrary="3"
-				RuntimeTypeInfo="TRUE"
-				WarningLevel="3"
-				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
-				AssemblerListingLocation="Debug"
-				ObjectFile="$(IntDir)\"
-				ProgramDataBaseFileName="..\..\lib\Debug/BulletSoftBody.pdb"
-/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(InputName).tlb"
 				OutputDirectory="$(IntDir)"
 				HeaderFileName="$(InputName).h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="$(InputName)_i.c"
-				ProxyFileName="$(InputName)_p.c"/>
+				ProxyFileName="$(InputName)_p.c"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				AdditionalOptions=" /Zm1000 /fp:fast"
+				Optimization="0"
+				InlineFunctionExpansion="0"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
+				ExceptionHandling="1"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				EnableEnhancedInstructionSet="1"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="Debug"
+				ObjectFile="$(IntDir)\"
+				ProgramDataBaseFileName="..\..\lib\v80\$(ConfigurationName)/BulletSoftBody.pdb"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\..\lib\Debug\BulletSoftBody.lib"/>
+				OutputFile="..\..\lib\v80\$(ConfigurationName)\BulletSoftBody.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)\"
 			IntermediateDirectory="BulletSoftBody.dir\Release"
 			ConfigurationType="4"
 			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions=" /Zm1000 /fp:fast"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				CompileAs="2"
-				EnableEnhancedInstructionSet="1"
-				ExceptionHandling="1"
-				InlineFunctionExpansion="2"
-				Optimization="2"
-				RuntimeLibrary="2"
-				RuntimeTypeInfo="TRUE"
-				WarningLevel="3"
-				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
-				AssemblerListingLocation="Release"
-				ObjectFile="$(IntDir)\"
-				ProgramDataBaseFileName="..\..\lib\Release/BulletSoftBody.pdb"
-/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(InputName).tlb"
 				OutputDirectory="$(IntDir)"
 				HeaderFileName="$(InputName).h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="$(InputName)_i.c"
-				ProxyFileName="$(InputName)_p.c"/>
+				ProxyFileName="$(InputName)_p.c"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				AdditionalOptions=" /Zm1000 /fp:fast"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
+				ExceptionHandling="1"
+				RuntimeLibrary="2"
+				EnableEnhancedInstructionSet="1"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="Release"
+				ObjectFile="$(IntDir)\"
+				ProgramDataBaseFileName="..\..\lib\v80\$(ConfigurationName)/BulletSoftBody.pdb"
+				WarningLevel="3"
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\..\lib\Release\BulletSoftBody.lib"/>
+				OutputFile="..\..\lib\v80\$(ConfigurationName)\BulletSoftBody.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
+	<References>
+	</References>
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="">
+			>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBody.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btDefaultSoftBodySolver.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBody.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyHelpers.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftRigidDynamicsWorld.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftRigidDynamicsWorld.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btDefaultSoftBodySolver.cpp">
+				RelativePath="..\..\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
-			Filter="">
+			>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBody.h">
+				RelativePath="..\..\src\BulletSoftBody\btDefaultSoftBodySolver.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBody.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyHelpers.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyHelpers.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftRigidDynamicsWorld.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodySolvers.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftBodySolverVertexBuffer.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSparseSDF.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodySolvers.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftRigidDynamicsWorld.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btDefaultSoftBodySolver.h">
+				RelativePath="..\..\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletSoftBody\btSoftBodySolverVertexBuffer.h">
+				RelativePath="..\..\src\BulletSoftBody\btSparseSDF.h"
+				>
 			</File>
 		</Filter>
 	</Files>

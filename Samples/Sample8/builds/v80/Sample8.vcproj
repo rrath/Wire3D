@@ -4,7 +4,7 @@
 	Version="8,00"
 	Name="Sample8 - Bullet Physics Integration"
 	ProjectGUID="{E69FDDF0-8094-4FF0-ABA4-39732FBE5C5A}"
-	RootNamespace="Sample8_WIN32"
+	RootNamespace="Sample8"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem;&quot;..\..\..\..\Tools\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -65,8 +65,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wired.lib BulletCollision.lib BulletDynamics.lib LinearMath.lib"
-				OutputFile="Sample8d.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\debug;&quot;..\..\Tools\bullet-2.77\lib\Debug&quot;"
+				OutputFile="..\..\Sample8d_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\..\..\Wire\lib\v80\$(ConfigurationName);&quot;..\..\..\..\Tools\bullet-2.77\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				TargetMachine="1"
@@ -99,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -125,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem;&quot;..\..\..\..\Tools\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN"
 				ExceptionHandling="0"
 				RuntimeLibrary="2"
@@ -146,8 +146,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wire.lib BulletCollision.lib BulletDynamics.lib LinearMath.lib"
-				OutputFile="Sample8.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\release;&quot;..\..\Tools\bullet-2.77\lib\Release&quot;"
+				OutputFile="..\..\Sample8_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\..\..\Wire\lib\v80\$(ConfigurationName);&quot;..\..\..\..\Tools\bullet-2.77\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				OptimizeReferences="2"
@@ -185,11 +185,11 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\src\Sample8.cpp"
+			RelativePath="..\..\src\Sample8.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Sample8.h"
+			RelativePath="..\..\src\Sample8.h"
 			>
 		</File>
 	</Files>

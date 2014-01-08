@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="Sample9 - Custom Main"
-	ProjectGUID="{96A783F2-75CD-4733-8F4E-803D3C744560}"
-	RootNamespace="Sample9_WIN32"
+	Name="Sample5 - Lighting"
+	ProjectGUID="{E960AE2F-C29B-452D-A24E-9178843D7E30}"
+	RootNamespace="Sample5"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\Renderer\Dx9;..\..\Wire\InputSystem;..\..\Wire\InputSystem\Win32"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -65,8 +65,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wired.lib"
-				OutputFile="Sample9d.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\debug"
+				OutputFile="..\..\Sample5d_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				TargetMachine="1"
@@ -99,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -125,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\Renderer\Dx9;..\..\Wire\InputSystem;..\..\Wire\InputSystem\Win32"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN"
 				ExceptionHandling="0"
 				RuntimeLibrary="2"
@@ -146,8 +146,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wire.lib"
-				OutputFile="Sample9.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\release"
+				OutputFile="..\..\Sample5_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				OptimizeReferences="2"
@@ -185,7 +185,11 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\src\Sample9.cpp"
+			RelativePath="..\..\src\Sample5.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\..\src\Sample5.h"
 			>
 		</File>
 	</Files>

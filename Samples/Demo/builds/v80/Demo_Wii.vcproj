@@ -65,44 +65,44 @@
 			Name="Controllers"
 			>
 			<File
-				RelativePath=".\src\Controllers\ConveyorBelt.cpp"
+				RelativePath="..\..\src\Controllers\ConveyorBelt.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\ConveyorBelt.h"
+				RelativePath="..\..\src\Controllers\ConveyorBelt.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\FanRotator.cpp"
+				RelativePath="..\..\src\Controllers\FanRotator.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\FanRotator.h"
+				RelativePath="..\..\src\Controllers\FanRotator.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\LogoFader.cpp"
+				RelativePath="..\..\src\Controllers\LogoFader.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\LogoFader.h"
+				RelativePath="..\..\src\Controllers\LogoFader.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\SplineCamera.cpp"
+				RelativePath="..\..\src\Controllers\SplineCamera.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Controllers\SplineCamera.h"
+				RelativePath="..\..\src\Controllers\SplineCamera.h"
 				>
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\src\Demo.cpp"
+			RelativePath="..\..\src\Demo.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Demo.h"
+			RelativePath="..\..\src\Demo.h"
 			>
 		</File>
 	</Files>

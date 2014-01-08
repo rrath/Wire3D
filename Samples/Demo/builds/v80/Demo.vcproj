@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="Sample11 - Input"
-	ProjectGUID="{8E77FA46-85C0-4773-B1AC-1B0C5C8F7597}"
-	RootNamespace="Sample0_WIN32"
+	Name="Demo"
+	ProjectGUID="{CC0521C8-3EC5-444B-B070-560E256479D1}"
+	RootNamespace="Demo"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;..\..\Tools\Importer\src;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem;..\..\..\..\Tools\Importer\src;&quot;..\..\..\..\Tools\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
 				ExceptionHandling="1"
@@ -64,9 +64,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Wired.lib"
-				OutputFile="Sample11d.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\debug"
+				AdditionalDependencies="Wired.lib Importerd.lib"
+				OutputFile="..\..\Demod_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;;&quot;..\..\..\..\Tools\Importer\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				TargetMachine="1"
@@ -99,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -125,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem;..\..\Tools\Importer\src;&quot;..\..\Tools\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem;..\..\..\..\Tools\Importer\src;&quot;..\..\..\..\Tools\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
@@ -145,9 +145,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Wire.lib"
-				OutputFile="Sample11.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\release"
+				AdditionalDependencies="Wire.lib Importer.lib"
+				OutputFile="..\..\Demo_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;;&quot;..\..\..\..\Tools\Importer\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				OptimizeReferences="2"
@@ -184,20 +184,48 @@
 	<References>
 	</References>
 	<Files>
+		<Filter
+			Name="Controllers"
+			>
+			<File
+				RelativePath="..\..\src\Controllers\ConveyorBelt.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\ConveyorBelt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\FanRotator.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\FanRotator.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\LogoFader.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\LogoFader.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\SplineCamera.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Controllers\SplineCamera.h"
+				>
+			</File>
+		</Filter>
 		<File
-			RelativePath=".\src\Cursors.cpp"
+			RelativePath="..\..\src\Demo.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Cursors.h"
-			>
-		</File>
-		<File
-			RelativePath=".\src\Sample11.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\src\Sample11.h"
+			RelativePath="..\..\src\Demo.h"
 			>
 		</File>
 	</Files>

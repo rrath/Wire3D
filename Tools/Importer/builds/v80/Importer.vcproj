@@ -4,7 +4,7 @@
 	Version="8,00"
 	Name="Importer"
 	ProjectGUID="{7CCCBC28-0B6B-461A-AE5A-D3991E735862}"
-	RootNamespace="Importer_WIN32"
+	RootNamespace="Importer"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="lib\$(ConfigurationName)"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="2"
@@ -39,7 +39,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\freetype\include;&quot;..\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\freetype\include;&quot;..\..\..\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN;WIN32;_DEBUG;D3D_DEBUG_INFO;WIRE_DEBUG;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -63,7 +63,7 @@
 				Name="VCLibrarianTool"
 				AdditionalDependencies="Wired.lib freetype249_D.lib BulletCollision.lib BulletDynamics.lib LinearMath.lib"
 				OutputFile="$(OutDir)\$(ProjectName)d.lib"
-				AdditionalLibraryDirectories="..\..\Wire\lib\Debug\;..\freetype\objs\win32\vc2005;..\bullet-2.77\lib\Debug"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;;..\..\..\freetype\objs\win32\vc2005;&quot;..\..\..\bullet-2.77\lib\v80\$(ConfigurationName)&quot;"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -83,7 +83,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="lib\$(ConfigurationName)"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="2"
@@ -106,7 +106,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\freetype\include;&quot;..\bullet-2.77\src&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\freetype\include;&quot;..\..\..\bullet-2.77\src&quot;"
 				PreprocessorDefinitions="WIRE_WIN;WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="2"
 				RuntimeTypeInfo="false"
@@ -126,7 +126,7 @@
 			<Tool
 				Name="VCLibrarianTool"
 				AdditionalDependencies="Wire.lib freetype249.lib BulletCollision.lib BulletDynamics.lib LinearMath.lib"
-				AdditionalLibraryDirectories="..\..\Wire\lib\Release\;..\freetype\objs\win32\vc2005;..\bullet-2.77\lib\Release"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;;..\..\..\freetype\objs\win32\vc2005;&quot;..\..\..\bullet-2.77\lib\v80\$(ConfigurationName)&quot;"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -152,35 +152,35 @@
 			Name="Header Files"
 			>
 			<File
-				RelativePath=".\src\CharacterController.h"
+				RelativePath="..\..\src\CharacterController.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\CollisionObjectController.h"
+				RelativePath="..\..\src\CollisionObjectController.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Importer.h"
+				RelativePath="..\..\src\Importer.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PhysicsController.h"
+				RelativePath="..\..\src\PhysicsController.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PhysicsWorld.h"
+				RelativePath="..\..\src\PhysicsWorld.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PicoPNG.h"
+				RelativePath="..\..\src\PicoPNG.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\rapidxml.hpp"
+				RelativePath="..\..\src\rapidxml.hpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\RigidBodyController.h"
+				RelativePath="..\..\src\RigidBodyController.h"
 				>
 			</File>
 		</Filter>
@@ -188,7 +188,7 @@
 			Name="Inline Files"
 			>
 			<File
-				RelativePath=".\src\PhysicsWorld.inl"
+				RelativePath="..\..\src\PhysicsWorld.inl"
 				>
 			</File>
 		</Filter>
@@ -196,31 +196,31 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath=".\src\CharacterController.cpp"
+				RelativePath="..\..\src\CharacterController.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\CollisionObjectController.cpp"
+				RelativePath="..\..\src\CollisionObjectController.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Importer.cpp"
+				RelativePath="..\..\src\Importer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PhysicsController.cpp"
+				RelativePath="..\..\src\PhysicsController.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PhysicsWorld.cpp"
+				RelativePath="..\..\src\PhysicsWorld.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\PicoPNG.cpp"
+				RelativePath="..\..\src\PicoPNG.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\RigidBodyController.cpp"
+				RelativePath="..\..\src\RigidBodyController.cpp"
 				>
 			</File>
 		</Filter>

@@ -65,19 +65,19 @@
 			Name="Header Files"
 			>
 			<File
-				RelativePath=".\src\Elevator.h"
+				RelativePath="..\..\src\Elevator.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Game.h"
+				RelativePath="..\..\src\Game.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Player.h"
+				RelativePath="..\..\src\Player.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\ProbeRobot.h"
+				RelativePath="..\..\src\ProbeRobot.h"
 				>
 			</File>
 		</Filter>
@@ -85,19 +85,19 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath=".\src\Elevator.cpp"
+				RelativePath="..\..\src\Elevator.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Game.cpp"
+				RelativePath="..\..\src\Game.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\Player.cpp"
+				RelativePath="..\..\src\Player.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\ProbeRobot.cpp"
+				RelativePath="..\..\src\ProbeRobot.cpp"
 				>
 			</File>
 		</Filter>

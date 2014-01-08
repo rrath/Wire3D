@@ -65,20 +65,20 @@
 			Name="Lensflare"
 			>
 			<File
-				RelativePath=".\src\LensflareNode.cpp"
+				RelativePath="..\..\src\LensflareNode.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\LensflareNode.h"
+				RelativePath="..\..\src\LensflareNode.h"
 				>
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\src\Sample6.cpp"
+			RelativePath="..\..\src\Sample6.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Sample6.h"
+			RelativePath="..\..\src\Sample6.h"
 			>
 		</File>
 	</Files>

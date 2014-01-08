@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="Sample1 - Basic Rendering"
-	ProjectGUID="{5EF9DCF2-9CD2-4EC6-9E7D-422AC18BE27E}"
-	RootNamespace="Sample1_WIN32"
+	Name="Sample2 - Scene Graph"
+	ProjectGUID="{FCAB5275-8361-4579-9FE8-63BD5F3B854E}"
+	RootNamespace="Sample2"
 	>
 	<Platforms>
 		<Platform
@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -42,7 +42,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN;WIRE_DEBUG"
 				MinimalRebuild="true"
 				ExceptionHandling="0"
@@ -65,8 +65,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wired.lib"
-				OutputFile="Sample1d.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\debug"
+				OutputFile="..\..\Sample2d_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
 				TargetMachine="1"
@@ -82,7 +82,6 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="$(OutDir)/$(TargetFileName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -100,7 +99,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="build\$(ConfigurationName)"
+			OutputDirectory="..\..\"
 			IntermediateDirectory="build\$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="2"
@@ -126,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\..\Wire\Foundation;..\..\Wire\Engine;..\..\Wire\Renderer;..\..\Wire\InputSystem"
+				AdditionalIncludeDirectories="..\..\..\..\Wire\Foundation;..\..\..\..\Wire\Engine;..\..\..\..\Wire\Renderer;..\..\..\..\Wire\InputSystem"
 				PreprocessorDefinitions="WIRE_WIN"
 				ExceptionHandling="0"
 				RuntimeLibrary="2"
@@ -147,14 +146,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Wire.lib"
-				OutputFile="Sample1.exe"
-				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;..\..\Wire\lib\release"
+				OutputFile="..\..\Sample2_v80.exe"
+				AdditionalLibraryDirectories="&quot;$(DXSDK_DIR)\Lib&quot;;&quot;$(DXSDK_DIR)\Lib\x86&quot;;&quot;..\..\..\..\Wire\lib\v80\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)\$(TargetName).pdb"
-				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				EntryPointSymbol="mainCRTStartup"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -168,7 +165,6 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="$(OutDir)/$(TargetFileName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -189,15 +185,11 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\src\Sample1.cpp"
+			RelativePath="..\..\src\Sample2.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Sample1.h"
-			>
-		</File>
-		<File
-			RelativePath=".\src\Sample1.inl"
+			RelativePath="..\..\src\Sample2.h"
 			>
 		</File>
 	</Files>

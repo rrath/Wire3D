@@ -62,19 +62,19 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\src\Cursors.cpp"
+			RelativePath="..\..\src\Cursors.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Cursors.h"
+			RelativePath="..\..\src\Cursors.h"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Sample11.cpp"
+			RelativePath="..\..\src\Sample11.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Sample11.h"
+			RelativePath="..\..\src\Sample11.h"
 			>
 		</File>
 	</Files>

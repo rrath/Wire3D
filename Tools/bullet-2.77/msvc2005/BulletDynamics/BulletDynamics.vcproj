@@ -1,281 +1,395 @@
-<?xml version="1.0" encoding = "Windows-1252"?>
+<?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="8,00"
 	Name="BulletDynamics"
 	ProjectGUID="{BB1EC392-AC70-4F04-9108-7FDDC54E31D4}"
-	Keyword="Win32Proj">
+	Keyword="Win32Proj"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)\"
 			IntermediateDirectory="BulletDynamics.dir\Debug"
 			ConfigurationType="4"
 			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions=" /Zm1000 /fp:fast"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				BasicRuntimeChecks="3"
-				CompileAs="2"
-				DebugInformationFormat="3"
-				EnableEnhancedInstructionSet="1"
-				ExceptionHandling="1"
-				InlineFunctionExpansion="0"
-				Optimization="0"
-				RuntimeLibrary="3"
-				RuntimeTypeInfo="TRUE"
-				WarningLevel="3"
-				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
-				AssemblerListingLocation="Debug"
-				ObjectFile="$(IntDir)\"
-				ProgramDataBaseFileName="..\..\lib\Debug/BulletDynamics.pdb"
-/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(InputName).tlb"
 				OutputDirectory="$(IntDir)"
 				HeaderFileName="$(InputName).h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="$(InputName)_i.c"
-				ProxyFileName="$(InputName)_p.c"/>
+				ProxyFileName="$(InputName)_p.c"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				AdditionalOptions=" /Zm1000 /fp:fast"
+				Optimization="0"
+				InlineFunctionExpansion="0"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
+				ExceptionHandling="1"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				EnableEnhancedInstructionSet="1"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="Debug"
+				ObjectFile="$(IntDir)\"
+				ProgramDataBaseFileName="..\..\lib\v80\$(ConfigurationName)/BulletDynamics.pdb"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WIN32,_DEBUG,_DEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Debug\&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\..\lib\Debug\BulletDynamics.lib"/>
+				OutputFile="..\..\lib\v80\$(ConfigurationName)\BulletDynamics.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
+			OutputDirectory="..\..\lib\v80\$(ConfigurationName)\"
 			IntermediateDirectory="BulletDynamics.dir\Release"
 			ConfigurationType="4"
 			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="FALSE"
-			CharacterSet="2">
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
 			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions=" /Zm1000 /fp:fast"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				CompileAs="2"
-				EnableEnhancedInstructionSet="1"
-				ExceptionHandling="1"
-				InlineFunctionExpansion="2"
-				Optimization="2"
-				RuntimeLibrary="2"
-				RuntimeTypeInfo="TRUE"
-				WarningLevel="3"
-				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
-				AssemblerListingLocation="Release"
-				ObjectFile="$(IntDir)\"
-				ProgramDataBaseFileName="..\..\lib\Release/BulletDynamics.pdb"
-/>
+				Name="VCPreBuildEventTool"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
-				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"/>
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
-				MkTypLibCompatible="FALSE"
+				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				GenerateStublessProxies="TRUE"
+				GenerateStublessProxies="true"
 				TypeLibraryName="$(InputName).tlb"
 				OutputDirectory="$(IntDir)"
 				HeaderFileName="$(InputName).h"
 				DLLDataFileName=""
 				InterfaceIdentifierFileName="$(InputName)_i.c"
-				ProxyFileName="$(InputName)_p.c"/>
+				ProxyFileName="$(InputName)_p.c"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCCLCompilerTool"
+				AdditionalOptions=" /Zm1000 /fp:fast"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
+				ExceptionHandling="1"
+				RuntimeLibrary="2"
+				EnableEnhancedInstructionSet="1"
+				RuntimeTypeInfo="true"
+				AssemblerListingLocation="Release"
+				ObjectFile="$(IntDir)\"
+				ProgramDataBaseFileName="..\..\lib\v80\$(ConfigurationName)/BulletDynamics.pdb"
+				WarningLevel="3"
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="WIN32,NDEBUG,USE_GRAPHICAL_BENCHMARK,_IRR_STATIC_LIB_,_CRT_SECURE_NO_WARNINGS,_CRT_SECURE_NO_DEPRECATE,_SCL_SECURE_NO_WARNINGS,CMAKE_INTDIR=\&quot;Release\&quot;"
+				AdditionalIncludeDirectories="..\..\..\..\Glut;..\..\src;"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\..\lib\Release\BulletDynamics.lib"/>
+				OutputFile="..\..\lib\v80\$(ConfigurationName)\BulletDynamics.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
+	<References>
+	</References>
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="">
+			>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Character\btKinematicCharacterController.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp">
+				RelativePath="..\..\src\BulletDynamics\Character\btKinematicCharacterController.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\Vehicle\btRaycastVehicle.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btRigidBody.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.cpp">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btRigidBody.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\Bullet-C-API.cpp">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Vehicle\btRaycastVehicle.cpp">
+				RelativePath="..\..\src\BulletDynamics\Vehicle\btWheelInfo.cpp"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Vehicle\btWheelInfo.cpp">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\Bullet-C-API.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
-			Filter="">
+			>
 			<File
-				RelativePath="..\..\src\btBulletDynamicsCommon.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btActionInterface.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\btBulletCollisionCommon.h">
+				RelativePath="..\..\src\btBulletCollisionCommon.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h">
+				RelativePath="..\..\src\btBulletDynamicsCommon.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConstraintSolver.h">
+				RelativePath="..\..\src\BulletDynamics\Character\btCharacterControllerInterface.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactSolverInfo.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btConstraintSolver.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btContactSolverInfo.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHingeConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btJacobianEntry.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btDynamicsWorld.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSliderConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHinge2Constraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btHingeConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolverBody.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btJacobianEntry.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolverConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\Character\btKinematicCharacterController.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btTypedConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.h">
+				RelativePath="..\..\src\BulletDynamics\Vehicle\btRaycastVehicle.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btActionInterface.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btRigidBody.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btContinuousDynamicsWorld.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h">
+				RelativePath="..\..\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btDynamicsWorld.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSliderConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Dynamics\btRigidBody.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolverBody.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Vehicle\btRaycastVehicle.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btSolverConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Vehicle\btVehicleRaycaster.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btTypedConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Vehicle\btWheelInfo.h">
+				RelativePath="..\..\src\BulletDynamics\ConstraintSolver\btUniversalConstraint.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Character\btCharacterControllerInterface.h">
+				RelativePath="..\..\src\BulletDynamics\Vehicle\btVehicleRaycaster.h"
+				>
 			</File>
 			<File
-				RelativePath="..\..\src\BulletDynamics\Character\btKinematicCharacterController.h">
+				RelativePath="..\..\src\BulletDynamics\Vehicle\btWheelInfo.h"
+				>
 			</File>
 		</Filter>
 	</Files>
