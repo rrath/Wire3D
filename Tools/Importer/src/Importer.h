@@ -37,6 +37,16 @@ public:
 		Bool CreateInterleavedVertexBuffers;
 	};
 
+	struct SceneOptions
+	{
+		SceneOptions()
+			:
+			Gravity(0, -9.81F, 0)
+			{}
+
+		Wire::Vector3F Gravity;
+	};
+
 	struct Statistics
 	{
 		UInt RenderObjectCount;
@@ -68,6 +78,7 @@ public:
 		UInt height, UInt maxLength = 4000);
 
 	const Statistics* GetStatistics();
+	void ApplySceneOptions(PhysicsWorld* pPhysicsWorld = NULL);
 
 private:
 	static Char* Load(const Char* pFilename, Int& rSize);
@@ -82,10 +93,12 @@ private:
 	Float GetFloat(rapidxml::xml_node<>* pXmlNode, const Char* pName);
 	void GetFloat(rapidxml::xml_node<>* pXmlNode, const Char* pName, Float& rFloat);
 	void GetHex(rapidxml::xml_node<>* pXmlNode, const Char* pName, UInt& rHex);
+	Int GetInt(rapidxml::xml_node<>* pXmlNode, const Char* pName);
 	UInt GetUInt(rapidxml::xml_node<>* pXmlNode, const Char* pName);
 	Bool GetBool(rapidxml::xml_node<>* pXmlNode, const Char* pName);
 	void GetBool(rapidxml::xml_node<>* pXmlNode, const Char* pName, Bool& rBool);
 	Wire::Vector3F GetVector3(rapidxml::xml_node<>* pXmlNode, const Char* pName);
+	void GetVector3(rapidxml::xml_node<>* pXmlNode, const Char* pName, Wire::Vector3F& rV);
 	Wire::ColorRGB GetColorRGB(rapidxml::xml_node<>* pXmlNode,
 		const Char* pName, Bool& rHasValue);
 	Wire::ColorRGBA GetColorRGBA(rapidxml::xml_node<>* pXmlNode,
@@ -95,6 +108,7 @@ private:
 	Bool Is(const Char*, const Char*);
 
 	void ParseAssets(rapidxml::xml_node<>* pXmlNode);
+	void ParseOptions(rapidxml::xml_node<>* pXmlNode);
 	Wire::Node* ParseNode(rapidxml::xml_node<>* pXmlNode, Wire::Node* pParent);
 	Wire::RenderObject* ParseRenderObject(rapidxml::xml_node<>* pXmlNode);
 	Wire::Node* ParseText(rapidxml::xml_node<>* pXmlNode);
@@ -140,6 +154,7 @@ private:
 	Statistics mStatistics;
 	Options mDefaultOptions;
 	Options* mpOptions;
+	SceneOptions mSceneOptions;
 
 #ifndef NO_BULLET_PHYSICS_LIB
 	struct RigidBodyInfo

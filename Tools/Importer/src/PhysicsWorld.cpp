@@ -87,6 +87,19 @@ PhysicsWorld::~PhysicsWorld()
 }
 
 //----------------------------------------------------------------------------
+Vector3F PhysicsWorld::GetGravity()
+{
+	btVector3 btGravity = mpDynamicsWorld->getGravity();
+	return Convert(btGravity);
+}
+
+//----------------------------------------------------------------------------
+void PhysicsWorld::SetGravity(const Vector3F& rGravity)
+{
+	mpDynamicsWorld->setGravity(Convert(rGravity));
+}
+
+//----------------------------------------------------------------------------
 Int PhysicsWorld::StepSimulation(Double deltaTime, Int maxSubSteps,
 	Double fixedTimeStep)
 {

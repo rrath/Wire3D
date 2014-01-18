@@ -378,6 +378,15 @@ RenderText* Importer::CreateText(const Char* pFilename, UInt width, UInt height,
 }
 
 //----------------------------------------------------------------------------
+void Importer::ApplySceneOptions(PhysicsWorld* pPhysicsWorld)
+{
+	if (pPhysicsWorld)
+	{
+		pPhysicsWorld->SetGravity(mSceneOptions.Gravity);
+	}
+}
+
+//----------------------------------------------------------------------------
 Char* Importer::Load(const Char* pFilename, Int& rSize)
 {
 	Char* pBuffer;
@@ -502,13 +511,20 @@ void Importer::ResetStatistics()
 //----------------------------------------------------------------------------
 void Importer::Traverse(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 {
-	if (Is("Assets", pXmlNode->name()))
+	const Char* pXmlName = pXmlNode->name();
+	if (Is("Options", pXmlName))
+	{
+		ParseOptions(pXmlNode);
+		return;
+	}
+
+	if (Is("Assets", pXmlName))
 	{
 		ParseAssets(pXmlNode);
 		return;
 	}
 
-	if (Is("Skybox", pXmlNode->name()))
+	if (Is("Skybox", pXmlName))
 	{
 		NodeSkybox* pSkybox = ParseSkybox(pXmlNode);
 		if (pSkybox)
@@ -519,7 +535,7 @@ void Importer::Traverse(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 		return;
 	}
 
-	if (Is("Text", pXmlNode->name()))
+	if (Is("Text", pXmlName))
 	{
 		Node* pText = ParseText(pXmlNode);
 		if (pText)
@@ -530,7 +546,7 @@ void Importer::Traverse(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 		return;
 	}
 
-	WIRE_ASSERT(Is("Node", pXmlNode->name()));
+	WIRE_ASSERT(Is("Node", pXmlName));
 	Node* pNode = ParseNode(pXmlNode, pParent);
 
 	if (pXmlNode->first_node())
@@ -538,8 +554,9 @@ void Importer::Traverse(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 		for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
 			pChild = pChild->next_sibling())
 		{
-			if (Is("Node", pChild->name()) || Is("Text", pChild->name()) ||
-				Is("Skybox", pChild->name()))
+			const Char* pChildName = pChild->name();
+			if (Is("Node", pChildName) || Is("Text", pChildName) ||
+				Is("Skybox", pChildName))
 			{
 				Traverse(pChild, pNode);
 			}
@@ -659,6 +676,21 @@ void Importer::GetHex(rapidxml::xml_node<>* pXmlNode, const Char* pName,
 }
 
 //----------------------------------------------------------------------------
+Int Importer::GetInt(rapidxml::xml_node<>* pXmlNode, const Char* pName)
+{
+	Char* pUInt = GetValue(pXmlNode, pName);
+	Int i = 0;
+	if (pUInt)
+	{
+		Int n;
+		n = sscanf(pUInt, "%d", &i);
+		WIRE_ASSERT_NO_SIDEEFFECTS(n == 1);
+	}
+
+	return i;
+}
+
+//----------------------------------------------------------------------------
 UInt Importer::GetUInt(rapidxml::xml_node<>* pXmlNode, const Char* pName)
 {
 	Char* pUInt = GetValue(pXmlNode, pName);
@@ -710,6 +742,19 @@ Vector3F Importer::GetVector3(rapidxml::xml_node<>* pXmlNode, const Char*
 	}
 
 	return v;
+}
+
+//----------------------------------------------------------------------------
+void Importer::GetVector3(rapidxml::xml_node<>* pXmlNode, const Char*
+	pName, Vector3F& rV)
+{
+	Char* pCol = GetValue(pXmlNode, pName);
+	if (pCol)
+	{
+		Int n;
+		n = sscanf(pCol, "%f, %f, %f", &rV.X(), &rV.Y(), &rV.Z());
+		WIRE_ASSERT_NO_SIDEEFFECTS(n == 3);
+	}
 }
 
 //----------------------------------------------------------------------------
@@ -769,37 +814,48 @@ void Importer::UpdateWorldTransformation(Spatial* pSpatial)
 }
 
 //----------------------------------------------------------------------------
+void Importer::ParseOptions(rapidxml::xml_node<>* pXmlNode)
+{
+	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
+		pChild = pChild->next_sibling())
+	{
+		const Char* pName = pChild->name();
+		if (Is("Physics", pName))
+		{
+			GetVector3(pChild, "Gravity", mSceneOptions.Gravity);
+		}
+	}
+}
+
+//----------------------------------------------------------------------------
 void Importer::ParseAssets(rapidxml::xml_node<>* pXmlNode)
 {
 	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
 		pChild = pChild->next_sibling())
 	{
-		for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
-			pChild = pChild->next_sibling())
+		const Char* pName = pChild->name();
+		if (Is("Meshes", pName))
 		{
-			if (Is("Meshes", pChild->name()))
+			for (rapidxml::xml_node<>* pMesh = pChild->first_node();
+				pMesh; pMesh = pMesh->next_sibling())
 			{
-				for (rapidxml::xml_node<>* pMesh = pChild->first_node();
-					pMesh; pMesh = pMesh->next_sibling())
-				{
-					ParseMesh(pMesh);
-				}
+				ParseMesh(pMesh);
 			}
-			else if (Is("Materials", pChild->name()))
+		}
+		else if (Is("Materials", pName))
+		{
+			for (rapidxml::xml_node<>* pMaterial = pChild->first_node();
+				pMaterial; pMaterial = pMaterial->next_sibling())
 			{
-				for (rapidxml::xml_node<>* pMaterial = pChild->first_node();
-					pMaterial; pMaterial = pMaterial->next_sibling())
-				{
-					ParseMaterial(pMaterial);
-				}
+				ParseMaterial(pMaterial);
 			}
-			else if (Is("Lights", pChild->name()))
+		}
+		else if (Is("Lights", pName))
+		{
+			for (rapidxml::xml_node<>* pLight = pChild->first_node();
+				pLight; pLight = pLight->next_sibling())
 			{
-				for (rapidxml::xml_node<>* pLight = pChild->first_node();
-					pLight; pLight = pLight->next_sibling())
-				{
-					ParseLight(pLight);
-				}
+				ParseLight(pLight);
 			}
 		}
 	}
@@ -1245,6 +1301,8 @@ void Importer::ParseCamera(rapidxml::xml_node<>* pXmlNode, Spatial* pSpatial)
 	Bool isEnabled = true;
 	GetBool(pXmlNode, "Enabled", isEnabled);
 	pCameraNode->SetEnabled(isEnabled);
+	pCameraNode->SetDepth(GetInt(pXmlNode, "Depth"));
+
 	StaticCast<Node>(pSpatial)->AttachChild(pCameraNode);
 }
 

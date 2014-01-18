@@ -20,6 +20,8 @@ public class Unity3DExporter : EditorWindow
 	private string m2ndTextureName;
 	private string mPath = "../Data/Scene";
 
+    private bool mDebugPushLightsToLeaf = false;
+
     private List<string> mMeshAssetsProcessed;
 	private Dictionary<string, string> mMeshAssetNameToMeshName;
 	private Dictionary<string, int> mMeshNameToCount;
@@ -347,9 +349,12 @@ public class Unity3DExporter : EditorWindow
             extraNode = true;
         }
 
-        foreach (Light light in lights)
+        if (mDebugPushLightsToLeaf)
         {
-            WriteLight(light, outFile, indent);
+            foreach (Light light in lights)
+            {
+                WriteLight(light, outFile, indent);
+            }
         }
 
         if (exportSubmeshes)
@@ -556,7 +561,7 @@ public class Unity3DExporter : EditorWindow
 		WriteNode(transform, outFile, indent);
 	}
 	
-	private void Export ()
+	private void Export()
 	{
 		string[] unityScenePath = EditorApplication.currentScene.Split (char.Parse ("/"));
 		string unitySceneName = unityScenePath[unityScenePath.Length - 1];
@@ -573,12 +578,18 @@ public class Unity3DExporter : EditorWindow
         
 		StreamWriter outFile = new StreamWriter (mPath + unitySceneName + ".xml");
 		try {
+            WriteOptions(outFile);
             WriteAssets(outFile);
 
-            GameObject root = new GameObject(unitySceneName);
-			outFile.WriteLine ("<Node Name=\"" + root.name + "\">");
-			DestroyImmediate (root);
+            outFile.WriteLine("<Node Name=\"" + unitySceneName + "\">");         
 			string indent = "  ";
+            if (!mDebugPushLightsToLeaf)
+            {
+                foreach (Light light in mLightToName.Keys)
+                {
+                    WriteLight(light, outFile, "");
+                }
+            }
 
             WriteStateFog (outFile, indent);
 
@@ -651,6 +662,13 @@ public class Unity3DExporter : EditorWindow
 
         return trafo;
 	}
+
+    private void WriteOptions(StreamWriter outFile)
+    {
+        outFile.WriteLine("<Options>");
+        outFile.WriteLine("  <Physics Gravity=\"" + Physics.gravity.x + ", " + Physics.gravity.y + ", " + Physics.gravity.z + "\" />");
+        outFile.WriteLine("</Options>");
+    }
 
     private void WriteAssets(StreamWriter outFile)
     {
@@ -1101,13 +1119,14 @@ public class Unity3DExporter : EditorWindow
 
         if (left != 0 || right != 1 || bottom != 0 || top != 1)
         {
-            viewport = "Left=\"" + left + "\" Right=\"" + right + "\" Top=\"" + top + "\" Bottom=\"" + bottom + "\" ";
+            viewport = "Left=\"" + left + "\" Right=\"" + right + "\" Top=\"" + top + "\" Bottom=\"" + bottom + "\"";
         }
 
-        string mask = camera.cullingMask == ~0 ? "" : " Mask=\"" + camera.cullingMask.ToString("X") + "\" ";
+        string mask = camera.cullingMask == ~0 ? "" : " Mask=\"" + camera.cullingMask.ToString("X") + "\"";
+        string depth = camera.depth == 0 ? "" : " Depth=\"" + camera.depth + "\"";
 
 		outFile.WriteLine (indent + "  " + "<Camera Fov=\"" + fieldOfView + "\" Near=\"" +
-            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\" " + viewport + mask + "/>");
+            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + depth + mask + " />");
 	}
 
     private string GetMaterialName(Material material, MeshRenderer meshRenderer)

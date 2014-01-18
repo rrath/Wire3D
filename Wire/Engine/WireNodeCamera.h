@@ -46,6 +46,9 @@ public:
 	inline void SetEnabled(Bool enabled);
 	inline Bool IsEnabled() const;
 
+	inline void SetDepth(Int depth);
+	inline Int GetDepth() const;
+
 protected:
 	// geometric updates
 	virtual void UpdateWorldData(Double appTime, Bool updateControllers);
@@ -54,6 +57,7 @@ private:
 	void CameraToLocalTransform();
 	Pointer<Camera> mspCamera;
 
+	Int mDepth;
 	Bool mEnabled;
 };
 

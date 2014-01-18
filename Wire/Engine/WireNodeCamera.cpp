@@ -18,6 +18,7 @@ WIRE_IMPLEMENT_RTTI(Wire, NodeCamera, Node);
 NodeCamera::NodeCamera(Camera* pCamera)
 	:
 	mspCamera(pCamera),
+	mDepth(0),
 	mEnabled(true)
 {
 	CameraToLocalTransform();

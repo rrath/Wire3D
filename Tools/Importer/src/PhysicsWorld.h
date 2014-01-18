@@ -28,6 +28,9 @@ public:
 
 	inline btDynamicsWorld* Get();
 
+	Wire::Vector3F GetGravity();
+	void SetGravity(const Wire::Vector3F& rGravity);
+
 	Int StepSimulation(Double deltaTime, Int maxSubSteps = 1,
 		Double fixedTimeStep = 1.0/60.0);
 

@@ -29,3 +29,15 @@ inline Bool NodeCamera::IsEnabled() const
 {
 	return mEnabled;
 }
+
+//----------------------------------------------------------------------------
+inline void NodeCamera::SetDepth(Int depth)
+{
+	mDepth = depth;
+}
+
+//----------------------------------------------------------------------------
+inline Int NodeCamera::GetDepth() const
+{
+	return mDepth;
+}
