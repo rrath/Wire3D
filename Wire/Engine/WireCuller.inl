@@ -9,6 +9,7 @@
 //----------------------------------------------------------------------------
 inline void Culler::SetCamera(const Camera* pCamera)
 {
+	WIRE_ASSERT(pCamera);
 	mpCamera = pCamera;
 	SetFrustum(mpCamera->GetFrustum());
 }

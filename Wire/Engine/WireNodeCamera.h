@@ -49,6 +49,9 @@ public:
 	inline void SetDepth(Int depth);
 	inline Int GetDepth() const;
 
+	static void Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot, Culler& rCuller,
+		Renderer* pRenderer);
+
 protected:
 	// geometric updates
 	virtual void UpdateWorldData(Double appTime, Bool updateControllers);

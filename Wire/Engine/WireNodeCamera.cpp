@@ -9,6 +9,8 @@
 #include "WireNodeCamera.h"
 
 #include "WireCamera.h"
+#include "WireCuller.h"
+#include "WireRenderer.h"
 
 using namespace Wire;
 
@@ -59,5 +61,24 @@ void NodeCamera::CameraToLocalTransform()
 		Matrix34F matrix(mspCamera->GetDVector(), mspCamera->GetUVector(),
 			mspCamera->GetRVector(), mspCamera->GetLocation());
 		Local.SetMatrix(matrix, false);
+	}
+}
+
+//----------------------------------------------------------------------------
+void NodeCamera::Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot,
+	Culler& rCuller, Renderer* pRenderer)
+{
+	WIRE_ASSERT(pRenderer && pRoot);
+	if (!pRenderer || !pRoot)
+	{
+		return;
+	}
+
+	for (UInt i = 0; i < rCameras.GetQuantity(); i++)
+	{
+		rCuller.SetCamera(rCameras[i]->Get());
+		rCuller.ComputeVisibleSet(pRoot);
+		pRenderer->SetCamera(rCameras[i]->Get());
+		pRenderer->Draw(rCuller.GetVisibleSets());
 	}
 }
