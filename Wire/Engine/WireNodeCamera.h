@@ -51,6 +51,7 @@ public:
 
 	static void Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot, Culler& rCuller,
 		Renderer* pRenderer);
+	static void SortByDepth(TArray<NodeCamera*>& rCameras);
 
 protected:
 	// geometric updates

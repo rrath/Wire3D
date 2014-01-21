@@ -82,3 +82,20 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot,
 		pRenderer->Draw(rCuller.GetVisibleSets());
 	}
 }
+
+//----------------------------------------------------------------------------
+void NodeCamera::SortByDepth(TArray<NodeCamera*>& rCameras)
+{
+	for (UInt i = 0; i < rCameras.GetQuantity()-1; ++i)
+	{
+		for (UInt j = 0; j < rCameras.GetQuantity()-i-1; ++j)
+		{
+			if (rCameras[j]->GetDepth() > rCameras[j+1]->GetDepth()) 
+			{
+				NodeCamera* pTemp = rCameras[j];
+				rCameras[j] = rCameras[j+1];
+				rCameras[j+1] = pTemp;
+			}
+		}
+	}
+}

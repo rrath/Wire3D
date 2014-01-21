@@ -45,17 +45,21 @@ void PdrIndexBuffer::Update(const IndexBuffer* pIndexBuffer)
 void PdrIndexBuffer::Update(const IndexBuffer* pIndexBuffer, UInt count,
 	UInt offset)
 {
-	WIRE_ASSERT(offset+count <= pIndexBuffer->GetQuantity());
-	WIRE_ASSERT((mBufferSize/sizeof(UShort)) == pIndexBuffer->GetQuantity());
+	WIRE_ASSERT(pIndexBuffer);
+	WIRE_ASSERT((offset+count) <= pIndexBuffer->GetQuantity());
+
+	const UInt indexSize = sizeof(UShort);
+	WIRE_ASSERT(mBufferSize == (indexSize * pIndexBuffer->GetQuantity()));
 
 	Buffer::LockingMode lockingMode = pIndexBuffer->GetUsage() ==
 		Buffer::UT_STATIC ? Buffer::LM_READ_WRITE : Buffer::LM_WRITE_ONLY;
-	UShort* pBuffer = reinterpret_cast<UShort*>(Lock(lockingMode)) + offset;
+	const UInt rawOffset = offset * indexSize;
+	size_t size = count * indexSize;
+	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
 
-	size_t size = count * sizeof(UShort);
+	void* pBuffer = Lock(lockingMode, size, rawOffset);
 	const UShort* pDst = pIndexBuffer->GetData() + offset;
 	System::Memcpy(pBuffer, size, pDst, size);
-
 	Unlock();
 }
 

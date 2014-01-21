@@ -65,10 +65,10 @@ void PdrVertexBuffer::Update(const VertexBuffer* pVertexBuffer, UInt count,
 	WIRE_ASSERT(vertexSize > 0);
 	WIRE_ASSERT(mBufferSize == (vertexSize * pVertexBuffer->GetQuantity()));
 	const UInt rawOffset = offset * vertexSize;
-
-	UChar* pBuffer = reinterpret_cast<UChar*>(Lock(Buffer::LM_WRITE_ONLY)) +
-		rawOffset;
 	size_t size = count * vertexSize;
+	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
+
+	void* pBuffer = Lock(Buffer::LM_WRITE_ONLY, size, rawOffset);
 	const UChar* pDst = reinterpret_cast<const UChar*>(pVertexBuffer->
 		GetData()) + rawOffset;
 	System::Memcpy(pBuffer, size, pDst, size);

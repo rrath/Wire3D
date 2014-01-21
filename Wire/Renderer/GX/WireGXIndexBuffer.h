@@ -33,7 +33,8 @@ public:
 	inline void Enable(Renderer* pRenderer);
 	inline void Disable(Renderer* pRenderer);
 
-	inline void* Lock(Buffer::LockingMode mode);
+	inline void* Lock(Buffer::LockingMode mode, UInt sizeToLock = 0,
+		UInt offsetToLock = 0);
 	inline void Unlock();
 
 	void Update(const IndexBuffer* pIndexBuffer);

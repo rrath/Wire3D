@@ -27,12 +27,13 @@ inline void PdrVertexBuffer::Disable(Renderer* pRenderer, UInt streamIndex)
 }
 
 //----------------------------------------------------------------------------
-void* PdrVertexBuffer::Lock(Buffer::LockingMode mode)
+void* PdrVertexBuffer::Lock(Buffer::LockingMode mode, UInt sizeToLock,
+	UInt offsetToLock)
 {
 	void* pBuffer = NULL;
 	HRESULT hr;
-	hr = mpBuffer->Lock(0, 0, &pBuffer,
-		PdrRendererData::BUFFER_LOCKING[mode]);
+	hr = mpBuffer->Lock(offsetToLock, sizeToLock, &pBuffer,	PdrRendererData::
+		BUFFER_LOCKING[mode]);
 	WIRE_ASSERT(SUCCEEDED(hr));
 	return pBuffer;
 }

@@ -21,9 +21,10 @@ inline void PdrIndexBuffer::Disable(Renderer* pRenderer)
 }
 
 //----------------------------------------------------------------------------
-inline void* PdrIndexBuffer::Lock(Buffer::LockingMode)
+inline void* PdrIndexBuffer::Lock(Buffer::LockingMode, UInt,
+	UInt offsetToLock)
 {
-	return mpBuffer;
+	return reinterpret_cast<UChar*>(mpBuffer) + offsetToLock;
 }
 
 //----------------------------------------------------------------------------

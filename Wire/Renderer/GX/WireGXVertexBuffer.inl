@@ -12,14 +12,16 @@ inline void PdrVertexBuffer::Disable(Renderer*, UInt)
 }
 
 //----------------------------------------------------------------------------
-inline void* PdrVertexBuffer::Lock(Buffer::LockingMode)
+inline void* PdrVertexBuffer::Lock(Buffer::LockingMode, UInt,
+	UInt offsetToLock)
 {
-	return mpBuffer;
+	return reinterpret_cast<UChar*>(mpBuffer) + offsetToLock;
 }
 
 //----------------------------------------------------------------------------
 inline void PdrVertexBuffer::Unlock()
 {
+	// TODO: only apply to locked size and offset
 	DCStoreRange(mpBuffer, mBufferSize);
 }
 
