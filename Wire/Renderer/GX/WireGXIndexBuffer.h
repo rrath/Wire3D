@@ -33,7 +33,7 @@ public:
 	inline void Enable(Renderer* pRenderer);
 	inline void Disable(Renderer* pRenderer);
 
-	inline void* Lock(Buffer::LockingMode mode, UInt sizeToLock = 0,
+	inline void* Lock(Buffer::LockingMode mode, UInt sizeToLock,
 		UInt offsetToLock = 0);
 	inline void Unlock();
 

@@ -1119,7 +1119,7 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 	Transformation*	const pTransformations[], UInt min, UInt max)
 {
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY);
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
 
 	UInt maxIndex = 0;
 	UShort minIndex = System::MAX_USHORT;
@@ -1168,7 +1168,7 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 			SetTransformation(Transformation::IDENTITY, pVisible[min]->
 				GetMesh()->HasNormal(), mspVertexShader);
 			DrawBatch(pIBPdr, maxIndex-minIndex+1, batchedIndexCount, minIndex);
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY);
+			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
 
 			maxIndex = 0;
 			minIndex = System::MAX_USHORT;
@@ -1203,14 +1203,14 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 	Transformation*	const pTransformations[], UInt min, UInt max)
 {
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY);
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
 
 	const UInt vbCount = pVisible[min]->GetMesh()->GetVertexBuffers().
 		GetQuantity();
 	for (UInt i = 0; i < vbCount; i++)
 	{
 		mRawBatchedVertexBuffers[i] = mBatchedVertexBuffers[i]->Lock(
-			Buffer::LM_WRITE_ONLY);
+			Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[i]->GetBufferSize());
 	}
 
 	UShort batchedVertexCount = 0;
@@ -1271,11 +1271,11 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 			DrawDynamicBatch(pVisible[min]->GetMesh(), pIBPdr,
 				mBatchedVertexBuffers, batchedVertexCount, batchedIndexCount);
 
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY);
+			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
 			for (UInt j = 0; j < vbCount; j++)
 			{
 				mRawBatchedVertexBuffers[j] = mBatchedVertexBuffers[j]->Lock(
-					Buffer::LM_WRITE_ONLY);
+					Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[j]->GetBufferSize());
 			}
 
 			batchedVertexCount = 0;
