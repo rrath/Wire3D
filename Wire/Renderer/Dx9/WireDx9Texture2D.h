@@ -32,7 +32,7 @@ public:
 	void* Lock(Buffer::LockingMode mode, UInt level = 0);
 	void Unlock(UInt level = 0);
 
-	inline UInt GetBufferSize() const { return mBufferSize; }
+	inline UInt GetSize() const { return mSize; }
 
 	static Bool IsTextureFormatSupported(Renderer* pRenderer, Image2D::
 		FormatMode format);
@@ -42,7 +42,7 @@ private:
 
 	friend class PdrRenderTarget; // requires access to render target texture
 	IDirect3DTexture9* mpBuffer;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 }

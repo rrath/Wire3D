@@ -21,7 +21,7 @@ PdrRenderTarget::PdrRenderTarget(Renderer* pRenderer, const RenderTarget*
 	:
 	mpDepthStencilTexture(NULL),
 	mpDepthStencilSurface(NULL),
-	mBufferSize(0),
+	mSize(0),
 	mpSaveColorSurface(NULL),
 	mpSaveDepthStencilSurface(NULL)
 {
@@ -57,7 +57,7 @@ PdrRenderTarget::PdrRenderTarget(Renderer* pRenderer, const RenderTarget*
 
 		mColorTextures.Append(pPdrTexture->mpBuffer);
 		mColorTextures[i]->AddRef();
-		mBufferSize += pPdrTexture->GetBufferSize();
+		mSize += pPdrTexture->GetSize();
 
 		IDirect3DSurface9* pSurface;
  		hr = mColorTextures[i]->GetSurfaceLevel(0, &pSurface);
@@ -82,7 +82,7 @@ PdrRenderTarget::PdrRenderTarget(Renderer* pRenderer, const RenderTarget*
 
 		mpDepthStencilTexture = pPdrTexture->mpBuffer;
 		mpDepthStencilTexture->AddRef();
-		mBufferSize += pPdrTexture->GetBufferSize();
+		mSize += pPdrTexture->GetSize();
 
 		hr = mpDepthStencilTexture->GetSurfaceLevel(0, &mpDepthStencilSurface);
 		WIRE_ASSERT(SUCCEEDED(hr));

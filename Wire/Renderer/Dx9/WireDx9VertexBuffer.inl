@@ -47,7 +47,7 @@ inline void PdrVertexBuffer::Unlock()
 }
 
 //----------------------------------------------------------------------------
-inline UInt PdrVertexBuffer::GetBufferSize() const
+inline UInt PdrVertexBuffer::GetSize() const
 {
-	return mBufferSize;
+	return mSize;
 }

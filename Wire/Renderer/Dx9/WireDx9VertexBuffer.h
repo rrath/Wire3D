@@ -40,14 +40,14 @@ public:
  	void Update(const VertexBuffer* pVertexBuffer, UInt count,
 		UInt offset = 0);
 
-	inline UInt GetBufferSize() const;
+	inline UInt GetSize() const;
 
 private:
 	void CreateBuffer(Renderer* pRenderer, UInt size, Buffer::UsageType
 		usage);
 
 	IDirect3DVertexBuffer9* mpBuffer;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 #include "WireDx9VertexBuffer.inl"

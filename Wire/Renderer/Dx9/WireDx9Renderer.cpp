@@ -644,14 +644,14 @@ void Renderer::ResetDevice()
 	UInt batchingIBOSize = 0;
 	if (mBatchedIndexBuffer)
 	{
-		batchingIBOSize = mBatchedIndexBuffer->GetBufferSize();
+		batchingIBOSize = mBatchedIndexBuffer->GetSize();
 	}
 
 	const UInt maxVertexStreamsToBatch = mBatchedVertexBuffers.GetQuantity();
 	UInt batchingVBOSize = 0;
 	if (mBatchedVertexBuffers.GetQuantity() > 0)
 	{
-		batchingVBOSize = mBatchedVertexBuffers[0]->GetBufferSize();
+		batchingVBOSize = mBatchedVertexBuffers[0]->GetSize();
 	}
 
 	DestroyBatchingBuffers();

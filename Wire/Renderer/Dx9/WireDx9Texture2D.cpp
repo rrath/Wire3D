@@ -164,7 +164,7 @@ PdrTexture2D::PdrTexture2D(Renderer* pRenderer, const Image2D* pImage)
 		PdrRendererData::IMAGE2D_FORMAT[format], pool, &mpBuffer, NULL);
 	WIRE_ASSERT(SUCCEEDED(hr));
 
-	mBufferSize = 0;
+	mSize = 0;
 
 	if (pDst)
 	{
@@ -180,7 +180,7 @@ PdrTexture2D::PdrTexture2D(Renderer* pRenderer, const Image2D* pImage)
 				GetBytesPerPixel();
 			System::Memcpy(pData, size, pDst + offset * bpp, size);
 			Unlock(level);
-			mBufferSize += size;
+			mSize += size;
 		}
 	}
 
@@ -420,7 +420,7 @@ void PdrTexture2D::CreateRenderTarget(Renderer* pRenderer, const Image2D*
 	WIRE_ASSERT(height <= pRenderer->GetMaxTextureHeight());
 
 	const Image2D::FormatMode format = pImage->GetFormat();
-	mBufferSize = width*height*Image2D::GetBytesPerPixel(format);
+	mSize = width*height*Image2D::GetBytesPerPixel(format);
 	if (format == Image2D::FM_D24S8)
 	{
 		hr = rDevice->CreateTexture(width, height, 1, D3DUSAGE_DEPTHSTENCIL,
@@ -447,7 +447,7 @@ void PdrTexture2D::CreateRenderTarget(Renderer* pRenderer, const Image2D*
 
 		if (levels == 0)
 		{
-			mBufferSize = Image2D::GetTotalQuantity(width, height) *
+			mSize = Image2D::GetTotalQuantity(width, height) *
 				Image2D::GetBytesPerPixel(format);
 		}
 	}

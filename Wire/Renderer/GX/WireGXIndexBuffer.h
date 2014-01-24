@@ -40,7 +40,7 @@ public:
 	void Update(const IndexBuffer* pIndexBuffer);
 	void Update(const IndexBuffer* pIndexBuffer, UInt count, UInt offset = 0);
 
-	inline UInt GetBufferSize() const;
+	inline UInt GetSize() const;
 
 	inline UShort* GetBuffer();
 	inline const UShort* GetBuffer() const;
@@ -50,7 +50,7 @@ private:
 		usage);
 
 	UShort* mpBuffer;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 #include "WireGXIndexBuffer.inl"

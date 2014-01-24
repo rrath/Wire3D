@@ -22,11 +22,11 @@ inline void* PdrVertexBuffer::Lock(Buffer::LockingMode, UInt,
 inline void PdrVertexBuffer::Unlock()
 {
 	// TODO: only apply to locked size and offset
-	DCStoreRange(mpBuffer, mBufferSize);
+	DCStoreRange(mpBuffer, mSize);
 }
 
 //----------------------------------------------------------------------------
-inline UInt PdrVertexBuffer::GetBufferSize() const
+inline UInt PdrVertexBuffer::GetSize() const
 {
-	return mBufferSize;
+	return mSize;
 }

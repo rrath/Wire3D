@@ -43,7 +43,7 @@ inline void PdrIndexBuffer::Unlock()
 }
 
 //----------------------------------------------------------------------------
-inline UInt PdrIndexBuffer::GetBufferSize() const
+inline UInt PdrIndexBuffer::GetSize() const
 {
-	return mBufferSize;
+	return mSize;
 }

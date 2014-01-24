@@ -40,8 +40,8 @@ PdrIndexBuffer::~PdrIndexBuffer()
 void PdrIndexBuffer::CreateBuffer(Renderer* pRenderer, UInt size,
 	Buffer::UsageType usage)
 {
-	mBufferSize = size;
-	mpBuffer = reinterpret_cast<UShort*>(memalign(32, mBufferSize));
+	mSize = size;
+	mpBuffer = reinterpret_cast<UShort*>(memalign(32, mSize));
 	WIRE_ASSERT(mpBuffer);
 }
 
@@ -60,10 +60,10 @@ void PdrIndexBuffer::Update(const IndexBuffer* pIndexBuffer, UInt count,
 	WIRE_ASSERT((offset + count) <= pIndexBuffer->GetQuantity());
 
 	const UInt indexSize = sizeof(UShort);
-	WIRE_ASSERT(mBufferSize == (indexSize * pIndexBuffer->GetQuantity()));
+	WIRE_ASSERT(mSize == (indexSize * pIndexBuffer->GetQuantity()));
 	const UInt rawOffset = offset * indexSize;
 	size_t size = count * indexSize;
-	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
+	WIRE_ASSERT(mSize >= (size + rawOffset));
 
 	void* pBuffer = Lock(Buffer::LM_WRITE_ONLY, size, rawOffset);
 	System::Memcpy(pBuffer, size, (pIndexBuffer->GetData()+offset), size);

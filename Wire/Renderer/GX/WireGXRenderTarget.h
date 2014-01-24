@@ -28,7 +28,7 @@ public:
 	inline void Enable(Renderer* pRenderer) {}
 	inline void Disable(Renderer* pRenderer) {}
 	Image2D* ReadColor(UInt i, Renderer* pRenderer);
-	inline UInt GetBufferSize() { return 0; }
+	inline UInt GetSize() { return 0; }
 
 private:
 	Image2D::FormatMode mFormat;

@@ -21,19 +21,19 @@ PdrDisplayList::PdrDisplayList(PdrRendererData* pRendererData,
 {
 	// Note that the display-list buffer area must be forced out of
 	// the CPU cache since it will be written using the write-gather pipe
-	mBufferSize = ((8 + indexCount * rElements.GetQuantity()*2) &
+	mSize = ((8 + indexCount * rElements.GetQuantity()*2) &
 		0xFFFFFFE0) + 64 ;
-	mpData = memalign(32, mBufferSize);
+	mpData = memalign(32, mSize);
 	WIRE_ASSERT(mpData);
-	DCInvalidateRange(mpData, mBufferSize);
+	DCInvalidateRange(mpData, mSize);
 
-	GXBeginDisplayList(mpData, mBufferSize);
+	GXBeginDisplayList(mpData, mSize);
 	pRendererData->Draw(rElements, rIBuffer.GetBuffer(), indexCount,
 		startIndex);
-	mSize = GXEndDisplayList();
-	WIRE_ASSERT(mSize && mSize <= mBufferSize);
+	mDisplayListSize = GXEndDisplayList();
+	WIRE_ASSERT(mDisplayListSize && mDisplayListSize <= mSize);
 
-	DCFlushRange(mpData, mBufferSize);
+	DCFlushRange(mpData, mSize);
 }
 
 //----------------------------------------------------------------------------

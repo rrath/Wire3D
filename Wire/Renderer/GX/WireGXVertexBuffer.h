@@ -37,14 +37,14 @@ public:
 	void Update(const VertexBuffer* pVertexBuffer, UInt count,
 		UInt offset = 0);
 
-	inline UInt GetBufferSize() const;
+	inline UInt GetSize() const;
 
 private:
 	void CreateBuffer(Renderer* pRenderer, UInt size, Buffer::UsageType
 		usage);
 
 	void* mpBuffer;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 #include "WireGXVertexBuffer.inl"

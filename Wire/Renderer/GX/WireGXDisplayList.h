@@ -29,12 +29,12 @@ public:
 
 	inline void Draw();
 
-	inline UInt GetBufferSize() const;
+	inline UInt GetSize() const;
 
 private:
 	void* mpData;
+	UInt mDisplayListSize;
 	UInt mSize;
-	UInt mBufferSize;
 };
 
 typedef Pointer<PdrDisplayList> PdrDisplayListPtr;

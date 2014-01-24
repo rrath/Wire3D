@@ -49,9 +49,9 @@ PdrTexture2D::PdrTexture2D(Renderer* pRenderer, const Image2D* pImage)
 
 	UInt bpp = pImage->GetBytesPerPixel();
 	bpp = (bpp == 3) ? 4 : bpp;
-	mBufferSize = PdrRendererData::GetTotalImageMemory(pImage, bpp);
+	mSize = PdrRendererData::GetTotalImageMemory(pImage, bpp);
 
-	mpBuffer = memalign(32, mBufferSize);
+	mpBuffer = memalign(32, mSize);
 	UChar* pDst = static_cast<UChar*>(mpBuffer);
 	WIRE_ASSERT(pDst);
 	Image2D::FormatMode format = pImage->GetFormat();
@@ -102,7 +102,7 @@ PdrTexture2D::PdrTexture2D(Renderer* pRenderer, const Image2D* pImage)
 		}
 	}
 
-	DCStoreRange(mpBuffer, mBufferSize);
+	DCStoreRange(mpBuffer, mSize);
 	GXInvalidateTexAll();
 
 	const UShort width = pImage->GetBound(0);

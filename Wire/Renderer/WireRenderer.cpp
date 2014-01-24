@@ -1119,7 +1119,7 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 	Transformation*	const pTransformations[], UInt min, UInt max)
 {
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
 
 	UInt maxIndex = 0;
 	UShort minIndex = System::MAX_USHORT;
@@ -1150,7 +1150,7 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 		const UInt ibSize = pMesh->GetIndexCount() * sizeof(UShort);
 
 		Bool exceedsBuffer = (ibSize+batchedIndexCount*sizeof(UShort)) >
-			mBatchedIndexBuffer->GetBufferSize();
+			mBatchedIndexBuffer->GetSize();
 
 		if (exceedsBuffer)
 		{
@@ -1168,7 +1168,7 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 			SetTransformation(Transformation::IDENTITY, pVisible[min]->
 				GetMesh()->HasNormal(), mspVertexShader);
 			DrawBatch(pIBPdr, maxIndex-minIndex+1, batchedIndexCount, minIndex);
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
+			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
 
 			maxIndex = 0;
 			minIndex = System::MAX_USHORT;
@@ -1203,14 +1203,14 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 	Transformation*	const pTransformations[], UInt min, UInt max)
 {
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
 
 	const UInt vbCount = pVisible[min]->GetMesh()->GetVertexBuffers().
 		GetQuantity();
 	for (UInt i = 0; i < vbCount; i++)
 	{
 		mRawBatchedVertexBuffers[i] = mBatchedVertexBuffers[i]->Lock(
-			Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[i]->GetBufferSize());
+			Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[i]->GetSize());
 	}
 
 	UShort batchedVertexCount = 0;
@@ -1242,7 +1242,7 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 		const UInt ibSize = pMesh->GetIndexCount() * sizeof(UShort);
 
 		Bool exceedsBuffer = (ibSize+batchedIndexCount*sizeof(UShort)) >
-			mBatchedIndexBuffer->GetBufferSize() ||
+			mBatchedIndexBuffer->GetSize() ||
 			(batchedVertexCount + vertexCount > 0xFFFF);
 		for (UInt j = 0; (j < vbCount) && !exceedsBuffer; j++)
 		{
@@ -1250,7 +1250,7 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 			UInt vertexSize = pVertexBuffer->GetAttributes().GetVertexSize();
 			UInt vbSize = (vertexCount+batchedVertexCount) * vertexSize;
 			exceedsBuffer = exceedsBuffer ||
-				vbSize > mBatchedVertexBuffers[j]->GetBufferSize();
+				vbSize > mBatchedVertexBuffers[j]->GetSize();
 		}
 
 		if (exceedsBuffer)
@@ -1271,11 +1271,11 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 			DrawDynamicBatch(pVisible[min]->GetMesh(), pIBPdr,
 				mBatchedVertexBuffers, batchedVertexCount, batchedIndexCount);
 
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetBufferSize());
+			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
 			for (UInt j = 0; j < vbCount; j++)
 			{
 				mRawBatchedVertexBuffers[j] = mBatchedVertexBuffers[j]->Lock(
-					Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[j]->GetBufferSize());
+					Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[j]->GetSize());
 			}
 
 			batchedVertexCount = 0;
@@ -1666,8 +1666,8 @@ void Renderer::CreateBatchingBuffers(UInt iboSize, UInt vboSize,
 	mBatchedIndexBuffer = WIRE_NEW PdrIndexBuffer(this, iboSize, Buffer::
 		UT_DYNAMIC_WRITE_ONLY);
 	mStatistics.mIBOCount++;
-	mStatistics.mIBOsSize += mBatchedIndexBuffer->GetBufferSize();
-	mStatistics.mBatchIBOSize = mBatchedIndexBuffer->GetBufferSize();
+	mStatistics.mIBOsSize += mBatchedIndexBuffer->GetSize();
+	mStatistics.mBatchIBOSize = mBatchedIndexBuffer->GetSize();
 
 	if (maxVertexStreams > mVertexBuffers.GetQuantity())
 	{
@@ -1682,7 +1682,7 @@ void Renderer::CreateBatchingBuffers(UInt iboSize, UInt vboSize,
 		{
 			mBatchedVertexBuffers[i] =  WIRE_NEW PdrVertexBuffer(this,
 				vboSize, Buffer::UT_DYNAMIC_WRITE_ONLY);
-			const UInt bufferSize = mBatchedVertexBuffers[i]->GetBufferSize();
+			const UInt bufferSize = mBatchedVertexBuffers[i]->GetSize();
 			mStatistics.mVBOCount++;
 			mStatistics.mVBOsSize += bufferSize;
 			mStatistics.mBatchVBOCount++;
@@ -1697,7 +1697,7 @@ void Renderer::DestroyBatchingBuffers()
 	if (mBatchedIndexBuffer)
 	{
 		mStatistics.mIBOCount--;
-		mStatistics.mIBOsSize -= mBatchedIndexBuffer->GetBufferSize();
+		mStatistics.mIBOsSize -= mBatchedIndexBuffer->GetSize();
 		mStatistics.mBatchIBOSize = 0;
 		WIRE_DELETE mBatchedIndexBuffer;
 		mBatchedIndexBuffer = NULL;
@@ -1705,7 +1705,7 @@ void Renderer::DestroyBatchingBuffers()
 
 	for (UInt i = 0; i < mBatchedVertexBuffers.GetQuantity(); i++)
 	{
-		const UInt bufferSize = mBatchedVertexBuffers[i]->GetBufferSize();
+		const UInt bufferSize = mBatchedVertexBuffers[i]->GetSize();
 		mStatistics.mVBOCount--;
 		mStatistics.mVBOsSize -= bufferSize;
 		mStatistics.mBatchVBOCount--;

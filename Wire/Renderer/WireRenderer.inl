@@ -97,7 +97,7 @@ inline Bool Renderer::Bind(const Resource* pResource, THashTable<const
 
 		if (pSize)
 		{
-			(*pSize) += pPdrResource->GetBufferSize();
+			(*pSize) += pPdrResource->GetSize();
 		}
 
 		return true;
@@ -122,7 +122,7 @@ inline void Renderer::Unbind(const Resource* pResource, THashTable<const
 
 		if (pSize)
 		{
-			(*pSize) -= (*pValue)->GetBufferSize();
+			(*pSize) -= (*pValue)->GetSize();
 		}
 
 		WIRE_DELETE *pValue;

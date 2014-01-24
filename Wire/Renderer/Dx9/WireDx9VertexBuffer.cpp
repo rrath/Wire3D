@@ -43,12 +43,12 @@ PdrVertexBuffer::~PdrVertexBuffer()
 void PdrVertexBuffer::CreateBuffer(Renderer* pRenderer, UInt size,
 	Buffer::UsageType usage)
 {
-	mBufferSize = size;
+	mSize = size;
 	const DWORD d3dUsage = PdrRendererData::USAGES[usage];
 	const D3DPOOL pool = PdrRendererData::POOLS[usage];
 	IDirect3DDevice9*& rDevice = pRenderer->GetRendererData()->D3DDevice;
 	HRESULT hr;
-	hr = rDevice->CreateVertexBuffer(mBufferSize, d3dUsage, 0, pool,
+	hr = rDevice->CreateVertexBuffer(mSize, d3dUsage, 0, pool,
 		&mpBuffer, NULL);
 	WIRE_ASSERT(SUCCEEDED(hr));
 }
@@ -68,13 +68,13 @@ void PdrVertexBuffer::Update(const VertexBuffer* pVertexBuffer, UInt count,
 
 	const UInt vertexSize = pVertexBuffer->GetAttributes().GetVertexSize();
 	WIRE_ASSERT(vertexSize > 0);
-	WIRE_ASSERT(mBufferSize == (vertexSize * pVertexBuffer->GetQuantity()));
+	WIRE_ASSERT(mSize == (vertexSize * pVertexBuffer->GetQuantity()));
 
 	Buffer::LockingMode lockingMode = pVertexBuffer->GetUsage() ==
 		Buffer::UT_STATIC ? Buffer::LM_READ_WRITE : Buffer::LM_WRITE_ONLY;
 	const UInt rawOffset = offset * vertexSize;
 	size_t size = count * vertexSize;
-	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
+	WIRE_ASSERT(mSize >= (size + rawOffset));
 
 	void* pBuffer = Lock(lockingMode, size, rawOffset);
 	const UChar* pDst = reinterpret_cast<const UChar*>(pVertexBuffer->

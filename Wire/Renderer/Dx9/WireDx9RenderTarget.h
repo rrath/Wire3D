@@ -32,7 +32,7 @@ public:
 	void Enable(Renderer* pRenderer);
 	void Disable(Renderer* pRenderer);
 	Image2D* ReadColor(UInt i, Renderer* pRenderer);
-	inline UInt GetBufferSize() { return mBufferSize; }
+	inline UInt GetSize() { return mSize; }
 
 private:
 	Bool IsDepthFormatSupported(Renderer* pRenderer) const;
@@ -47,7 +47,7 @@ private:
 	IDirect3DTexture9* mpDepthStencilTexture;
 	IDirect3DSurface9* mpDepthStencilSurface;
 
-	UInt mBufferSize;
+	UInt mSize;
 
 	// save/restore the render target 0, i.e. the backbuffer
 	IDirect3DSurface9* mpSaveColorSurface;

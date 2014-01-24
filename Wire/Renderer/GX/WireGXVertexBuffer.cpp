@@ -43,8 +43,8 @@ PdrVertexBuffer::~PdrVertexBuffer()
 void PdrVertexBuffer::CreateBuffer(Renderer*, UInt size,
 	Buffer::UsageType usage)
 {
-	mBufferSize = size;
-	mpBuffer = memalign(32, mBufferSize);
+	mSize = size;
+	mpBuffer = memalign(32, mSize);
 	WIRE_ASSERT(mpBuffer);
 }
 
@@ -63,10 +63,10 @@ void PdrVertexBuffer::Update(const VertexBuffer* pVertexBuffer, UInt count,
 
 	const UInt vertexSize = pVertexBuffer->GetAttributes().GetVertexSize();
 	WIRE_ASSERT(vertexSize > 0);
-	WIRE_ASSERT(mBufferSize == (vertexSize * pVertexBuffer->GetQuantity()));
+	WIRE_ASSERT(mSize == (vertexSize * pVertexBuffer->GetQuantity()));
 	const UInt rawOffset = offset * vertexSize;
 	size_t size = count * vertexSize;
-	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
+	WIRE_ASSERT(mSize >= (size + rawOffset));
 
 	void* pBuffer = Lock(Buffer::LM_WRITE_ONLY, size, rawOffset);
 	const UChar* pDst = reinterpret_cast<const UChar*>(pVertexBuffer->

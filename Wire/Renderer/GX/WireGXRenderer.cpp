@@ -224,7 +224,7 @@ void Renderer::Bind(const Mesh* pMesh)
 			mpData->DisplayListMap.Insert(pMesh, pDisplayList);
 			mpData->Statistics.DisplayListCount++;
 			mpData->Statistics.DisplayListsSize += pDisplayList->
-				GetBufferSize();
+				GetSize();
 		}
 	}
 }
@@ -237,7 +237,7 @@ void Renderer::Unbind(const Mesh* pMesh)
 	if (pValue)
 	{
 		mpData->Statistics.DisplayListCount--;
-		mpData->Statistics.DisplayListsSize -= (*pValue)->GetBufferSize();
+		mpData->Statistics.DisplayListsSize -= (*pValue)->GetSize();
 		WIRE_DELETE *pValue;
 		mpData->DisplayListMap.Remove(pMesh);
 	}
@@ -361,8 +361,7 @@ void Renderer::DrawElements(UInt vertexCount, UInt indexCount,
 				indexCount, startIndex, rDeclaration);
 			mpData->DisplayListMap.Insert(mspMesh, pDisplayList);
 			mpData->Statistics.DisplayListCount++;
-			mpData->Statistics.DisplayListsSize += pDisplayList->
-				GetBufferSize();
+			mpData->Statistics.DisplayListsSize += pDisplayList->GetSize();
 		}
 
 		if (pDisplayList && isStatic)
@@ -375,8 +374,7 @@ void Renderer::DrawElements(UInt vertexCount, UInt indexCount,
 			if (pDisplayList)
 			{
 				mpData->Statistics.DisplayListCount--;
-				mpData->Statistics.DisplayListsSize -= pDisplayList->
-					GetBufferSize();
+				mpData->Statistics.DisplayListsSize -= pDisplayList->GetSize();
 				WIRE_DELETE pDisplayList;
 				mpData->DisplayListMap.Remove(mspMesh);
 			}

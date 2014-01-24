@@ -40,14 +40,14 @@ public:
 	void Update(const IndexBuffer* pIndexBuffer);
 	void Update(const IndexBuffer* pIndexBuffer, UInt count, UInt offset = 0);
 
-	inline UInt GetBufferSize() const;
+	inline UInt GetSize() const;
 
 private:
 	void CreateBuffer(Renderer* pRenderer, UInt size, Buffer::UsageType
 		usage);
 
 	IDirect3DIndexBuffer9* mpBuffer;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 #include "WireDx9IndexBuffer.inl"

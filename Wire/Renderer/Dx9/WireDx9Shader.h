@@ -28,7 +28,7 @@ public:
 
 	void Enable(Renderer* pRenderer);
 	void Disable(Renderer* pRenderer);
-	UInt GetBufferSize() { return 0; }
+	UInt GetSize() { return 0; }
 
 	void SetBuiltInVariables(Renderer* pRenderer);
 	void SetMatrix(Renderer* pRenderer, const Char* pName,

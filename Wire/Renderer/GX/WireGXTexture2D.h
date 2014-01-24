@@ -29,12 +29,12 @@ public:
  	void Enable(Renderer* pRenderer, const Texture2D* pTexture, UInt unit);
  	void Disable(Renderer* pRenderer, UInt unit);
 
-	inline UInt GetBufferSize() const { return mBufferSize; }
+	inline UInt GetSize() const { return mSize; }
 
 private:
 	void* mpBuffer;
 	GXTexObj mTexObj;
-	UInt mBufferSize;
+	UInt mSize;
 };
 
 }

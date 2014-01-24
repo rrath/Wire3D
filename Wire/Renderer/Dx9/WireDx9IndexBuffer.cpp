@@ -49,13 +49,13 @@ void PdrIndexBuffer::Update(const IndexBuffer* pIndexBuffer, UInt count,
 	WIRE_ASSERT((offset+count) <= pIndexBuffer->GetQuantity());
 
 	const UInt indexSize = sizeof(UShort);
-	WIRE_ASSERT(mBufferSize == (indexSize * pIndexBuffer->GetQuantity()));
+	WIRE_ASSERT(mSize == (indexSize * pIndexBuffer->GetQuantity()));
 
 	Buffer::LockingMode lockingMode = pIndexBuffer->GetUsage() ==
 		Buffer::UT_STATIC ? Buffer::LM_READ_WRITE : Buffer::LM_WRITE_ONLY;
 	const UInt rawOffset = offset * indexSize;
 	size_t size = count * indexSize;
-	WIRE_ASSERT(mBufferSize >= (size + rawOffset));
+	WIRE_ASSERT(mSize >= (size + rawOffset));
 
 	void* pBuffer = Lock(lockingMode, size, rawOffset);
 	const UShort* pDst = pIndexBuffer->GetData() + offset;
@@ -67,12 +67,12 @@ void PdrIndexBuffer::Update(const IndexBuffer* pIndexBuffer, UInt count,
 void PdrIndexBuffer::CreateBuffer(Renderer* pRenderer, UInt size, 
 	Buffer::UsageType usage)
 {
-	mBufferSize = size;
+	mSize = size;
 	const DWORD d3dUsage = PdrRendererData::USAGES[usage];
 	const D3DPOOL pool = PdrRendererData::POOLS[usage];
 	IDirect3DDevice9*& rDevice = pRenderer->GetRendererData()->D3DDevice;
 	HRESULT hr;
-	hr = rDevice->CreateIndexBuffer(mBufferSize, d3dUsage, D3DFMT_INDEX16,
-		pool, &mpBuffer, NULL);
+	hr = rDevice->CreateIndexBuffer(mSize, d3dUsage, D3DFMT_INDEX16, pool,
+		&mpBuffer, NULL);
 	WIRE_ASSERT(SUCCEEDED(hr));
 }
