@@ -17,7 +17,7 @@ public class Unity3DExporter : EditorWindow
     private bool mWriteDataAsBigEndian = true;
     private bool mCombineStaticMeshes = true;
     private bool mWriteColorsAs32Bit = true;
-	private string m2ndTextureName;
+    private bool mWriteNormalmaps = false;
 	private string mPath = "../Data/Scene";
 
     private bool mDebugPushLightsToLeaf = false;
@@ -136,8 +136,8 @@ public class Unity3DExporter : EditorWindow
 
             GUI.contentColor = c;
         }
-    }
-    
+    }   
+
     private void ShowSettingsDialog()
     {
         mExportXmlOnly = GUILayout.Toggle(mExportXmlOnly, new GUIContent("Export scene XML file only", "Textures, meshes, etc. will not be exported."));
@@ -170,8 +170,8 @@ public class Unity3DExporter : EditorWindow
         mWriteColorsAs32Bit = GUILayout.Toggle(mWriteColorsAs32Bit, new GUIContent(
             "Write vertex colors as 32bit",
             "Write vertex colors of meshes as 32 bit values instead of 4 floats"));
-        GUILayout.Label("Use property names:");
-        m2ndTextureName = EditorGUILayout.TextField("- 2nd Texture ", m2ndTextureName ?? string.Empty);
+        mWriteNormalmaps = GUILayout.Toggle(mWriteNormalmaps, new GUIContent(
+            "Write normal maps"));
     }
 
     private void ShowExportDialog()
@@ -1180,8 +1180,6 @@ public class Unity3DExporter : EditorWindow
             outFile.WriteLine(indent + "<Material Name=\"" + materialName + "\">");
         }
 
-		Texture2D texture = material.mainTexture as Texture2D;
-
         bool usesLightmap = meshRenderer.lightmapIndex != -1 && meshRenderer.lightmapIndex != 254;
         bool isRealtimeLit = GetLightsForRenderer(meshRenderer).Count > 0;
 
@@ -1191,18 +1189,78 @@ public class Unity3DExporter : EditorWindow
             WriteTexture(lightmap, outFile, indent, true, isRealtimeLit);
         }
 
-        WriteTexture(texture, outFile, indent, false, isRealtimeLit);
-
-		if (!string.IsNullOrEmpty(m2ndTextureName) && material.HasProperty(m2ndTextureName))
+        var textures = GetTextures(material);
+        for (int i = 0; i < textures.Count; ++i)
         {
-			Texture2D _2ndTexture = material.GetTexture(m2ndTextureName) as Texture2D;
-			WriteTexture(_2ndTexture, outFile, indent);
-		}
+            if (i == 0)
+            {
+                WriteTexture(textures[i], outFile, indent, false, isRealtimeLit);
+            }
+            else
+            {
+                if (!IsNormalmap(textures[i]))
+                {
+                    WriteTexture(textures[i], outFile, indent);
+                }
+                else if (mWriteNormalmaps)
+                {
+                    WriteTexture(textures[i], outFile, indent);
+                }
+            }
+        }
 
 		WriteMaterialState(material, outFile, indent);
 
 		outFile.WriteLine(indent + "</Material>");
 	}
+
+    private List<Texture2D> GetTextures(Material material)
+    {
+        List<Texture2D> textures = new List<Texture2D>();
+        if (material == null)
+        {
+            return textures;
+        }
+
+        int propertyCount = ShaderUtil.GetPropertyCount(material.shader);
+        for (int i = 0; i < propertyCount; i++)
+        {
+            ShaderUtil.ShaderPropertyType propertyType = ShaderUtil.GetPropertyType(material.shader, i);
+            if (ShaderUtil.ShaderPropertyType.TexEnv == propertyType)
+            {
+                var texture = material.GetTexture(ShaderUtil.GetPropertyName(material.shader, i)) as Texture2D;
+                if (texture != null)
+                {
+                    textures.Add(texture);
+                }
+            }
+        }
+
+        return textures;
+    }
+
+    private static bool IsNormalmap(Texture texture)
+    {
+        if (texture == null)
+        {
+            return false;
+        }
+
+        string assetPath = AssetDatabase.GetAssetPath(texture);
+        if (assetPath == null)
+        {
+            return false;
+        }
+
+        TextureImporter textureImporter = AssetImporter.GetAtPath(assetPath) as TextureImporter;
+        if (textureImporter == null)
+        {
+            Debug.LogWarning("Cannot get TextureImporter for '" + texture.name + "' at " + assetPath);
+            return false;
+        }
+
+        return textureImporter.normalmap;
+    }
 
 	private void WriteMaterialState(Material materialState, StreamWriter outFile, string indent)
 	{
