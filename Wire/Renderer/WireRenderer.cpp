@@ -46,6 +46,7 @@ void Renderer::Initialize(UInt width, UInt height)
 
 	mIdentityNonRS.SetMatrix(Matrix34F::IDENTITY, true);
 	mBatchedIndexBuffer = NULL;
+	mBatchingIndexCount = 0;
 	mStaticBatchingMaxIndexCount = 0;
 	mDynamicBatchingMaxVertexCount = 0;
 	mDynamicBatchingMaxIndexCount = 0;
@@ -1020,60 +1021,76 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 		Bool hasIdenticalVBOs = pAT->IsIdentity();
 		const Mesh* pMeshA = pA->GetMesh();
 		WIRE_ASSERT(pMeshA);
-		UInt vA = GetVertexFormatKey(pMeshA->GetVertexBuffers());
-
-		for (; idx < max-1; idx++)
+		if (pMeshA->GetIndexCount() <= mStaticBatchingMaxIndexCount)
 		{
-			const Transformation* pBT = pTransformations[idx+1];
-			if (!pBT)
+			mBatchingIndexCount = pMeshA->GetIndexCount();
+			UInt vA = GetVertexFormatKey(pMeshA->GetVertexBuffers());
+
+			for (; idx < max-1; idx++)
 			{
-				continue;	// skip the start/end marker of an effect
-			}
-
-			WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx+1])));
-			const RenderObject* pB = StaticCast<RenderObject>(pVisible[idx+1]);
-			Bool hadIdenticalVBOs = hasIdenticalVBOs && pBT->IsIdentity();
-
-			const Mesh* pMeshB = pB->GetMesh();
-			WIRE_ASSERT(pMeshB);
-
-			if (pA->GetMaterial() != pB->GetMaterial() ||
-				pA->GetStateSetID() != pB->GetStateSetID())
-			{
-				break;
-			}
-
-			const VertexBuffers& rVBOsB = pMeshB->GetVertexBuffers();
-			UInt vB = GetVertexFormatKey(rVBOsB);
-			if ((vA != vB))
-			{
-				break;
-			}
-
-			for (UInt i = 0; i < rVBOsB.GetQuantity(); i++)
-			{
-				const VertexBufferPtr* pVBOsA = pMeshA->GetVertexBuffers().
-					GetArray();
-				if (rVBOsB[i] != pVBOsA[i])
+				const Transformation* pBT = pTransformations[idx+1];
+				if (!pBT)
 				{
-					hasIdenticalVBOs = false;
+					continue;	// skip the start/end marker of an effect
+				}
+
+				WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx+1])));
+				const RenderObject* pB = StaticCast<RenderObject>(pVisible[idx+1]);
+				Bool hadIdenticalVBOs = hasIdenticalVBOs && pBT->IsIdentity();
+
+				const Mesh* pMeshB = pB->GetMesh();
+				WIRE_ASSERT(pMeshB);
+
+				if (pA->GetMaterial() != pB->GetMaterial() ||
+					pA->GetStateSetID() != pB->GetStateSetID())
+				{
 					break;
 				}
-			}
 
-			if (hadIdenticalVBOs && !hasIdenticalVBOs && (idx > min))
-			{
-				hasIdenticalVBOs = true;
-				break;
-			}
+				const VertexBuffers& rVBOsB = pMeshB->GetVertexBuffers();
+				UInt vB = GetVertexFormatKey(rVBOsB);
+				if ((vA != vB))
+				{
+					break;
+				}
 
-			if (!hasIdenticalVBOs && rVBOsB.GetQuantity() > maxStreams)
-			{
-				break;
-			}
+				for (UInt i = 0; i < rVBOsB.GetQuantity(); i++)
+				{
+					const VertexBufferPtr* pVBOsA = pMeshA->GetVertexBuffers().GetArray();
+					if (rVBOsB[i] != pVBOsA[i])
+					{
+						hasIdenticalVBOs = false;
+						break;
+					}
+				}
 
-  			pA = pB;
-  			vA = vB;
+				if (hadIdenticalVBOs && !hasIdenticalVBOs && (idx > min))
+				{
+					hasIdenticalVBOs = true;
+					break;
+				}
+
+				if (!hasIdenticalVBOs && rVBOsB.GetQuantity() > maxStreams)
+				{
+					break;
+				}
+
+				UInt indexCount = pMeshB->GetIndexCount();
+				if (indexCount > mStaticBatchingMaxIndexCount)
+				{
+					break;
+				}
+
+				UInt iboSize = (mBatchingIndexCount+indexCount) * sizeof(UShort);
+				if (iboSize > mBatchedIndexBuffer->GetSize())
+				{
+					break;
+				}
+
+				mBatchingIndexCount += indexCount;
+				pA = pB;
+				vA = vB;
+			}
 		}
 
 		if (idx > min)
@@ -1116,14 +1133,19 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 
 //----------------------------------------------------------------------------
 void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
-	Transformation*	const pTransformations[], UInt min, UInt max)
+	Transformation* const pTransformations[], UInt min, UInt max)
 {
+	WIRE_ASSERT(min < max);
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, mBatchingIndexCount *
+		sizeof(UShort));
+
+#ifdef WIRE_DEBUG
+	UInt batchedIndexCount = 0;
+#endif
 
 	UInt maxIndex = 0;
 	UShort minIndex = System::MAX_USHORT;
-	UInt batchedIndexCount = 0;
 
 	for (UInt i = min; i < max; i++)
 	{
@@ -1132,15 +1154,8 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 			continue; // skip the start/end marker of an effect
 		}
 
-		RenderObject* pRenderObject = pVisible[i];
-		Transformation& rTransformation = *(pTransformations[i]);
-		Mesh* const pMesh = pRenderObject->GetMesh();
-
-		if (pMesh->GetIndexCount() > mStaticBatchingMaxIndexCount)
-		{
-			Draw(pRenderObject, rTransformation);
-			continue;
-		}
+		Mesh* const pMesh = pVisible[i]->GetMesh();
+		WIRE_ASSERT(pMesh->GetIndexCount() <= mStaticBatchingMaxIndexCount);
 
 		UInt curMaxIndex = pMesh->GetVertexCount()+pMesh->GetStartVertex()-1;
 		maxIndex = maxIndex < curMaxIndex ? curMaxIndex : maxIndex;
@@ -1149,53 +1164,26 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 
 		const UInt ibSize = pMesh->GetIndexCount() * sizeof(UShort);
 
-		Bool exceedsBuffer = (ibSize+batchedIndexCount*sizeof(UShort)) >
-			mBatchedIndexBuffer->GetSize();
+#ifdef WIRE_DEBUG
+		WIRE_ASSERT((ibSize+batchedIndexCount*sizeof(UShort)) <=
+ 			mBatchedIndexBuffer->GetSize());
+		batchedIndexCount += pMesh->GetIndexCount();
+#endif
 
-		if (exceedsBuffer)
-		{
-			if (batchedIndexCount == 0)
-			{
-				Draw(pRenderObject, rTransformation);
-				maxIndex = 0;
-				minIndex = System::MAX_USHORT;
-				continue;
-			}
-
-			pIBPdr->Unlock();
-			WIRE_ASSERT(maxIndex < 65535);
-
-			SetTransformation(Transformation::IDENTITY, pVisible[min]->
-				GetMesh()->HasNormal(), mspVertexShader);
-			DrawBatch(pIBPdr, maxIndex-minIndex+1, batchedIndexCount, minIndex);
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
-
-			maxIndex = 0;
-			minIndex = System::MAX_USHORT;
-			batchedIndexCount = 0;
-			i--;
-			continue;
-		}
-
-		IndexBuffer* const pIndexBuffer = pMesh->GetIndexBuffer();
-		pIndexBuffer->Copy(static_cast<UShort*>(pIBRaw), 0,
+		pMesh->GetIndexBuffer()->Copy(static_cast<UShort*>(pIBRaw), 0,
 			pMesh->GetIndexCount(), pMesh->GetStartIndex());
-		pIBRaw = reinterpret_cast<void*>(ibSize + reinterpret_cast<UChar*>(
-			pIBRaw));
+		pIBRaw = reinterpret_cast<void*>(ibSize + reinterpret_cast<UChar*>(pIBRaw));
 
 		mStatistics.mBatchedStatic++;
-		batchedIndexCount += pMesh->GetIndexCount();
 	}
 
 	pIBPdr->Unlock();
 
-	if (batchedIndexCount > 0)
-	{
-		WIRE_ASSERT(maxIndex < 65535);
-		SetTransformation(Transformation::IDENTITY, pVisible[min]->
-			GetMesh()->HasNormal(), mspVertexShader);
-		DrawBatch(pIBPdr, maxIndex-minIndex+1, batchedIndexCount, minIndex);
-	}
+	WIRE_ASSERT(mBatchingIndexCount == batchedIndexCount);
+	WIRE_ASSERT(mBatchingIndexCount > 0 && mBatchingIndexCount < 65535);
+	SetTransformation(Transformation::IDENTITY, pVisible[min]->GetMesh()->
+		HasNormal(), mspVertexShader);
+	DrawBatch(pIBPdr, maxIndex-minIndex+1, mBatchingIndexCount, minIndex);
 }
 
 //----------------------------------------------------------------------------
