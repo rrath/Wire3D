@@ -397,6 +397,7 @@ private:
 	PdrIndexBuffer* mBatchedIndexBuffer;
 	TArray<PdrVertexBuffer*> mBatchedVertexBuffers;
 	TArray<void*> mRawBatchedVertexBuffers;
+	UInt mBatchingIndexCount;
 	UInt mStaticBatchingMaxIndexCount;
 	UInt mDynamicBatchingMaxVertexCount;
 	UInt mDynamicBatchingMaxIndexCount;
