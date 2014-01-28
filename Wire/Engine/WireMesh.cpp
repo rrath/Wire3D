@@ -338,6 +338,7 @@ void Mesh::SetVertexBuffer(VertexBuffer* pVertexBuffer)
 	mVertexBuffers.SetQuantity(0, false);
 	mVertexBuffers.SetMaxQuantity(1);
 	mVertexBuffers.Append(pVertexBuffer);
+	mMaxVertexSize = pVertexBuffer->GetAttributes().GetVertexSize();
 }
 
 //----------------------------------------------------------------------------
@@ -348,6 +349,7 @@ void Mesh::SetVertexBuffers(const VertexBuffers& rVertexBuffers)
 
 	mVertexBuffers.SetQuantity(0, false);
 	mVertexBuffers.SetMaxQuantity(rVertexBuffers.GetMaxQuantity());
+	mMaxVertexSize = 0;
 
 	for (UInt i = 0; i < rVertexBuffers.GetQuantity(); i++)
 	{
@@ -355,5 +357,10 @@ void Mesh::SetVertexBuffers(const VertexBuffers& rVertexBuffers)
 		WIRE_ASSERT(rVertexBuffers[i]->GetQuantity() == rVertexBuffers[0]->
 			GetQuantity()); // check if all streams have the same vertex count
 		mVertexBuffers.Append(rVertexBuffers[i]);
+		UInt vertexSize = rVertexBuffers[i]->GetAttributes().GetVertexSize();
+		if (vertexSize > mMaxVertexSize)
+		{
+			mMaxVertexSize = vertexSize;
+		}
 	}
 }

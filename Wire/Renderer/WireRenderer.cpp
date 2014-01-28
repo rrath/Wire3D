@@ -46,7 +46,8 @@ void Renderer::Initialize(UInt width, UInt height)
 
 	mIdentityNonRS.SetMatrix(Matrix34F::IDENTITY, true);
 	mBatchedIndexBuffer = NULL;
-	mBatchingIndexCount = 0;
+	mBatchIndexCount = 0;
+	mBatchVertexCount = 0;
 	mStaticBatchingMaxIndexCount = 0;
 	mDynamicBatchingMaxVertexCount = 0;
 	mDynamicBatchingMaxIndexCount = 0;
@@ -1021,76 +1022,100 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 		Bool hasIdenticalVBOs = pAT->IsIdentity();
 		const Mesh* pMeshA = pA->GetMesh();
 		WIRE_ASSERT(pMeshA);
-		if (pMeshA->GetIndexCount() <= mStaticBatchingMaxIndexCount)
+
+		mBatchIndexCount = pMeshA->GetIndexCount();
+		mBatchVertexCount = pMeshA->GetVertexCount();
+		Bool exceedsStaticIndexCount = pMeshA->GetIndexCount() > mStaticBatchingMaxIndexCount;
+		Bool exceedsDynamicIndexCount = pMeshA->GetIndexCount() > mDynamicBatchingMaxIndexCount;
+		Bool exceedsDynamicVertexCount = pMeshA->GetVertexCount() > mDynamicBatchingMaxVertexCount;
+		UInt vA = GetVertexFormatKey(pMeshA->GetVertexBuffers());
+
+		for (; idx < max-1; idx++)
 		{
-			mBatchingIndexCount = pMeshA->GetIndexCount();
-			UInt vA = GetVertexFormatKey(pMeshA->GetVertexBuffers());
-
-			for (; idx < max-1; idx++)
+			const Transformation* pBT = pTransformations[idx+1];
+			if (!pBT)
 			{
-				const Transformation* pBT = pTransformations[idx+1];
-				if (!pBT)
+				continue;	// skip the start/end marker of an effect
+			}
+
+			WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx+1])));
+			const RenderObject* pB = StaticCast<RenderObject>(pVisible[idx+1]);
+			Bool hadIdenticalVBOs = hasIdenticalVBOs && pBT->IsIdentity();
+
+			const Mesh* pMeshB = pB->GetMesh();
+			WIRE_ASSERT(pMeshB);
+
+			if (pA->GetMaterial() != pB->GetMaterial() ||
+				pA->GetStateSetID() != pB->GetStateSetID())
+			{
+				break;
+			}
+
+			const VertexBuffers& rVBOsB = pMeshB->GetVertexBuffers();
+			UInt vB = GetVertexFormatKey(rVBOsB);
+			if ((vA != vB))
+			{
+				break;
+			}
+
+			for (UInt i = 0; i < rVBOsB.GetQuantity(); i++)
+			{
+				const VertexBufferPtr* pVBOsA = pMeshA->GetVertexBuffers().GetArray();
+				if (rVBOsB[i] != pVBOsA[i])
 				{
-					continue;	// skip the start/end marker of an effect
+					hasIdenticalVBOs = false;
+					break;
 				}
+			}
 
-				WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx+1])));
-				const RenderObject* pB = StaticCast<RenderObject>(pVisible[idx+1]);
-				Bool hadIdenticalVBOs = hasIdenticalVBOs && pBT->IsIdentity();
+			if (hadIdenticalVBOs && !hasIdenticalVBOs && (idx > min))
+			{
+				hasIdenticalVBOs = true;
+				break;
+			}
 
-				const Mesh* pMeshB = pB->GetMesh();
-				WIRE_ASSERT(pMeshB);
+			UInt indexCount = pMeshB->GetIndexCount();
+			if (hasIdenticalVBOs)
+			{
+				if (indexCount > mStaticBatchingMaxIndexCount || exceedsStaticIndexCount)
+				{
+					break;
+				}
+			}
 
-				if (pA->GetMaterial() != pB->GetMaterial() ||
-					pA->GetStateSetID() != pB->GetStateSetID())
+			UInt iboSize = (mBatchIndexCount+indexCount) * sizeof(UShort);
+			if (iboSize > mBatchedIndexBuffer->GetSize())
+			{
+				break;
+			}
+
+			UInt vertexCount = pMeshB->GetVertexCount();
+			if (!hasIdenticalVBOs)
+			{
+				if (rVBOsB.GetQuantity() > maxStreams)
 				{
 					break;
 				}
 
-				const VertexBuffers& rVBOsB = pMeshB->GetVertexBuffers();
-				UInt vB = GetVertexFormatKey(rVBOsB);
-				if ((vA != vB))
+				if (mBatchedVertexBuffers.GetQuantity() > 0)
 				{
-					break;
-				}
-
-				for (UInt i = 0; i < rVBOsB.GetQuantity(); i++)
-				{
-					const VertexBufferPtr* pVBOsA = pMeshA->GetVertexBuffers().GetArray();
-					if (rVBOsB[i] != pVBOsA[i])
+					if (indexCount > mDynamicBatchingMaxIndexCount || exceedsDynamicIndexCount ||
+						vertexCount > mDynamicBatchingMaxVertexCount || exceedsDynamicVertexCount)
 					{
-						hasIdenticalVBOs = false;
+						break;
+					}
+
+					UInt vboSize = (mBatchVertexCount+vertexCount) * pMeshB->GetMaxVertexSize();
+					if (vboSize > mBatchedVertexBuffers[0]->GetSize())
+					{
 						break;
 					}
 				}
-
-				if (hadIdenticalVBOs && !hasIdenticalVBOs && (idx > min))
-				{
-					hasIdenticalVBOs = true;
-					break;
-				}
-
-				if (!hasIdenticalVBOs && rVBOsB.GetQuantity() > maxStreams)
-				{
-					break;
-				}
-
-				UInt indexCount = pMeshB->GetIndexCount();
-				if (indexCount > mStaticBatchingMaxIndexCount)
-				{
-					break;
-				}
-
-				UInt iboSize = (mBatchingIndexCount+indexCount) * sizeof(UShort);
-				if (iboSize > mBatchedIndexBuffer->GetSize())
-				{
-					break;
-				}
-
-				mBatchingIndexCount += indexCount;
-				pA = pB;
-				vA = vB;
 			}
+
+			mBatchIndexCount += indexCount;
+			mBatchVertexCount += vertexCount;
+			pA = pB;
 		}
 
 		if (idx > min)
@@ -1115,11 +1140,11 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 					}
 				}
 
-				DrawStaticBatches(pVisible, pTransformations, min, idx+1);
+				DrawStaticBatch(pVisible, pTransformations, min, idx+1);
 			}
 			else
 			{
-				DrawDynamicBatches(pVisible, pTransformations, min, idx+1);
+				DrawDynamicBatch(pVisible, pTransformations, min, idx+1);
 			}
 		}
 		else
@@ -1132,13 +1157,13 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 }
 
 //----------------------------------------------------------------------------
-void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
+void Renderer::DrawStaticBatch(RenderObject* const pVisible[],
 	Transformation* const pTransformations[], UInt min, UInt max)
 {
-	WIRE_ASSERT(min < max);
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, mBatchingIndexCount *
-		sizeof(UShort));
+	const UInt batchSize = mBatchIndexCount * sizeof(UShort);
+	WIRE_ASSERT(batchSize <= pIBPdr->GetSize());
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, batchSize);
 
 #ifdef WIRE_DEBUG
 	UInt batchedIndexCount = 0;
@@ -1179,26 +1204,30 @@ void Renderer::DrawStaticBatches(RenderObject* const pVisible[],
 
 	pIBPdr->Unlock();
 
-	WIRE_ASSERT(mBatchingIndexCount == batchedIndexCount);
-	WIRE_ASSERT(mBatchingIndexCount > 0 && mBatchingIndexCount < 65535);
+	WIRE_ASSERT(mBatchIndexCount == batchedIndexCount);
+	WIRE_ASSERT(mBatchIndexCount > 0 && mBatchIndexCount <= 65535);
 	SetTransformation(Transformation::IDENTITY, pVisible[min]->GetMesh()->
 		HasNormal(), mspVertexShader);
-	DrawBatch(pIBPdr, maxIndex-minIndex+1, mBatchingIndexCount, minIndex);
+	DrawBatch(pIBPdr, maxIndex-minIndex+1, mBatchIndexCount, minIndex);
 }
 
 //----------------------------------------------------------------------------
-void Renderer::DrawDynamicBatches(RenderObject* const pVisible[], 
+void Renderer::DrawDynamicBatch(RenderObject* const pVisible[], 
 	Transformation*	const pTransformations[], UInt min, UInt max)
 {
 	PdrIndexBuffer* const pIBPdr = mBatchedIndexBuffer;
-	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
+	const UInt batchSize = mBatchIndexCount * sizeof(UShort);
+	WIRE_ASSERT(batchSize <= pIBPdr->GetSize());
+	void* pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, batchSize);
 
-	const UInt vbCount = pVisible[min]->GetMesh()->GetVertexBuffers().
-		GetQuantity();
+	Mesh::VertexBuffers& vbs = pVisible[min]->GetMesh()->GetVertexBuffers();
+	const UInt vbCount = vbs.GetQuantity();
 	for (UInt i = 0; i < vbCount; i++)
 	{
+		const UInt batchSize = mBatchVertexCount * vbs[i]->GetAttributes().GetVertexSize();
+		WIRE_ASSERT(batchSize <= mBatchedVertexBuffers[i]->GetSize());
 		mRawBatchedVertexBuffers[i] = mBatchedVertexBuffers[i]->Lock(
-			Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[i]->GetSize());
+			Buffer::LM_WRITE_ONLY, batchSize);
 	}
 
 	UShort batchedVertexCount = 0;
@@ -1220,12 +1249,8 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 		const UInt vertexCount = pMesh->GetVertexCount();
 		const UShort minIndex = pMesh->GetStartVertex();
 
-		if (vertexCount > mDynamicBatchingMaxVertexCount ||
-			pMesh->GetIndexCount() > mDynamicBatchingMaxIndexCount)
-		{
-			Draw(pRenderObject, rTransformation);
-			continue;
-		}
+		WIRE_ASSERT(pMesh->GetIndexCount() <= mDynamicBatchingMaxIndexCount);
+		WIRE_ASSERT(vertexCount <= mDynamicBatchingMaxVertexCount);
 
 		const UInt ibSize = pMesh->GetIndexCount() * sizeof(UShort);
 
@@ -1241,36 +1266,8 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 				vbSize > mBatchedVertexBuffers[j]->GetSize();
 		}
 
-		if (exceedsBuffer)
-		{
-			if (batchedIndexCount == 0)
-			{
-				Draw(pRenderObject, rTransformation);
-				continue;
-			}
-
-			for (UInt j = 0; j < vbCount; j++)
-			{
-				mBatchedVertexBuffers[j]->Unlock();
-			}
-
-			pIBPdr->Unlock();
-
-			DrawDynamicBatch(pVisible[min]->GetMesh(), pIBPdr,
-				mBatchedVertexBuffers, batchedVertexCount, batchedIndexCount);
-
-			pIBRaw = pIBPdr->Lock(Buffer::LM_WRITE_ONLY, pIBPdr->GetSize());
-			for (UInt j = 0; j < vbCount; j++)
-			{
-				mRawBatchedVertexBuffers[j] = mBatchedVertexBuffers[j]->Lock(
-					Buffer::LM_WRITE_ONLY, mBatchedVertexBuffers[j]->GetSize());
-			}
-
-			batchedVertexCount = 0;
-			batchedIndexCount = 0;
-			i--;
-			continue;
-		}
+		WIRE_ASSERT(!exceedsBuffer);
+		batchedIndexCount += pMesh->GetIndexCount();
 
 		IndexBuffer* const pIndexBuffer = pMesh->GetIndexBuffer();
 		const UShort offset = batchedVertexCount - minIndex;
@@ -1302,7 +1299,6 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 
 		batchedVertexCount = batchedVertexCount + static_cast<UShort>(
 			vertexCount);
-		batchedIndexCount += pMesh->GetIndexCount();
 	}
 
 	pIBPdr->Unlock();
@@ -1311,11 +1307,10 @@ void Renderer::DrawDynamicBatches(RenderObject* const pVisible[],
 		mBatchedVertexBuffers[i]->Unlock();
 	}
 
-	if (batchedIndexCount > 0)
-	{
-		DrawDynamicBatch(pVisible[min]->GetMesh(), pIBPdr,
-			mBatchedVertexBuffers, batchedVertexCount, batchedIndexCount);
-	}
+	WIRE_ASSERT(mBatchIndexCount == batchedIndexCount);
+	WIRE_ASSERT(mBatchIndexCount > 0 && mBatchIndexCount <= 65535);
+	DrawDynamicBatch(pVisible[min]->GetMesh(), pIBPdr,
+		mBatchedVertexBuffers, batchedVertexCount, mBatchIndexCount);
 }
 
 //----------------------------------------------------------------------------

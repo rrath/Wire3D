@@ -63,6 +63,8 @@ public:
 	void SetIndexCount(UInt indexCount, Bool updateModelBound = false);
 	inline Bool IsDirty() const;
 
+	inline UInt GetMaxVertexSize() const;
+
 	void UpdateModelBound();
 	void GenerateNormals(Bool ignoreHardEdges = false);
 
@@ -86,6 +88,9 @@ private:
 	// submesh definition
 	UInt mStartIndex;
 	UInt mIndexCount;
+
+	// maximum size of a vertex of all vertex streams in bytes
+	UInt mMaxVertexSize;
 
 	// flag to indicate changes to the submesh's definition
 	Bool mIsDirty;

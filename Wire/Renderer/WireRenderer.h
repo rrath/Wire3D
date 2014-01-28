@@ -279,9 +279,9 @@ private:
 		Bool processNormals, Shader* pVertexShader);
 	UInt GetVertexFormatKey(const VertexBuffers& rVertexBuffers);
 
-	void DrawStaticBatches(RenderObject* const pVisible[], Transformation*
+	void DrawStaticBatch(RenderObject* const pVisible[], Transformation*
 		const pTransformations[], UInt min, UInt max);
-	void DrawDynamicBatches(RenderObject* const pVisible[], Transformation*
+	void DrawDynamicBatch(RenderObject* const pVisible[], Transformation*
 		const pTransformations[], UInt min, UInt max);
 	void DrawDynamicBatch(const Mesh* pMesh, PdrIndexBuffer* const pIBPdr,
 		TArray<PdrVertexBuffer*>& rVBsPdr, UInt vertexCount,
@@ -397,7 +397,8 @@ private:
 	PdrIndexBuffer* mBatchedIndexBuffer;
 	TArray<PdrVertexBuffer*> mBatchedVertexBuffers;
 	TArray<void*> mRawBatchedVertexBuffers;
-	UInt mBatchingIndexCount;
+	UInt mBatchIndexCount;
+	UInt mBatchVertexCount;
 	UInt mStaticBatchingMaxIndexCount;
 	UInt mDynamicBatchingMaxVertexCount;
 	UInt mDynamicBatchingMaxIndexCount;

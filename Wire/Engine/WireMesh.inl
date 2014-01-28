@@ -86,3 +86,9 @@ inline Bool Mesh::IsDirty() const
 {
 	return mIsDirty;
 }
+
+//----------------------------------------------------------------------------
+inline UInt Mesh::GetMaxVertexSize() const
+{
+	return mMaxVertexSize;
+}
