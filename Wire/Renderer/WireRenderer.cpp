@@ -1231,7 +1231,10 @@ void Renderer::DrawDynamicBatch(RenderObject* const pVisible[],
 	}
 
 	UShort batchedVertexCount = 0;
+
+#ifdef WIRE_DEBUG
 	UInt batchedIndexCount = 0;
+#endif
 
 	for (UInt i = min; i < max; i++)
 	{
@@ -1254,6 +1257,7 @@ void Renderer::DrawDynamicBatch(RenderObject* const pVisible[],
 
 		const UInt ibSize = pMesh->GetIndexCount() * sizeof(UShort);
 
+#ifdef WIRE_DEBUG
 		Bool exceedsBuffer = (ibSize+batchedIndexCount*sizeof(UShort)) >
 			mBatchedIndexBuffer->GetSize() ||
 			(batchedVertexCount + vertexCount > 0xFFFF);
@@ -1268,6 +1272,7 @@ void Renderer::DrawDynamicBatch(RenderObject* const pVisible[],
 
 		WIRE_ASSERT(!exceedsBuffer);
 		batchedIndexCount += pMesh->GetIndexCount();
+#endif
 
 		IndexBuffer* const pIndexBuffer = pMesh->GetIndexBuffer();
 		const UShort offset = batchedVertexCount - minIndex;
@@ -1297,8 +1302,8 @@ void Renderer::DrawDynamicBatch(RenderObject* const pVisible[],
 			mStatistics.mBatchedDynamicTransformed++;
 		}
 
-		batchedVertexCount = batchedVertexCount + static_cast<UShort>(
-			vertexCount);
+		WIRE_ASSERT(vertexCount < 0x10000);
+		batchedVertexCount = batchedVertexCount + static_cast<UShort>(vertexCount);
 	}
 
 	pIBPdr->Unlock();
