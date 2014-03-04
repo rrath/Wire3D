@@ -70,6 +70,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4316</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>..\..\Sample8d_$(PlatformToolset).exe</OutputFile>
@@ -104,6 +105,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4316</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <OutputFile>..\..\Sample8_$(PlatformToolset).exe</OutputFile>
