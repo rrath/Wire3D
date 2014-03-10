@@ -202,7 +202,8 @@ public:
 	inline UInt GetHeight() const;
 	inline const ColorRGBA& GetClearColor() const;
 	void SetClearColor(const ColorRGBA& rClearColor);
-	void ClearBuffers();
+	void ClearBuffers(Bool back = true, Bool z = true, const Vector4F& rect =
+		Vector4F::ZERO); // rect (x,y,width,height) in pixel, (0,0) is top/left
 	void DisplayBackBuffer();
 
 	// Immediate render state handling

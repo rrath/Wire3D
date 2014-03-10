@@ -1303,6 +1303,26 @@ void Importer::ParseCamera(rapidxml::xml_node<>* pXmlNode, Spatial* pSpatial)
 	pCameraNode->SetEnabled(isEnabled);
 	pCameraNode->SetDepth(GetInt(pXmlNode, "Depth"));
 
+	Bool hasValue;
+	ColorRGBA clearColor = GetColorRGBA(pXmlNode, "ClearColor", hasValue);
+	if (hasValue)
+	{
+		pCameraNode->SetClearColor(clearColor);
+	}
+
+	Char* pClearFlags = GetValue(pXmlNode, "Clear");
+	if (pClearFlags)
+	{
+		if (Is("Z", pClearFlags))
+		{
+			pCameraNode->SetClearFlag(NodeCamera::CF_Z_ONLY);
+		}
+		else if (Is("No", pClearFlags))
+		{
+			pCameraNode->SetClearFlag(NodeCamera::CF_NONE);
+		}
+	}
+
 	StaticCast<Node>(pSpatial)->AttachChild(pCameraNode);
 }
 

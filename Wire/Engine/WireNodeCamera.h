@@ -11,6 +11,7 @@
 #define WIRENODECAMERA_H
 
 #include "WireNode.h"
+#include "WireColorRGBA.h"
 
 namespace Wire
 {
@@ -22,6 +23,14 @@ class NodeCamera : public Node
 	WIRE_DECLARE_RTTI;
 
 public:
+	enum ClearFlag
+	{
+		CF_ALL,
+		CF_Z_ONLY,
+		CF_NONE,
+		SBM_QUANTITY
+	};
+
 	// The node's world transformation is used as the camera's transformation.
 	// The camera's transformation is only updated if the node's Enabled flag
 	// is true.
@@ -49,8 +58,14 @@ public:
 	inline void SetDepth(Int depth);
 	inline Int GetDepth() const;
 
-	static void Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot, Culler& rCuller,
-		Renderer* pRenderer);
+	inline void SetClearColor(const ColorRGBA& clearColor);
+	inline ColorRGBA GetClearColor() const;
+
+	inline void SetClearFlag(ClearFlag clearFlag);
+	inline ClearFlag GetClearFlag() const;
+
+	static void Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
+		Culler& rCuller, Renderer* pRenderer);
 	static void SortByDepth(TArray<NodeCamera*>& rCameras);
 
 protected:
@@ -62,6 +77,8 @@ private:
 	Pointer<Camera> mspCamera;
 
 	Int mDepth;
+	ColorRGBA mClearColor;
+	ClearFlag mClearFlag;
 	Bool mEnabled;
 };
 

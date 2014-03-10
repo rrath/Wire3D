@@ -493,8 +493,12 @@ void Player::UpdateShot(Double deltaTime, const Vector2F& rCursorPosition)
 			}
  		}
 
-		ProbeRobot* pProbeRobotController = static_cast<ProbeRobot*>(hitCallback.m_collisionObject->getUserPointer());
-		if (pProbeRobotController) 
+		void* pUserPointer = hitCallback.m_collisionObject->getUserPointer();
+		// Wire::Objects must be exclusively used as Bullet user pointers,
+		// so we can use DynamicCast to determine its type.
+		Object* pObject = static_cast<Object*>(pUserPointer);
+		ProbeRobot* pProbeRobotController = DynamicCast<ProbeRobot>(pObject);
+		if (pProbeRobotController)
 		{
 			pProbeRobotController->TakeDamage(5.0F);
 		}

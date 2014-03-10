@@ -207,20 +207,35 @@ Renderer::~Renderer()
 }
 
 //----------------------------------------------------------------------------
-void Renderer::ClearBuffers()
+void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 {
-	if (mpData->IsDeviceLost)
+	if (mpData->IsDeviceLost || !(back || z))
 	{
 		return;
 	}
 
 	DWORD clearColor = D3DCOLOR_COLORVALUE(mClearColor.R(),
 		mClearColor.G(), mClearColor.B(), mClearColor.A());
+	DWORD flags = 0 /*| D3DCLEAR_STENCIL*/;
+	flags = back ? flags | D3DCLEAR_TARGET : flags;
+	flags = z ? flags | D3DCLEAR_ZBUFFER : flags;
+
+	D3DRECT* pRects = NULL;
+	DWORD rectCount = 0;
+	D3DRECT d3dRect;
+	if (rect.Z() != 0 && rect.W() != 0)
+	{
+		pRects = &d3dRect;
+		d3dRect.x1 = static_cast<LONG>(rect.X());
+		d3dRect.y1 = static_cast<LONG>(rect.Y());
+		d3dRect.x2 = static_cast<LONG>(rect.X() + rect.Z());
+		d3dRect.y2 = static_cast<LONG>(rect.Y() + rect.W());
+		rectCount = 1;
+	}
 
 	HRESULT hr;
-	hr = mpData->D3DDevice->Clear(0, 0,
-		D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER /*| D3DCLEAR_STENCIL*/,
-		clearColor, 1.0F/*mClearDepth*/, static_cast<DWORD>(0/*mClearStencil*/));
+	hr = mpData->D3DDevice->Clear(rectCount, pRects, flags, clearColor,
+		1.0F/*mClearDepth*/, static_cast<DWORD>(0/*mClearStencil*/));
 	WIRE_ASSERT(SUCCEEDED(hr));
 }
 

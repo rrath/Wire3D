@@ -41,3 +41,27 @@ inline Int NodeCamera::GetDepth() const
 {
 	return mDepth;
 }
+
+//----------------------------------------------------------------------------
+inline void NodeCamera::SetClearColor(const ColorRGBA& rClearColor)
+{
+	mClearColor = rClearColor;
+}
+
+//----------------------------------------------------------------------------
+inline ColorRGBA NodeCamera::GetClearColor() const
+{
+	return mClearColor;
+}
+
+//----------------------------------------------------------------------------
+inline void NodeCamera::SetClearFlag(ClearFlag clearFlag)
+{
+	mClearFlag = clearFlag;
+}
+
+//----------------------------------------------------------------------------
+inline NodeCamera::ClearFlag NodeCamera::GetClearFlag() const
+{
+	return mClearFlag;
+}

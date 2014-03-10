@@ -1119,14 +1119,30 @@ public class Unity3DExporter : EditorWindow
 
         if (left != 0 || right != 1 || bottom != 0 || top != 1)
         {
-            viewport = "Left=\"" + left + "\" Right=\"" + right + "\" Top=\"" + top + "\" Bottom=\"" + bottom + "\"";
+            viewport = " Left=\"" + left + "\" Right=\"" + right + "\" Top=\"" + top + "\" Bottom=\"" + bottom + "\"";
         }
 
         string mask = camera.cullingMask == ~0 ? "" : " Mask=\"" + camera.cullingMask.ToString("X") + "\"";
         string depth = camera.depth == 0 ? "" : " Depth=\"" + camera.depth + "\"";
+        string clear = string.Empty;
+        Color c = camera.backgroundColor;
+        string clearColor = " ClearColor=\"" + c.r + ", " + c.g + ", " + c.b + ", " + c.a + "\"";
+        switch (camera.clearFlags)
+        {
+            case CameraClearFlags.Depth:
+                clear = " Clear=\"Z\"";
+                clearColor = string.Empty;
+                break;
+            case CameraClearFlags.Nothing:
+                clear = " Clear=\"No\"";
+                clearColor = string.Empty;
+                break;
+            default:
+                break;
+        }
 
 		outFile.WriteLine (indent + "  " + "<Camera Fov=\"" + fieldOfView + "\" Near=\"" +
-            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + depth + mask + " />");
+            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + clear + clearColor + depth + mask + " />");
 	}
 
     private string GetMaterialName(Material material, MeshRenderer meshRenderer)

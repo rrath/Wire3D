@@ -156,11 +156,42 @@ void Renderer::PostDraw()
 }
 
 //----------------------------------------------------------------------------
-void Renderer::ClearBuffers()
+void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 {
-	if (mpData->IsFrameBufferDirty)
+	if (!mpData->IsFrameBufferDirty || !(back || z))
+	{
+		return;
+	}
+
+	if (!back)
+	{
+		GXSetColorUpdate(GX_FALSE);
+	}
+
+	if (!z)
+	{
+		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_FALSE);
+	}
+
+	if (rect.Z() != 0 && rect.W() != 0)
+	{
+		GXSetDispCopySrc(rect.X(), rect.Y(), rect.Z(), rect.W());
+		GXCopyDisp(mpData->FrameBuffer[(mpData->FrameBufferIndex)^1], GX_TRUE);
+		GXSetDispCopySrc(0, 0, mpData->RMode->fbWidth, mpData->RMode->efbHeight);
+	}
+	else
 	{
 		GXCopyDisp(mpData->FrameBuffer[(mpData->FrameBufferIndex)^1], GX_TRUE);
+	}
+
+	if (!back)
+	{
+		GXSetColorUpdate(GX_TRUE);
+	}
+
+	if (!z)
+	{
+		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
 	}
 }
 
@@ -255,6 +286,9 @@ void Renderer::SetClearColor(const ColorRGBA& rClearColor)
 	rGXClearColor.b = static_cast<UChar>(rClearColor.B() * 255.0F);
 	rGXClearColor.a = static_cast<UChar>(rClearColor.A() * 255.0F);
 	GXSetCopyClear(rGXClearColor, GX_MAX_Z24);
+
+	// mark as dirty, so subsequent Clears with new color will not be ignored
+	mpData->IsFrameBufferDirty = true;
 }
 
 //----------------------------------------------------------------------------

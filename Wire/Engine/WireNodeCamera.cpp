@@ -21,6 +21,8 @@ NodeCamera::NodeCamera(Camera* pCamera)
 	:
 	mspCamera(pCamera),
 	mDepth(0),
+	mClearColor(ColorRGBA::BLACK),
+	mClearFlag(CF_ALL),
 	mEnabled(true)
 {
 	CameraToLocalTransform();
@@ -65,7 +67,7 @@ void NodeCamera::CameraToLocalTransform()
 }
 
 //----------------------------------------------------------------------------
-void NodeCamera::Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot,
+void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 	Culler& rCuller, Renderer* pRenderer)
 {
 	WIRE_ASSERT(pRenderer && pRoot);
@@ -74,11 +76,40 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rCameras, Spatial* pRoot,
 		return;
 	}
 
-	for (UInt i = 0; i < rCameras.GetQuantity(); i++)
+	for (UInt i = 0; i < rNodeCameras.GetQuantity(); i++)
 	{
-		rCuller.SetCamera(rCameras[i]->Get());
+		WIRE_ASSERT(rNodeCameras[i] && rNodeCameras[i]->Get());
+		Camera* pCamera = rNodeCameras[i]->Get();
+		rCuller.SetCamera(pCamera);
 		rCuller.ComputeVisibleSet(pRoot);
-		pRenderer->SetCamera(rCameras[i]->Get());
+
+		Float left;
+		Float right;
+		Float top;
+		Float bottom;
+		pCamera->GetViewport(left, right, top, bottom);
+		UInt width = pRenderer->GetWidth();
+		UInt height = pRenderer->GetHeight();
+		Vector4F rect(left*width, (1.0F-top)*height, (right-left)*width, (top-bottom)*height);
+
+		switch (rNodeCameras[i]->mClearFlag)
+		{
+		case CF_ALL:
+			pRenderer->ClearBuffers(true, true, rect);
+			break;
+
+		case CF_Z_ONLY:
+			pRenderer->ClearBuffers(false, true, rect);
+			break;
+
+		case CF_NONE:		
+			break;
+
+		default:
+			WIRE_ASSERT(false);
+		}
+
+		pRenderer->SetCamera(pCamera);
 		pRenderer->Draw(rCuller.GetVisibleSets());
 	}
 }
