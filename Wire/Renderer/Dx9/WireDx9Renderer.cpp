@@ -228,8 +228,8 @@ void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 		pRects = &d3dRect;
 		d3dRect.x1 = static_cast<LONG>(rect.X());
 		d3dRect.y1 = static_cast<LONG>(rect.Y());
-		d3dRect.x2 = static_cast<LONG>(rect.X() + rect.Z());
-		d3dRect.y2 = static_cast<LONG>(rect.Y() + rect.W());
+		d3dRect.x2 = d3dRect.x1 + static_cast<LONG>(rect.Z());
+		d3dRect.y2 = d3dRect.y1 + static_cast<LONG>(rect.W());
 		rectCount = 1;
 	}
 
