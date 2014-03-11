@@ -556,10 +556,15 @@ void Renderer::OnViewportChange()
 	// screen. DirectX needs a specification of relative distance from the
 	// top of the screen, which is 1 - 'top'.
 	D3DVIEWPORT9 viewport;
-	viewport.X = static_cast<DWORD>(left * mWidth);
-	viewport.Y = static_cast<DWORD>((1.0F - top) * mHeight);// See note above.
-	viewport.Width = static_cast<DWORD>((right - left) * mWidth);
-	viewport.Height = static_cast<DWORD>((top - bottom) * mHeight);
+	Float x = MathF::Round(left * mWidth);
+	Float y = MathF::Round((1.0F - top) * mHeight);
+	Float width = MathF::Round((right - left) * mWidth);
+	Float height = MathF::Round((top - bottom) * mHeight);
+
+	viewport.X = static_cast<DWORD>(x);
+	viewport.Y = static_cast<DWORD>(y);// See note above.
+	viewport.Width = static_cast<DWORD>(width);
+	viewport.Height = static_cast<DWORD>(height);
 	viewport.MinZ = 0.0F;
 	viewport.MaxZ = 1.0F;
 

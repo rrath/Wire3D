@@ -90,7 +90,11 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		pCamera->GetViewport(left, right, top, bottom);
 		UInt width = pRenderer->GetWidth();
 		UInt height = pRenderer->GetHeight();
-		Vector4F rect(left*width, (1.0F-top)*height, (right-left)*width, (top-bottom)*height);
+		Vector4F rect;
+		rect.X() = MathF::Round(left*width);
+		rect.Y() = MathF::Round((1.0F-top)*height);
+		rect.Z() = MathF::Round((right-left)*width);
+		rect.W() = MathF::Round((top-bottom)*height);
 
 		switch (rNodeCameras[i]->mClearFlag)
 		{

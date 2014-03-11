@@ -165,12 +165,18 @@ void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 
 	if (!back)
 	{
+		// TODO: review StateAlpha
 		GXSetColorUpdate(GX_FALSE);
 	}
 
 	if (!z)
 	{
 		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_FALSE);
+	}
+	else
+	{
+		// TODO: review StateZBuffer
+		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
 	}
 
 	if (rect.Z() != 0 && rect.W() != 0)
@@ -489,10 +495,10 @@ void Renderer::OnViewportChange()
 	// top of the screen, which is 1 - 'top'.
 	mspCamera->GetViewport(left, right, top, bottom);
 	GXRenderModeObj*& rRMode = mpData->RMode;
-	Float originX = left * static_cast<Float>(mWidth);
-	Float width = (right - left) *  static_cast<Float>(mWidth);
-	Float originY = (1.0F - top) * static_cast<Float>(rRMode->xfbHeight);
-	Float height = (top - bottom) * static_cast<Float>(rRMode->xfbHeight);
+	Float originX = MathF::Round(left * mWidth);
+	Float width = MathF::Round((right - left) *  mWidth);
+	Float originY = MathF::Round((1.0F - top) * rRMode->xfbHeight);
+	Float height = MathF::Round((top - bottom) * rRMode->xfbHeight);
 
 	// Set up viewport (This is inappropriate for full-frame AA.)
 	if (rRMode->field_rendering)
