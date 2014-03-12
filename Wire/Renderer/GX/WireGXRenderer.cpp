@@ -165,19 +165,10 @@ void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 
 	if (!back)
 	{
-		// TODO: review StateAlpha
 		GXSetColorUpdate(GX_FALSE);
 	}
 
-	if (!z)
-	{
-		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_FALSE);
-	}
-	else
-	{
-		// TODO: review StateZBuffer
-		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
-	}
+	GXSetZMode(GX_TRUE, GX_LEQUAL, z ? GX_TRUE : GX_FALSE);
 
 	if (rect.Z() != 0 && rect.W() != 0)
 	{
@@ -195,10 +186,7 @@ void Renderer::ClearBuffers(Bool back, Bool z, const Vector4F& rect)
 		GXSetColorUpdate(GX_TRUE);
 	}
 
-	if (!z)
-	{
-		GXSetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
-	}
+	GXSetZMode(mpData->ZCompareEnable, mpData->ZFunc, mpData->ZUpdateEnable);
 }
 
 //----------------------------------------------------------------------------
@@ -232,6 +220,9 @@ void Renderer::DisplayBackBuffer()
 	{
 		VIWaitForRetrace();
 	}
+
+	// restore ZMode which was altered for GXCopyDisp
+	GXSetZMode(mpData->ZCompareEnable, mpData->ZFunc, mpData->ZUpdateEnable);
 }
 
 //----------------------------------------------------------------------------
@@ -541,7 +532,10 @@ PdrRendererData::PdrRendererData()
 	FrameBufferIndex(0),
 	IsFrameBufferDirty(false),
 	UseVSync(true),
-	LightsMask(0)
+	LightsMask(0),
+	ZCompareEnable(GX_TRUE),
+	ZFunc(GX_LEQUAL),
+	ZUpdateEnable(GX_TRUE)
 {
 	FrameBuffer[0] = NULL;
 	FrameBuffer[1] = NULL;
@@ -888,6 +882,16 @@ void PdrRendererData::DrawWireframe(const TArray<PdrVertexFormat::
 	}
 
 	GXEnd();
+}
+
+//----------------------------------------------------------------------------
+void PdrRendererData::SetZMode(UChar compareEnable, UChar func,
+	UChar updateEnable)
+{
+	GXSetZMode(compareEnable, func, updateEnable);
+	ZCompareEnable = compareEnable;
+	ZFunc = func;
+	ZUpdateEnable = updateEnable;
 }
 
 //----------------------------------------------------------------------------

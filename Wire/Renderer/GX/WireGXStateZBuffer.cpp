@@ -33,6 +33,6 @@ void Renderer::SetState(StateZBuffer* pState)
 	UChar enable = pState->Enabled ? GX_TRUE : GX_FALSE;
 	UChar writable = pState->Writable ? GX_TRUE : GX_FALSE;
 
-	GXSetZMode(enable, PdrRendererData::ZBUFFER_COMPARE[pState->Compare],
+	mpData->SetZMode(enable, PdrRendererData::ZBUFFER_COMPARE[pState->Compare],
 		writable);
 }

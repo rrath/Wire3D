@@ -47,6 +47,7 @@ public:
 	void DrawWireframe(const TArray<PdrVertexFormat::VertexElement>&
 		rElements, const UShort* const pIBuffer, UInt indexCount,
 		UInt startIndex);
+	void SetZMode(UChar compareEnable, UChar func, UChar updateEnable);
 
 	// Platform dependent renderer statistics (e.g. display lists allocated)
 	void AppendStatistics(RenderText* pText);
@@ -77,6 +78,11 @@ public:
 	Bool UseVSync;
 
 	UChar LightsMask;
+
+	// cached values for GXSetZMode;
+	UChar ZCompareEnable;
+	UChar ZFunc;
+	UChar ZUpdateEnable;
 
 	static const UInt DEFAULT_FIFO_SIZE = 256*1024;
 	static const UChar ALPHA_SRC_BLEND[];
