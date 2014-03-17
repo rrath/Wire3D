@@ -1429,6 +1429,23 @@ Node* Importer::ParseNode(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 
 	mStatistics.NodeCount++;
 
+	Char* pCulling = GetValue(pXmlNode, "Culling");
+	if (pCulling)
+	{
+		if (Is("ALWAYS", pCulling))
+		{
+			pNode->Culling = Spatial::CULL_ALWAYS;
+		}
+		else if (Is("NEVER", pCulling))
+		{
+			pNode->Culling = Spatial::CULL_NEVER;
+		}
+		else
+		{
+			WIRE_ASSERT(false);
+		}
+	}
+
 	Char* pName = GetValue(pXmlNode, "Name");
 	if (pName)
 	{

@@ -20,8 +20,6 @@ public class Unity3DExporter : EditorWindow
     private bool mWriteNormalmaps = false;
 	private string mPath = "../Data/Scene";
 
-    private bool mDebugPushLightsToLeaf = false;
-
     private List<string> mMeshAssetsProcessed;
 	private Dictionary<string, string> mMeshAssetNameToMeshName;
 	private Dictionary<string, int> mMeshNameToCount;
@@ -82,7 +80,7 @@ public class Unity3DExporter : EditorWindow
 		MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer> ();
 		
 		return (meshFilter != null && meshFilter.sharedMesh != null) &&
-            (meshRenderer != null && meshRenderer.enabled);
+            (meshRenderer != null);
 	}
 	
 
@@ -340,21 +338,20 @@ public class Unity3DExporter : EditorWindow
 
         List<Light> lights = GetLightsForRenderer(meshRenderer);
         bool extraNode = false;
-        if (lights.Count > 0 && transform.childCount > 0)
+        if (transform.childCount > 0)
         {
             indent = indent + "  ";
             string isStatic = go.isStatic ? " Static=\"1\"" : "";
             string layer = go.layer == 0 ? "" : " Layer=\"" + go.layer + "\"";
-            outFile.WriteLine(indent + "<Node Name=\"" + go.name + "\"" + isStatic + layer + ">");
+            string culling = GetCulling(meshRenderer);
+
+            outFile.WriteLine(indent + "<Node Name=\"" + go.name + "\"" + isStatic + layer + culling + ">");
             extraNode = true;
         }
 
-        if (mDebugPushLightsToLeaf)
+        foreach (Light light in lights)
         {
-            foreach (Light light in lights)
-            {
-                WriteLight(light, outFile, indent);
-            }
+            WriteLight(light, outFile, indent);
         }
 
         if (exportSubmeshes)
@@ -372,6 +369,21 @@ public class Unity3DExporter : EditorWindow
             outFile.WriteLine(indent + "</Node>");       
         }
 	}
+
+    private string GetCulling(Renderer renderer)
+    {
+        if (renderer == null)
+        {
+            return string.Empty;
+        }
+
+        if (!renderer.enabled)
+        {
+            return " Culling=\"ALWAYS\"";
+        }
+
+        return string.Empty;
+    }
 
     private List<Light> GetLightsForRenderer(Renderer renderer)
     {
@@ -452,7 +464,10 @@ public class Unity3DExporter : EditorWindow
             isStatic += "Static=\"1\"";
         }
 
+        bool hasRenderObject = HasRenderObject(transform);
         bool isEmpty = go.transform.childCount == 0;
+        string culling = isEmpty ? GetCulling(go.GetComponent<MeshRenderer>()) : string.Empty;
+
         Component[] components = go.GetComponents<Component>();
         isEmpty = isEmpty && (components == null || components.Length < 2);
         string slash = isEmpty ? " /" : "";
@@ -460,7 +475,7 @@ public class Unity3DExporter : EditorWindow
         string layer = go.layer == 0 ? "" : " Layer=\"" + go.layer + "\"";
 
         outFile.WriteLine(indent + "<Node Name=\"" + go.name + "\" " +
-             trafo + isStatic + layer + slash + ">");
+             trafo + isStatic + layer + culling + slash + ">");
 
         WriteLightNode(go.GetComponent<Light>(), outFile, indent);
 
@@ -468,7 +483,7 @@ public class Unity3DExporter : EditorWindow
         WriteColliders(go, outFile, indent);
         WriteRigidbody(go, outFile, indent);
 
-        if (HasRenderObject(transform))
+        if (hasRenderObject)
         {
             WriteRenderObject(transform, outFile, indent);
         }
@@ -484,19 +499,22 @@ public class Unity3DExporter : EditorWindow
         }
 	}
 
-	private void WriteSkybox (StreamWriter outFile, string indent)
+	private void WriteSkybox(Material skyboxMaterial, StreamWriter outFile, string indent, bool disableZCompare = false)
 	{
-		Material skyboxMaterial = RenderSettings.skybox;
-		if (skyboxMaterial == null) {
+		if (skyboxMaterial == null)
+        {
 			return;
 		}
 
 		Shader skyBoxShader = skyboxMaterial.shader;
-		if (skyBoxShader == null) {
+		if (skyBoxShader == null)
+        {
 			return;
 		}
 
-		if (!skyBoxShader.name.Equals ("RenderFX/Skybox")) {
+		if (!skyBoxShader.name.Equals ("RenderFX/Skybox"))
+        {
+            Debug.LogWarning("Only skyboxes with shader \"RenderFX/Skybox\" are supported.", skyboxMaterial);
 			return;
 		}
 
@@ -536,6 +554,11 @@ public class Unity3DExporter : EditorWindow
 		outFile.WriteLine (indent + "  " + "</NegY>");
 
         outFile.WriteLine(indent + "<FogState Enabled=\"0\" />");
+
+        if (disableZCompare)
+        {
+            outFile.WriteLine(indent + "<ZBufferState Enabled=\"0\" Writable=\"0\" />");
+        }
 
 		outFile.WriteLine (indent + "</Skybox>");
 	}
@@ -583,21 +606,12 @@ public class Unity3DExporter : EditorWindow
 
             outFile.WriteLine("<Node Name=\"" + unitySceneName + "\">");         
 			string indent = "  ";
-            if (!mDebugPushLightsToLeaf)
-            {
-                foreach (Light light in mLightToName.Keys)
-                {
-                    WriteLight(light, outFile, "");
-                }
-            }
 
             WriteStateFog (outFile, indent);
 
 			foreach (Transform transform in GetRootTransforms ()) {
 				Traverse (transform, outFile, indent);
 			}
-	
-			WriteSkybox (outFile, indent);
 
 			outFile.WriteLine ("</Node>");
 		} finally {
@@ -1127,6 +1141,7 @@ public class Unity3DExporter : EditorWindow
         string clear = string.Empty;
         Color c = camera.backgroundColor;
         string clearColor = " ClearColor=\"" + c.r + ", " + c.g + ", " + c.b + ", " + c.a + "\"";
+        Material skyboxMaterial = null;
         switch (camera.clearFlags)
         {
             case CameraClearFlags.Depth:
@@ -1137,12 +1152,39 @@ public class Unity3DExporter : EditorWindow
                 clear = " Clear=\"No\"";
                 clearColor = string.Empty;
                 break;
+            case CameraClearFlags.Skybox:
+                var skybox = camera.gameObject.GetComponent<Skybox>();
+                if (skybox != null && skybox.enabled && skybox.material != null)
+                {
+                    skyboxMaterial = skybox.material;
+                }
+                else
+                {
+                    skyboxMaterial = RenderSettings.skybox;
+                }
+
+                if (skyboxMaterial != null)
+                {
+                    clear = " Clear=\"Z\"";
+                    clearColor = string.Empty;
+                }
+                break;
             default:
                 break;
         }
 
-		outFile.WriteLine (indent + "  " + "<Camera Fov=\"" + fieldOfView + "\" Near=\"" +
-            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + clear + clearColor + depth + mask + " />");
+		outFile.Write(indent + "  " + "<Camera Fov=\"" + fieldOfView + "\" Near=\"" +
+            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + clear + clearColor + depth + mask);
+        if (skyboxMaterial != null)
+        {
+            outFile.WriteLine(">");
+            WriteSkybox(skyboxMaterial, outFile, indent + "    ", true);
+            outFile.WriteLine(indent + "  " + "</Camera>");
+        }   
+        else
+        {
+            outFile.WriteLine(" />");
+        }
 	}
 
     private string GetMaterialName(Material material, MeshRenderer meshRenderer)
