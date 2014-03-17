@@ -870,7 +870,6 @@ void Node::UpdateStateRenderObject(States* pStates, Lights* pLights)
 	}
 
 	pRenderObjectLights->RemoveAll();
-	pRenderObjectLights->SetMaxQuantity(pLights->GetQuantity());
 	for (UInt i = 0; i < pLights->GetQuantity(); i++)
 	{
 		if (((*pLights)[i]->LayerMask & mLayerMask) != 0)
