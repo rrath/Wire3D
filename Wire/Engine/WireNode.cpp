@@ -889,7 +889,7 @@ void Node::UpdateStateRenderObject(States* pStates, Lights* pLights)
 	WIRE_ASSERT(stateKey < (1 << STATEKEYBITS));
 
 	UInt lightKey = Light::GetSetID(mspRenderObject->GetLights());
-	WIRE_ASSERT(stateKey < (1 << LIGHTKEYBITS));
+	WIRE_ASSERT(lightKey < (1 << LIGHTKEYBITS));
 
 	UInt key = (lightKey << STATEKEYBITS) | stateKey;
 	mspRenderObject->SetStateSetID(key);
