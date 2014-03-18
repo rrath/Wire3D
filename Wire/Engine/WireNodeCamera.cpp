@@ -76,10 +76,33 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		return;
 	}
 
+	const UInt maxCameraCount = 64;
+	if (rNodeCameras.GetQuantity() >= 64)
+	{
+		WIRE_ASSERT(false);
+		return;
+	}
+
+	// cull all skyboxes attached to cameras in the scene
+	Spatial::CullingMode tempCullingModes[maxCameraCount];
 	for (UInt i = 0; i < rNodeCameras.GetQuantity(); i++)
 	{
-		WIRE_ASSERT(rNodeCameras[i] && rNodeCameras[i]->Get());
-		Camera* pCamera = rNodeCameras[i]->Get();
+		NodeCamera* pNodeCamera = rNodeCameras[i];
+		WIRE_ASSERT(pNodeCamera);
+		Node* pSkybox = pNodeCamera->mspSkybox;
+		if (pSkybox)
+		{
+			tempCullingModes[i] = pSkybox->Culling;
+			pSkybox->Culling = Spatial::CULL_ALWAYS;
+		}
+	}
+
+	for (UInt i = 0; i < rNodeCameras.GetQuantity(); i++)
+	{
+		NodeCamera* pNodeCamera = rNodeCameras[i];
+		WIRE_ASSERT(pNodeCamera && pNodeCamera->Get());
+		Camera* pCamera = pNodeCamera->Get();
+
 		rCuller.SetCamera(pCamera);
 		rCuller.ComputeVisibleSet(pRoot);
 
@@ -96,10 +119,13 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		rect.Z() = MathF::Round((right-left)*width);
 		rect.W() = MathF::Round((top-bottom)*height);
 
+		ColorRGBA clearColor = pRenderer->GetClearColor();
 		switch (rNodeCameras[i]->mClearFlag)
 		{
 		case CF_ALL:
+			pRenderer->SetClearColor(pNodeCamera->GetClearColor());
 			pRenderer->ClearBuffers(true, true, rect);
+			pRenderer->SetClearColor(clearColor);
 			break;
 
 		case CF_Z_ONLY:
@@ -115,6 +141,27 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 
 		pRenderer->SetCamera(pCamera);
 		pRenderer->Draw(rCuller.GetVisibleSets());
+
+		Node* pSkybox = pNodeCamera->mspSkybox;
+		if (pSkybox)
+		{
+			pSkybox->Culling = Spatial::CULL_NEVER;
+			rCuller.ComputeVisibleSet(pSkybox);
+			pRenderer->Draw(rCuller.GetVisibleSets());
+			pSkybox->Culling = Spatial::CULL_ALWAYS;
+		}
+	}
+
+	// restore culling mode of all skyboxes attached to cameras in the scene
+	for (UInt i = 0; i < rNodeCameras.GetQuantity(); i++)
+	{
+		NodeCamera* pNodeCamera = rNodeCameras[i];
+		WIRE_ASSERT(pNodeCamera);
+		Node* pSkybox = pNodeCamera->mspSkybox;
+		if (pSkybox)
+		{
+			pSkybox->Culling = tempCullingModes[i];
+		}
 	}
 }
 

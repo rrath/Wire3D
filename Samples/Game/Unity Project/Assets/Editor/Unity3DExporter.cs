@@ -499,7 +499,7 @@ public class Unity3DExporter : EditorWindow
         }
 	}
 
-	private void WriteSkybox(Material skyboxMaterial, StreamWriter outFile, string indent, bool disableZCompare = false)
+	private void WriteSkybox(Material skyboxMaterial, StreamWriter outFile, string indent)
 	{
 		if (skyboxMaterial == null)
         {
@@ -554,11 +554,7 @@ public class Unity3DExporter : EditorWindow
 		outFile.WriteLine (indent + "  " + "</NegY>");
 
         outFile.WriteLine(indent + "<FogState Enabled=\"0\" />");
-
-        if (disableZCompare)
-        {
-            outFile.WriteLine(indent + "<ZBufferState Enabled=\"0\" Writable=\"0\" />");
-        }
+        outFile.WriteLine(indent + "<ZBufferState Enabled=\"1\" Writable=\"0\" />");
 
 		outFile.WriteLine (indent + "</Skybox>");
 	}
@@ -1178,7 +1174,7 @@ public class Unity3DExporter : EditorWindow
         if (skyboxMaterial != null)
         {
             outFile.WriteLine(">");
-            WriteSkybox(skyboxMaterial, outFile, indent + "    ", true);
+            WriteSkybox(skyboxMaterial, outFile, indent + "    ");
             outFile.WriteLine(indent + "  " + "</Camera>");
         }   
         else

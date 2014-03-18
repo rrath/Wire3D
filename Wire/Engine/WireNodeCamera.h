@@ -64,6 +64,9 @@ public:
 	inline void SetClearFlag(ClearFlag clearFlag);
 	inline ClearFlag GetClearFlag() const;
 
+	inline void SetSkybox(Node* pSkybox);
+	inline Node* GetSkybox() const;
+
 	static void Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		Culler& rCuller, Renderer* pRenderer);
 	static void SortByDepth(TArray<NodeCamera*>& rCameras);
@@ -76,6 +79,7 @@ private:
 	void CameraToLocalTransform();
 	Pointer<Camera> mspCamera;
 
+	NodePtr mspSkybox;
 	Int mDepth;
 	ColorRGBA mClearColor;
 	ClearFlag mClearFlag;

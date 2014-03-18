@@ -65,3 +65,15 @@ inline NodeCamera::ClearFlag NodeCamera::GetClearFlag() const
 {
 	return mClearFlag;
 }
+
+//----------------------------------------------------------------------------
+inline void NodeCamera::SetSkybox(Node* pSkybox)
+{
+	mspSkybox = pSkybox;
+}
+
+//----------------------------------------------------------------------------
+inline Node* NodeCamera::GetSkybox() const
+{
+	return mspSkybox;
+}

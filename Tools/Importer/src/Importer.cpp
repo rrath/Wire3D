@@ -64,13 +64,10 @@ Node* Importer::LoadSceneFromXml(const Char* pFilename)
 	Node* pRoot = WIRE_NEW Node;
 	pRoot->SetName(pFilename);
 
-	if (doc.first_node())
+	for (rapidxml::xml_node<>* pChild = doc.first_node(); pChild;
+		pChild = pChild->next_sibling())
 	{
-		for (rapidxml::xml_node<>* pChild = doc.first_node(); pChild;
-			pChild = pChild->next_sibling())
-		{
-			Traverse(pChild, pRoot);
-		}
+		Traverse(pChild, pRoot);
 	}
 
 	WIRE_DELETE[] pXmlNullTerminated;
@@ -549,17 +546,14 @@ void Importer::Traverse(rapidxml::xml_node<>* pXmlNode, Node* pParent)
 	WIRE_ASSERT(Is("Node", pXmlName));
 	Node* pNode = ParseNode(pXmlNode, pParent);
 
-	if (pXmlNode->first_node())
+	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
+		pChild = pChild->next_sibling())
 	{
-		for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
-			pChild = pChild->next_sibling())
+		const Char* pChildName = pChild->name();
+		if (Is("Node", pChildName) || Is("Text", pChildName) ||
+			Is("Skybox", pChildName))
 		{
-			const Char* pChildName = pChild->name();
-			if (Is("Node", pChildName) || Is("Text", pChildName) ||
-				Is("Skybox", pChildName))
-			{
-				Traverse(pChild, pNode);
-			}
+			Traverse(pChild, pNode);
 		}
 	}
 }
@@ -1323,6 +1317,21 @@ void Importer::ParseCamera(rapidxml::xml_node<>* pXmlNode, Spatial* pSpatial)
 		}
 	}
 
+	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
+		pChild = pChild->next_sibling())
+	{
+		const Char* pChildName = pChild->name();
+		if (Is("Skybox", pChildName))
+		{
+			NodeSkybox* pSkybox = ParseSkybox(pChild);
+			if (pSkybox)
+			{
+				pCameraNode->AttachChild(pSkybox);
+				pCameraNode->SetSkybox(pSkybox);
+			}
+		}
+	}
+
 	StaticCast<Node>(pSpatial)->AttachChild(pCameraNode);
 }
 
@@ -1480,19 +1489,16 @@ RenderObject* Importer::ParseRenderObject(rapidxml::xml_node<>* pXmlNode)
 	Mesh* pMesh = NULL;
 	Material* pMaterial = NULL;
 
-	if (pXmlNode->first_node())
+	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
+		pChild = pChild->next_sibling())
 	{
-		for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
-			pChild = pChild->next_sibling())
+		if (Is("Mesh", pChild->name()))
 		{
-			if (Is("Mesh", pChild->name()))
-			{
-				pMesh = ParseMesh(pChild);
-			}
-			else if (Is("Material", pChild->name()))
-			{
-				pMaterial = ParseMaterial(pChild);
-			}
+			pMesh = ParseMesh(pChild);
+		}
+		else if (Is("Material", pChild->name()))
+		{
+			pMaterial = ParseMaterial(pChild);
 		}
 	}
 
@@ -2110,49 +2116,46 @@ Material* Importer::ParseMaterial(rapidxml::xml_node<>* pXmlNode)
 	}
 
 	Material* pMaterial = WIRE_NEW Material;
-	if (pXmlNode->first_node())
+	for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
+		pChild = pChild->next_sibling())
 	{
-		for (rapidxml::xml_node<>* pChild = pXmlNode->first_node(); pChild;
-			pChild = pChild->next_sibling())
+		if (Is("Texture", pChild->name()))
 		{
-			if (Is("Texture", pChild->name()))
+			Material::BlendMode bm = Material::BM_QUANTITY;
+			Texture2D* pTex = ParseTexture(pChild, bm);
+
+			if (bm == Material::BM_QUANTITY)
 			{
-				Material::BlendMode bm = Material::BM_QUANTITY;
-				Texture2D* pTex = ParseTexture(pChild, bm);
-
-				if (bm == Material::BM_QUANTITY)
-				{
-					bm = pMaterial->GetTextureQuantity() > 0 ?
-						Material::BM_MODULATE : Material::BM_REPLACE;
-				}
-
-				pMaterial->AddTexture(pTex, bm);
+				bm = pMaterial->GetTextureQuantity() > 0 ?
+					Material::BM_MODULATE : Material::BM_REPLACE;
 			}
-			else
-			{
-				State* pState = ParseRenderStates(pChild);
-				if (pState)
-				{
-					TArray<StatePtr>* pStateList = mMaterialStates.Find(pMaterial);
-					if (pStateList)
-					{
-						for (UInt i = 0; i < pStateList->GetQuantity(); i++)
-						{
-							if ((*pStateList)[i]->GetStateType() == pState->
-								GetStateType())
-							{
-								WIRE_ASSERT(false /* multiple States of the same type encountered */);
-							}
-						}
 
-						pStateList->Append(pState);
-					}
-					else
+			pMaterial->AddTexture(pTex, bm);
+		}
+		else
+		{
+			State* pState = ParseRenderStates(pChild);
+			if (pState)
+			{
+				TArray<StatePtr>* pStateList = mMaterialStates.Find(pMaterial);
+				if (pStateList)
+				{
+					for (UInt i = 0; i < pStateList->GetQuantity(); i++)
 					{
-						TArray<StatePtr> stateList;
-						stateList.Append(pState);
-						mMaterialStates.Insert(pMaterial, stateList);
+						if ((*pStateList)[i]->GetStateType() == pState->
+							GetStateType())
+						{
+							WIRE_ASSERT(false /* multiple States of the same type encountered */);
+						}
 					}
+
+					pStateList->Append(pState);
+				}
+				else
+				{
+					TArray<StatePtr> stateList;
+					stateList.Append(pState);
+					mMaterialStates.Insert(pMaterial, stateList);
 				}
 			}
 		}
