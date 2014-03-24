@@ -276,16 +276,25 @@ void Renderer::SetClearColor(const ColorRGBA& rClearColor)
 {
 	mClearColor = rClearColor;
 
-	GXColor& rGXClearColor = mpData->ClearColor;
+	GXColor& rColor = mpData->ClearColor;
 
-	rGXClearColor.r = static_cast<UChar>(rClearColor.R() * 255.0F);
-	rGXClearColor.g = static_cast<UChar>(rClearColor.G() * 255.0F);
-	rGXClearColor.b = static_cast<UChar>(rClearColor.B() * 255.0F);
-	rGXClearColor.a = static_cast<UChar>(rClearColor.A() * 255.0F);
-	GXSetCopyClear(rGXClearColor, GX_MAX_Z24);
+	Bool dirty = false;
+	UChar r = static_cast<UChar>(rClearColor.R() * 255.0F);
+	UChar g = static_cast<UChar>(rClearColor.G() * 255.0F);
+	UChar b = static_cast<UChar>(rClearColor.B() * 255.0F);
+	UChar a = static_cast<UChar>(rClearColor.A() * 255.0F);
+
+	if (rColor.r != r) { rColor.r = r; dirty = true; }
+	if (rColor.g != g) { rColor.g = g; dirty = true; }
+	if (rColor.b != b) { rColor.b = b; dirty = true; }
+	if (rColor.a != a) { rColor.a = a; dirty = true; }
+	GXSetCopyClear(rColor, GX_MAX_Z24);
 
 	// mark as dirty, so subsequent Clears with new color will not be ignored
-	mpData->IsFrameBufferDirty = true;
+	if (dirty)
+	{
+		mpData->IsFrameBufferDirty = true;
+	}
 }
 
 //----------------------------------------------------------------------------

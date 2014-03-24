@@ -31,7 +31,8 @@ public:
 		const Vector3F& rPosition = Vector3F::ZERO);
 
 protected:
-	UInt64 GetKey(RenderObject* pRenderObject, const Vector3F& rPosition);
+	UInt64 GetKey(RenderObject* pRenderObject, Transformation* pTransformation,
+		const Vector3F& rPosition);
 };
 
 }

@@ -351,7 +351,7 @@ public class Unity3DExporter : EditorWindow
 
         foreach (Light light in lights)
         {
-            WriteLight(light, outFile, indent);
+            WriteLight(light, outFile, indent + "  ");
         }
 
         if (exportSubmeshes)
@@ -477,11 +477,16 @@ public class Unity3DExporter : EditorWindow
         outFile.WriteLine(indent + "<Node Name=\"" + go.name + "\" " +
              trafo + isStatic + layer + culling + slash + ">");
 
-        WriteLightNode(go.GetComponent<Light>(), outFile, indent);
+        WriteLightNode(go.GetComponent<Light>(), outFile, indent + "  ");
 
         WriteCamera(go.GetComponent<Camera>(), outFile, indent);
         WriteColliders(go, outFile, indent);
         WriteRigidbody(go, outFile, indent);
+        LensFlare lensflare = go.GetComponent<LensFlare>();
+        if (lensflare != null)
+        {
+            WriteLensflareNode(lensflare.flare, lensflare.enabled, outFile, indent);
+        }
 
         if (hasRenderObject)
         {
@@ -529,32 +534,34 @@ public class Unity3DExporter : EditorWindow
 
         WriteMaterialState(skyboxMaterial, outFile, indent);
 
-		outFile.WriteLine (indent + "  " + "<PosZ>");
-		WriteTexture (posZTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</PosZ>");
+        string indent2 = indent + "  ";
 
-		outFile.WriteLine (indent + "  " + "<NegZ>");
-		WriteTexture (negZTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</NegZ>");
+		outFile.WriteLine (indent2 + "<PosZ>");
+		WriteTexture (posZTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</PosZ>");
 
-		outFile.WriteLine (indent + "  " + "<PosX>");
-		WriteTexture (negXTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</PosX>");
+		outFile.WriteLine (indent2 + "<NegZ>");
+		WriteTexture (negZTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</NegZ>");
 
-		outFile.WriteLine (indent + "  " + "<NegX>");
-		WriteTexture (posXTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</NegX>");
+		outFile.WriteLine (indent2 + "<PosX>");
+		WriteTexture (negXTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</PosX>");
 
-		outFile.WriteLine (indent + "  " + "<PosY>");
-		WriteTexture (posYTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</PosY>");
+		outFile.WriteLine (indent2 + "<NegX>");
+		WriteTexture (posXTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</NegX>");
 
-		outFile.WriteLine (indent + "  " + "<NegY>");
-		WriteTexture (negYTexture2D, outFile, indent + "  ");
-		outFile.WriteLine (indent + "  " + "</NegY>");
+		outFile.WriteLine (indent2 + "<PosY>");
+		WriteTexture (posYTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</PosY>");
 
-        outFile.WriteLine(indent + "<FogState Enabled=\"0\" />");
-        outFile.WriteLine(indent + "<ZBufferState Enabled=\"1\" Writable=\"0\" />");
+		outFile.WriteLine (indent2 + "<NegY>");
+		WriteTexture (negYTexture2D, outFile, indent2 + "  ");
+		outFile.WriteLine (indent2 + "</NegY>");
+
+        outFile.WriteLine(indent2 + "<FogState Enabled=\"0\" />");
+        outFile.WriteLine(indent2 + "<ZBufferState Enabled=\"1\" Writable=\"0\" />");
 
 		outFile.WriteLine (indent + "</Skybox>");
 	}
@@ -686,6 +693,7 @@ public class Unity3DExporter : EditorWindow
         string indent = "    ";
 
         WriteLightAssets(outFile, indent);
+        WriteFlareAssets(outFile, indent);
         WriteMeshAssets(outFile, indent);
         WriteMaterialAssets(outFile, indent);
 
@@ -726,6 +734,94 @@ public class Unity3DExporter : EditorWindow
         }
     }
 
+    private void WriteFlareAssets(StreamWriter outFile, string indent)
+    {
+        List<Transform> rootTransforms = GetRootTransforms();
+        List<Flare> flares = new List<Flare>();
+
+        foreach (Transform transform in rootTransforms)
+        {
+            if (mIgnoreUnderscore && transform.gameObject.name.StartsWith("_"))
+            {
+                continue;
+            }
+
+            Light[] lights = transform.gameObject.GetComponentsInChildren<Light>();
+            foreach (Light light in lights)
+            {
+                if (light.flare != null)
+                {
+                    if (!flares.Contains(light.flare))
+                    {
+                        flares.Add(light.flare);
+                    }
+                }
+            }
+
+            LensFlare[] lensFlares = transform.gameObject.GetComponentsInChildren<LensFlare>();
+            foreach (LensFlare lensFlare in lensFlares)
+            {
+                if (lensFlare && lensFlare.flare != null)
+                {
+                    if (!flares.Contains(lensFlare.flare))
+                    {
+                        flares.Add(lensFlare.flare);
+                    }
+                }
+            }
+        }
+
+        if (flares.Count > 0)
+        {
+            outFile.WriteLine("  <Flares>");
+
+            foreach (Flare flare in flares)
+            {
+                SerializedObject so = new SerializedObject(flare);
+
+                // 0 - 1 Large 4 Small
+                // 1 - 1 Large 2 Medium 8 Small
+                // 2 - 1 Texture
+                // 3 - 2x2 Grid
+                // 4 - 3x3 Grid
+                // 5 - 4x4 Grid
+                int layout = so.FindProperty("m_TextureLayout").intValue;
+                int useFog = so.FindProperty("m_UseFog").boolValue ? 1 : 0;
+
+                outFile.WriteLine(indent + "<Flare Name=\"" + flare.name + "\" Layout=\"" + layout + "\" Fog=\"" + useFog + "\">");
+                WriteTexture(so.FindProperty("m_FlareTexture").objectReferenceValue as Texture2D, outFile, indent + "  ");
+
+                SerializedProperty sp = so.FindProperty("m_Elements"); 
+                int arraySize = sp.arraySize;
+                for (int i = 0; i < arraySize; ++i)
+                {
+                    SerializedProperty spElement = sp.GetArrayElementAtIndex(i);
+                    int imageIndex = spElement.FindPropertyRelative("m_ImageIndex").intValue;
+                    float position = spElement.FindPropertyRelative("m_Position").floatValue;
+                    float size = spElement.FindPropertyRelative("m_Size").floatValue;
+
+                    SerializedProperty spColor = spElement.FindPropertyRelative("m_Color");
+                    float r = spColor.FindPropertyRelative("r").floatValue;
+                    float g = spColor.FindPropertyRelative("g").floatValue;
+                    float b = spColor.FindPropertyRelative("b").floatValue;
+                    float a = spColor.FindPropertyRelative("a").floatValue;
+                    string color = " Color=\"" + r + ", " + g + ", " + b + ", " + a + "\"";
+
+                    int useLightColor = spElement.FindPropertyRelative("m_UseLightColor").boolValue ? 1 : 0;
+                    int rotate = spElement.FindPropertyRelative("m_Rotate").boolValue ? 1 : 0;
+                    int zoom = spElement.FindPropertyRelative("m_Zoom").boolValue ? 1 : 0;
+                    int fade = spElement.FindPropertyRelative("m_Fade").boolValue ? 1 : 0;
+
+                    outFile.WriteLine(indent + "  <Element ImageIndex=\"" + imageIndex + "\" Position=\"" + position + "\" Size=\"" + size + "\"" + color + " UseLightColor=\"" +
+                        useLightColor + "\" Rotate=\"" + rotate + "\" Zoom=\"" + zoom + "\" Fade=\"" + fade + "\" />");
+                }
+
+                outFile.WriteLine(indent + "</Flare>");
+            }
+
+            outFile.WriteLine("  </Flares>");
+        }
+    }
 
     private struct MeshAndMeshRenderer
     {
@@ -923,11 +1019,22 @@ public class Unity3DExporter : EditorWindow
             return;
         }
 
-        outFile.WriteLine(indent + "  " + "<LightNode>");
+        outFile.WriteLine(indent + "<LightNode>");        
         WriteLight(light, outFile, indent + "  ");
-        outFile.WriteLine(indent + "  " + "</LightNode>");
+        WriteLensflareNode(light.flare, true, outFile, indent);
+        outFile.WriteLine(indent + "</LightNode>");
     }
-    
+
+    private void WriteLensflareNode(Flare flare, bool enabled, StreamWriter outFile, string indent)
+    {
+        if (flare == null)
+        {
+            return;
+        }
+
+        outFile.WriteLine(indent + "  <Lensflare Flare=\"" + flare.name + "\"" + (enabled ? "" : " Enabled=\"0\"") + " />");
+    }
+
     private void WriteLight(Light light, StreamWriter outFile, string indent)
 	{
 		if (light == null)
@@ -960,7 +1067,7 @@ public class Unity3DExporter : EditorWindow
 
         if (alreadyProcessed)
         {
-            outFile.WriteLine(indent + "  " + "<Light Name=\"" + lightName + "\" />");
+            outFile.WriteLine(indent + "<Light Name=\"" + lightName + "\" />");
         }
         else
         {
@@ -974,7 +1081,7 @@ public class Unity3DExporter : EditorWindow
             string mask = light.cullingMask == ~0 ? "" : " Mask=\"" + light.cullingMask.ToString("X") + "\"";
             string enabled = light.enabled ? "" : " Enabled=\"0\"";
             
-            outFile.WriteLine(indent + "  " + "<Light Name=\"" + lightName + "\" Type=\"" + light.type +
+            outFile.WriteLine(indent + "<Light Name=\"" + lightName + "\" Type=\"" + light.type +
                 "\"" + direction + range + " Ambient=\"" + ambient.r + ", " + ambient.g + ", " + ambient.b +
 			    "\" Color=\"" + color.r + ", " + color.g + ", " + color.b + "\"" + mask + enabled + lightmap + " />");
         }
@@ -1240,7 +1347,7 @@ public class Unity3DExporter : EditorWindow
         if (usesLightmap)
         {
             Texture2D lightmap = LightmapSettings.lightmaps[meshRenderer.lightmapIndex].lightmapFar;
-            WriteTexture(lightmap, outFile, indent, true, isRealtimeLit);
+            WriteTexture(lightmap, outFile, indent + "  ", true, isRealtimeLit);
         }
 
         var textures = GetTextures(material);
@@ -1248,17 +1355,17 @@ public class Unity3DExporter : EditorWindow
         {
             if (i == 0)
             {
-                WriteTexture(textures[i], outFile, indent, false, isRealtimeLit);
+                WriteTexture(textures[i], outFile, indent + "  ", false, isRealtimeLit);
             }
             else
             {
                 if (!IsNormalmap(textures[i]))
                 {
-                    WriteTexture(textures[i], outFile, indent);
+                    WriteTexture(textures[i], outFile, indent + "  ");
                 }
                 else if (mWriteNormalmaps)
                 {
-                    WriteTexture(textures[i], outFile, indent);
+                    WriteTexture(textures[i], outFile, indent + "  ");
                 }
             }
         }
@@ -1364,7 +1471,7 @@ public class Unity3DExporter : EditorWindow
 
 		int mipmapCount = (mDontGenerateMipmapsForLightmaps && isLightmap) ? 1 : texture.mipmapCount;
 
-		string textureXmlNode = indent + "  <Texture Name=\"" + texName +
+		string textureXmlNode = indent + "<Texture Name=\"" + texName +
             "\" FilterMode=\"" + texture.filterMode + "\" AnisoLevel=\"" + texture.anisoLevel +
             "\" WrapMode=\"" + texture.wrapMode + "\" Mipmaps=\"" + mipmapCount + "\" ";
 

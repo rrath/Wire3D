@@ -58,66 +58,74 @@ void NodeSkybox::Init(Texture2D* pPosZ, Texture2D* pNegZ, Texture2D* pPosX,
 	pCull->CullFace = StateCull::CM_BACK;
 	AttachState(pCull);
 
+	VertexAttributes attributes;
+	attributes.SetPositionChannels(3);  // channels: X, Y, Z
+	attributes.SetTCoordChannels(2);	// channels: U, V
+	VertexBuffer* pVBuffer = WIRE_NEW VertexBuffer(attributes, 4*6);
+	for (UInt i = 0; i < 6; ++i)
+	{
+		pVBuffer->TCoord2(i*4+0) = Vector2F(0, 0);
+		pVBuffer->TCoord2(i*4+1) = Vector2F(1, 0);
+		pVBuffer->TCoord2(i*4+2) = Vector2F(1, 1);
+		pVBuffer->TCoord2(i*4+3) = Vector2F(0, 1);
+	}
+
+	const UShort indices[6] = { 0, 1, 2, 0, 2, 3 };
+	UInt indexQuantity = sizeof(indices) / sizeof(UShort);
+	IndexBuffer* pIBuffer = WIRE_NEW IndexBuffer(indexQuantity*6);
+	for (UShort j = 0; j < 6; j++)
+	{
+		for	(UInt i = 0; i < indexQuantity; i++)
+		{
+			(*pIBuffer)[j*indexQuantity+i] = indices[i]+j*4;
+		}
+	}
+
 	// +Z (front)
 	AddQuad(Vector3F(1.0F, 1.0F, 1.0F), Vector3F(-1.0F, 1.0F, 1.0F),
 			Vector3F(-1.0F, -1.0F, 1.0F), Vector3F(1.0F, -1.0F, 1.0F),
-			pPosZ);
+			pPosZ, pVBuffer, pIBuffer, 0);
 
 	// -Z (back)
 	AddQuad(Vector3F(-1.0F, 1.0F, -1.0F), Vector3F(1.0F, 1.0F,-1.0F),
 			Vector3F(1.0F, -1.0F, -1.0F), Vector3F(-1.0F, -1.0F, -1.0F),
-			pNegZ);
+			pNegZ, pVBuffer, pIBuffer, 1);
 
 	// +X (left)
 	AddQuad(Vector3F(1.0F, 1.0F, -1.0F), Vector3F(1.0F, 1.0F, 1.0F),
 			Vector3F(1.0F, -1.0F, 1.0F), Vector3F(1.0F, -1.0F, -1.0F),
-			pPosX);
+			pPosX, pVBuffer, pIBuffer, 2);
 
 	// -X (right)
 	AddQuad(Vector3F(-1.0F, 1.0F, 1.0F), Vector3F(-1.0F, 1.0F, -1.0F),
 			Vector3F(-1.0F, -1.0F, -1.0F), Vector3F(-1.0F, -1.0F, 1.0F),
-			pNegX);
+			pNegX, pVBuffer, pIBuffer, 3);
 
 	// +Y (up)
 	AddQuad(Vector3F(1.0F, 1.0F, -1.0F), Vector3F(-1.0F, 1.0F, -1.0F),
 			Vector3F(-1.0F, 1.0F, 1.0F), Vector3F(1.0F, 1.0F, 1.0F),
-			pPosY);
+			pPosY, pVBuffer, pIBuffer, 4);
 
 	// -Y (down)
 	AddQuad(Vector3F(1.0F, -1.0F, 1.0F), Vector3F(-1.0F, -1.0F, 1.0F),
 			Vector3F(-1.0F, -1.0F, -1.0F), Vector3F(1.0F, -1.0F, -1.0F),
-			pNegY);
+			pNegY, pVBuffer, pIBuffer, 5);
 }
 
 //----------------------------------------------------------------------------
 void NodeSkybox::AddQuad(const Vector3F& v0, const Vector3F& v1, const
-	Vector3F& v2, const Vector3F& v3, Texture2D* pTexture)
+	Vector3F& v2, const Vector3F& v3, Texture2D* pTexture,
+	VertexBuffer* pVBuffer, IndexBuffer* pIBuffer, UInt side)
 {
-	VertexAttributes attributes;
-	attributes.SetPositionChannels(3);  // channels: X, Y, Z
-	attributes.SetTCoordChannels(2);	// channels: U, V
-
-	VertexBuffer* pVBuffer = WIRE_NEW VertexBuffer(attributes, 4);
-	pVBuffer->Position3(0) = v0;
-	pVBuffer->TCoord2(0) = Vector2F(0, 0);
-	pVBuffer->Position3(1) = v1;
-	pVBuffer->TCoord2(1) = Vector2F(1, 0);
-	pVBuffer->Position3(2) = v2;
-	pVBuffer->TCoord2(2) = Vector2F(1, 1);
-	pVBuffer->Position3(3) = v3;
-	pVBuffer->TCoord2(3) = Vector2F(0, 1);
-
-	const UShort indices[6] = { 0, 1, 2, 0, 2, 3 };
-	UInt indexQuantity = sizeof(indices) / sizeof(UShort);
-	IndexBuffer* pIBuffer = WIRE_NEW IndexBuffer(indexQuantity);
-	for	(UInt i = 0; i < indexQuantity; i++)
-	{
-		(*pIBuffer)[i] = indices[i];
-	}
+	pVBuffer->Position3(side*4+0) = v0;
+	pVBuffer->Position3(side*4+1) = v1;
+	pVBuffer->Position3(side*4+2) = v2;
+	pVBuffer->Position3(side*4+3) = v3;
 
 	Material* pMaterial = WIRE_NEW Material;
 	pMaterial->AddTexture(pTexture, Material::BM_REPLACE);
 
-	Node* pQuad = WIRE_NEW Node(pVBuffer, pIBuffer, pMaterial);
+	Mesh* pMesh = WIRE_NEW Mesh(pVBuffer, pIBuffer, side*6, 6);
+	Node* pQuad = WIRE_NEW Node(pMesh, pMaterial);
 	AttachChild(pQuad);
 }

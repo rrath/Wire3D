@@ -51,7 +51,7 @@ void CullerSorting::Insert(Object* pObject, Transformation* pTransformation,
 		return;
 	}
 
-	UInt64 key = GetKey(pRenderObject, rPosition);
+	UInt64 key = GetKey(pRenderObject, pTransformation, rPosition);
 	StateAlpha* pAlpha = StaticCast<StateAlpha>(pRenderObject->GetStates()[
 		State::ALPHA]);
 	if (pAlpha)
@@ -72,8 +72,8 @@ void CullerSorting::Insert(Object* pObject, Transformation* pTransformation,
 }
 
 //----------------------------------------------------------------------------
-UInt64 CullerSorting::GetKey(RenderObject* pRenderObject, const Vector3F&
-	rPosition)
+UInt64 CullerSorting::GetKey(RenderObject* pRenderObject, Transformation*
+	pTransformation, const Vector3F& rPosition)
 {
 	WIRE_ASSERT(pRenderObject);
 	UInt64 key = 0;
@@ -81,13 +81,14 @@ UInt64 CullerSorting::GetKey(RenderObject* pRenderObject, const Vector3F&
 	// number of bits we use for the sorting key (MSB to LSB)
 	enum
 	{
-		STATESET = 24,
+		STATESET = 23,
 		MATERIAL = 16,
+		IDENTITY_TRANSFORM = 1,
 		DEPTH = 24
 	};
 	
 	 // The sum of the ranges must fit in the key
-	WIRE_ASSERT((STATESET + MATERIAL + DEPTH) <= sizeof(key) * 8);
+	WIRE_ASSERT((STATESET + MATERIAL + IDENTITY_TRANSFORM + DEPTH) <= sizeof(key) * 8);
 
 	Float z = GetCamera()->GetDVector().Dot(rPosition);
 	const Float far = GetCamera()->GetDMax();
@@ -106,19 +107,24 @@ UInt64 CullerSorting::GetKey(RenderObject* pRenderObject, const Vector3F&
 
 	WIRE_ASSERT(key < (1<<DEPTH));
 
+	if (!pTransformation->IsIdentity())
+	{
+		key |= (1<<DEPTH);
+	}
+
 	// The following asserts let you know when you have created more materials
 	// and state sets than the key can handle. 
 	Material* pMaterial = pRenderObject->GetMaterial();
 	if (pMaterial)
 	{
 		WIRE_ASSERT(pMaterial->ID < (1<<MATERIAL));
-		key |= pMaterial->ID << DEPTH;
+		key |= pMaterial->ID << (DEPTH + IDENTITY_TRANSFORM);
 	}
 
 	// If StateSetID is MAX_UINT, it wasn't initialized (call UpdateRS() once,
 	// or initialize manually)
 	WIRE_ASSERT(pRenderObject->GetStateSetID() < (1<<STATESET));
-	key |= static_cast<UInt64>(pRenderObject->GetStateSetID()) << (MATERIAL + DEPTH);
+	key |= static_cast<UInt64>(pRenderObject->GetStateSetID()) << (MATERIAL + IDENTITY_TRANSFORM + DEPTH);
 
 	return key;
 }
