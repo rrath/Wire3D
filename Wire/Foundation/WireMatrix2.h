@@ -69,6 +69,13 @@ public:
 	void SetColumn(UInt col, const Vector2<Real>& rV);
 	Vector2<Real> GetColumn (UInt col) const;
 
+	// assignment
+	inline Matrix2& operator= (const Matrix2& rM);
+
+	// comparison
+	Bool operator== (const Matrix2& rM) const;
+	Bool operator!= (const Matrix2& rM) const;
+
 	// arithmetic operations
 	inline Matrix2 operator* (const Matrix2& rM) const;
 	inline Matrix2 operator* (Real scalar) const;

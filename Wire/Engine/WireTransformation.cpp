@@ -29,6 +29,28 @@ Transformation::~Transformation()
 }
 
 //----------------------------------------------------------------------------
+Bool Transformation::operator== (const Transformation& rT) const
+{
+	if (mMatrix != rT.mMatrix)
+	{
+		return false;
+	}
+
+	return mScale == rT.mScale;
+}
+
+//----------------------------------------------------------------------------
+Bool Transformation::operator!= (const Transformation& rT) const
+{
+	if (mMatrix != rT.mMatrix)
+	{
+		return true;
+	}
+
+	return mScale != rT.mScale;
+}
+
+//----------------------------------------------------------------------------
 void Transformation::MakeIdentity()
 {
 	mMatrix.MakeIdentity();

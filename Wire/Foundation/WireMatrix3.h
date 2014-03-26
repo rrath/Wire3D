@@ -82,8 +82,15 @@ public:
 	void SetColumn(UInt col, const Vector3<Real>& rV);
 	Vector3<Real> GetColumn(UInt col) const;
 
+	// assignment
+	inline Matrix3& operator= (const Matrix3& rM);
+
+	// comparison
+	Bool operator== (const Matrix3& rM) const;
+	Bool operator!= (const Matrix3& rM) const;
+
 	// arithmetic operations
-	inline Matrix3 operator* (const Matrix3& rMatrix) const;
+	inline Matrix3 operator* (const Matrix3& rM) const;
 	inline Matrix3 operator* (Real scalar) const;
 
 	// matrix times vector

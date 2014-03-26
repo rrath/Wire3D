@@ -31,7 +31,11 @@ public:
 	inline Bool IsUniformScale() const;
 
 	inline operator Matrix34F ();
- 	inline operator const Matrix34F () const;
+	inline operator const Matrix34F () const;
+
+	// comparison
+	Bool operator== (const Transformation& rT) const;
+	Bool operator!= (const Transformation& rT) const;
 
 	void MakeIdentity();
 

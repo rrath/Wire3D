@@ -307,12 +307,33 @@ Vector3<Real> Matrix34<Real>::GetColumn(UInt col) const
 
 //----------------------------------------------------------------------------
 template <class Real>
-inline Matrix34<Real> Matrix34<Real>::operator* (const Matrix34& rMatrix)
+inline Matrix34<Real>& Matrix34<Real>::operator= (const Matrix34& rM)
+{
+	MTXCopy(const_cast<Real4*>(rM.mEntry), const_cast<Real4*>(mEntry));
+	return *this;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix34<Real>::operator== (const Matrix34& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) == 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix34<Real>::operator!= (const Matrix34& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) != 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+inline Matrix34<Real> Matrix34<Real>::operator* (const Matrix34& rM)
 const
 {
 	Matrix34<Real> result;
-	MTXConcat(const_cast<Real4*>(mEntry), const_cast<Matrix34&>(rMatrix),
-		result);
+	MTXConcat(const_cast<Real4*>(mEntry), const_cast<Matrix34&>(rM), result);
 	return result;
 }
 

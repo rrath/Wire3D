@@ -224,6 +224,43 @@ Vector4<Real> Matrix4<Real>::GetColumn(UInt col) const
 
 //----------------------------------------------------------------------------
 template <class Real>
+inline Matrix4<Real>& Matrix4<Real>::operator= (const Matrix4& rM)
+{
+	mEntry[ 0] = rM.mEntry[ 0];
+	mEntry[ 1] = rM.mEntry[ 1];
+	mEntry[ 2] = rM.mEntry[ 2];
+	mEntry[ 3] = rM.mEntry[ 3];
+	mEntry[ 4] = rM.mEntry[ 4];
+	mEntry[ 5] = rM.mEntry[ 5];
+	mEntry[ 6] = rM.mEntry[ 6];
+	mEntry[ 7] = rM.mEntry[ 7];
+	mEntry[ 8] = rM.mEntry[ 8];
+	mEntry[ 9] = rM.mEntry[ 9];
+	mEntry[10] = rM.mEntry[10];
+	mEntry[11] = rM.mEntry[11];
+	mEntry[12] = rM.mEntry[12];
+	mEntry[13] = rM.mEntry[13];
+	mEntry[14] = rM.mEntry[14];
+	mEntry[15] = rM.mEntry[15];
+	return *this;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix4<Real>::operator== (const Matrix4& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) == 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix4<Real>::operator!= (const Matrix4& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) != 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
 inline Matrix4<Real> Matrix4<Real>::operator* (const Matrix4& rM) const
 {
 	return Matrix4<Real>(

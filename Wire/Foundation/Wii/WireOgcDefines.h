@@ -100,6 +100,7 @@ typedef guVector Vec;
 #define GXSetZMode GX_SetZMode
 
 #define MTXConcat guMtxConcat
+#define MTXCopy guMtxCopy
 #define MTXFrustum guFrustum
 #define MTXIdentity guMtxIdentity
 #define MTXInverse guMtxInverse

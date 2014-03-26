@@ -169,6 +169,31 @@ Vector2<Real> Matrix2<Real>::GetColumn(UInt col) const
 
 //----------------------------------------------------------------------------
 template <class Real>
+inline Matrix2<Real>& Matrix2<Real>::operator= (const Matrix2& rM)
+{
+	mEntry[0] = rM.mEntry[0];
+	mEntry[1] = rM.mEntry[1];
+	mEntry[2] = rM.mEntry[2];
+	mEntry[3] = rM.mEntry[3];
+	return *this;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix2<Real>::operator== (const Matrix2& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) == 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix2<Real>::operator!= (const Matrix2& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) != 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
 inline Matrix2<Real> Matrix2<Real>::operator* (const Matrix2& rM) const
 {
 	return Matrix2<Real>(

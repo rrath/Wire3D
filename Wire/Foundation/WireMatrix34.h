@@ -110,6 +110,13 @@ public:
 	void SetColumn(UInt col, const Vector3<Real>& rV);
 	Vector3<Real> GetColumn(UInt col) const;
 
+	// assignment
+	inline Matrix34& operator= (const Matrix34& rM);
+
+	// comparison
+	Bool operator== (const Matrix34& rM) const;
+	Bool operator!= (const Matrix34& rM) const;
+
 	// arithmetic operations
 	inline Matrix34<Real> operator* (const Matrix34<Real>& rMatrix) const;
 	inline Matrix4<Real> operator* (const Matrix4<Real>& rMatrix) const; // M34 * M4;

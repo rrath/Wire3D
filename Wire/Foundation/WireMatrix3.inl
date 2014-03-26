@@ -242,44 +242,74 @@ Vector3<Real> Matrix3<Real>::GetColumn(UInt col) const
 
 //----------------------------------------------------------------------------
 template <class Real>
-inline Matrix3<Real> Matrix3<Real>::operator* (const Matrix3& rMatrix) const
+inline Matrix3<Real>& Matrix3<Real>::operator= (const Matrix3& rM)
+{
+	mEntry[0] = rM.mEntry[0];
+	mEntry[1] = rM.mEntry[1];
+	mEntry[2] = rM.mEntry[2];
+	mEntry[3] = rM.mEntry[3];
+	mEntry[4] = rM.mEntry[4];
+	mEntry[5] = rM.mEntry[5];
+	mEntry[6] = rM.mEntry[6];
+	mEntry[7] = rM.mEntry[7];
+	mEntry[8] = rM.mEntry[8];
+	return *this;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix3<Real>::operator== (const Matrix3& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) == 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix3<Real>::operator!= (const Matrix3& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) != 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+inline Matrix3<Real> Matrix3<Real>::operator* (const Matrix3& rM) const
 {
 	return Matrix3<Real>(
-		mEntry[0] * rMatrix.mEntry[0] +
-		mEntry[1] * rMatrix.mEntry[3] +
-		mEntry[2] * rMatrix.mEntry[6],
+		mEntry[0] * rM.mEntry[0] +
+		mEntry[1] * rM.mEntry[3] +
+		mEntry[2] * rM.mEntry[6],
 
-		mEntry[0] * rMatrix.mEntry[1] +
-		mEntry[1] * rMatrix.mEntry[4] +
-		mEntry[2] * rMatrix.mEntry[7],
+		mEntry[0] * rM.mEntry[1] +
+		mEntry[1] * rM.mEntry[4] +
+		mEntry[2] * rM.mEntry[7],
 
-		mEntry[0] * rMatrix.mEntry[2] +
-		mEntry[1] * rMatrix.mEntry[5] +
-		mEntry[2] * rMatrix.mEntry[8],
+		mEntry[0] * rM.mEntry[2] +
+		mEntry[1] * rM.mEntry[5] +
+		mEntry[2] * rM.mEntry[8],
 
-		mEntry[3] * rMatrix.mEntry[0] +
-		mEntry[4] * rMatrix.mEntry[3] +
-		mEntry[5] * rMatrix.mEntry[6],
+		mEntry[3] * rM.mEntry[0] +
+		mEntry[4] * rM.mEntry[3] +
+		mEntry[5] * rM.mEntry[6],
 
-		mEntry[3] * rMatrix.mEntry[1] +
-		mEntry[4] * rMatrix.mEntry[4] +
-		mEntry[5] * rMatrix.mEntry[7],
+		mEntry[3] * rM.mEntry[1] +
+		mEntry[4] * rM.mEntry[4] +
+		mEntry[5] * rM.mEntry[7],
 
-		mEntry[3] * rMatrix.mEntry[2] +
-		mEntry[4] * rMatrix.mEntry[5] +
-		mEntry[5] * rMatrix.mEntry[8],
+		mEntry[3] * rM.mEntry[2] +
+		mEntry[4] * rM.mEntry[5] +
+		mEntry[5] * rM.mEntry[8],
 
-		mEntry[6] * rMatrix.mEntry[0] +
-		mEntry[7] * rMatrix.mEntry[3] +
-		mEntry[8] * rMatrix.mEntry[6],
+		mEntry[6] * rM.mEntry[0] +
+		mEntry[7] * rM.mEntry[3] +
+		mEntry[8] * rM.mEntry[6],
 
-		mEntry[6] * rMatrix.mEntry[1] +
-		mEntry[7] * rMatrix.mEntry[4] +
-		mEntry[8] * rMatrix.mEntry[7],
+		mEntry[6] * rM.mEntry[1] +
+		mEntry[7] * rM.mEntry[4] +
+		mEntry[8] * rM.mEntry[7],
 
-		mEntry[6] * rMatrix.mEntry[2] +
-		mEntry[7] * rMatrix.mEntry[5] +
-		mEntry[8] * rMatrix.mEntry[8]);
+		mEntry[6] * rM.mEntry[2] +
+		mEntry[7] * rM.mEntry[5] +
+		mEntry[8] * rM.mEntry[8]);
 }
 
 //----------------------------------------------------------------------------

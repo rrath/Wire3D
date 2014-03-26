@@ -337,6 +337,39 @@ Vector3<Real> Matrix34<Real>::GetColumn(UInt col) const
 
 //----------------------------------------------------------------------------
 template <class Real>
+inline Matrix34<Real>& Matrix34<Real>::operator= (const Matrix34& rM)
+{
+	mEntry[0][0] = rM.mEntry[0][0];
+	mEntry[0][1] = rM.mEntry[0][1];
+	mEntry[0][2] = rM.mEntry[0][2];
+	mEntry[0][3] = rM.mEntry[0][3];
+	mEntry[1][0] = rM.mEntry[1][0];
+	mEntry[1][1] = rM.mEntry[1][1];
+	mEntry[1][2] = rM.mEntry[1][2];
+	mEntry[1][3] = rM.mEntry[1][3];
+	mEntry[2][0] = rM.mEntry[2][0];
+	mEntry[2][1] = rM.mEntry[2][1];
+	mEntry[2][2] = rM.mEntry[2][2];
+	mEntry[2][3] = rM.mEntry[2][3];
+	return *this;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix34<Real>::operator== (const Matrix34& rM) const
+{
+ 	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) == 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
+Bool Matrix34<Real>::operator!= (const Matrix34& rM) const
+{
+	return System::Memcmp(mEntry, rM.mEntry, sizeof(mEntry)) != 0;
+}
+
+//----------------------------------------------------------------------------
+template <class Real>
 inline Matrix34<Real> Matrix34<Real>::operator* (const Matrix34& rMatrix) const
 {
 	const Real4* a = mEntry;
