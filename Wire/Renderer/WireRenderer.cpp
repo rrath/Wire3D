@@ -1019,7 +1019,7 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 
 		WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx])));
 		const RenderObject* pA = pVisible[idx];
-		Bool hasIdenticalVBOs = pAT->IsIdentity();
+		Bool hasIdenticalVBOs = true;
 		const Mesh* pMeshA = pA->GetMesh();
 		WIRE_ASSERT(pMeshA);
 
@@ -1040,7 +1040,7 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 
 			WIRE_ASSERT(DynamicCast<RenderObject>((Object*)(pVisible[idx+1])));
 			const RenderObject* pB = StaticCast<RenderObject>(pVisible[idx+1]);
-			Bool hadIdenticalVBOs = hasIdenticalVBOs && pBT->IsIdentity();
+			Bool hadIdenticalVBOs = hasIdenticalVBOs;
 
 			const Mesh* pMeshB = pB->GetMesh();
 			WIRE_ASSERT(pMeshB);
@@ -1058,7 +1058,7 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 				break;
 			}
 
-			for (UInt i = 0; i < rVBOsB.GetQuantity(); i++)
+			for (UInt i = 0; (i < rVBOsB.GetQuantity()) && hasIdenticalVBOs; i++)
 			{
 				const VertexBufferPtr* pVBOsA = pMeshA->GetVertexBuffers().GetArray();
 				if (rVBOsB[i] != pVBOsA[i])
@@ -1066,6 +1066,13 @@ void Renderer::Draw(RenderObject* const pVisible[], Transformation* const
 					hasIdenticalVBOs = false;
 					break;
 				}
+			}
+
+			// static batching requires identical transformation
+			if (hasIdenticalVBOs && (*pAT != *pBT))
+			{
+				// indicate that static batching is not possible
+				hasIdenticalVBOs = false;
 			}
 
 			if (hadIdenticalVBOs && !hasIdenticalVBOs && (idx > min))
