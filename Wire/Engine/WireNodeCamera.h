@@ -67,6 +67,9 @@ public:
 	inline void SetSkybox(Node* pSkybox);
 	inline Node* GetSkybox() const;
 
+	inline void SetSupportsLensFlare(Bool supportsLensFlare);
+	inline Bool SupportsLensFlare() const;
+
 	static void Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		Culler& rCuller, Renderer* pRenderer);
 	static void SortByDepth(TArray<NodeCamera*>& rCameras);
@@ -84,6 +87,7 @@ private:
 	ColorRGBA mClearColor;
 	ClearFlag mClearFlag;
 	Bool mEnabled;
+	Bool mSupportsLensFlare;
 };
 
 typedef Pointer<NodeCamera> NodeCameraPtr;

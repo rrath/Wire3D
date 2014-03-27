@@ -542,6 +542,9 @@
     <ClInclude Include="..\..\Engine\WireRenderText.h">
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeLensflare.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Foundation\WireBox3.inl">
@@ -1150,6 +1153,9 @@
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Engine\WireRenderText.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeLensflare.cpp">
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

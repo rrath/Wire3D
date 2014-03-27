@@ -1,9 +1,12 @@
+<Options>
+  <Physics Gravity="0, -9.81, 0" />
+</Options>
 <Assets>
   <Lights>
-      <Light Name="Directional Light Blue" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.2662745, 0.3019608, 0.2635294" Mask="FFFFFCFF" Baked="1" />
-      <Light Name="Directional Light Platform only" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.9843137, 0.9960784, 0.9294118" Mask="100" Baked="1" />
-      <Light Name="Directional Light Yellow" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.8268235, 0.8367059, 0.7807059" Mask="FFFFFCFF" Baked="1" />
-      <Light Name="Point light" Type="Point" Range="10" Ambient="0, 0, 0" Color="1, 0.9215686, 0.6666667" Mask="FFFFFDFF" />
+    <Light Name="Directional Light Blue" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.2662745, 0.3019608, 0.2635294" Mask="FFFFFCFF" Baked="1" />
+    <Light Name="Directional Light Platform only" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.9843137, 0.9960784, 0.9294118" Mask="100" Baked="1" />
+    <Light Name="Directional Light Yellow" Type="Directional" Direction="0, 0, 1" Ambient="0.2224375, 0.2509804, 0.2225965" Color="0.8268235, 0.8367059, 0.7807059" Mask="FFFFFCFF" Baked="1" />
+    <Light Name="Point light" Type="Point" Range="10" Ambient="0, 0, 0" Color="1, 0.9215686, 0.6666667" Mask="FFFFFDFF" />
   </Lights>
   <Meshes>
     <Mesh Name="Sphere002">
@@ -878,13 +881,66 @@
   <Node Name="Platform" Pos="32.225, 4.925, 3.75" Scale="5, 0.15, 4.9" Layer="8">
     <Collider Shape="Box" Center="0, 0, 0" Size="1, 1, 1" />
     <RigidBody Mass="1" Kinematic="1" AngularDrag="0.05" />
-    <Light Name="Directional Light Platform only" />
-    <Light Name="Point light" />
-    <Mesh Name="Cube" />
-    <Material Name="mainsqr_floor_big_diff3_layersTGA_lit" />
+    <Node Name="Platform" Layer="8">
+      <Light Name="Directional Light Platform only" />
+      <Light Name="Point light" />
+      <Mesh Name="Cube" />
+      <Material Name="mainsqr_floor_big_diff3_layersTGA_lit" />
+    </Node>
+    <Node Name="Camera" Pos="0, 10, 0" Rot="0.9238796, 0, -0.3826835, 0">
+      <Camera Fov="60" Near="0.3" Far="1000" Left="0.7" Right="0.9" Top="0.9" Bottom="0.7" Clear="Z" Depth="1">
+        <Skybox>
+          <MaterialState Ambient="0.5, 0.5, 0.5, 0.5" />
+          <PosZ>
+            <Texture Name="Front.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </PosZ>
+          <NegZ>
+            <Texture Name="Back.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </NegZ>
+          <PosX>
+            <Texture Name="Right.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </PosX>
+          <NegX>
+            <Texture Name="Left.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </NegX>
+          <PosY>
+            <Texture Name="Top.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </PosY>
+          <NegY>
+            <Texture Name="Bottom.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+          </NegY>
+          <FogState Enabled="0" />
+          <ZBufferState Enabled="1" Writable="0" />
+        </Skybox>
+      </Camera>
+    </Node>
   </Node>
   <Node Name="Player" Pos="0, 10, -50">
-    <Camera Fov="60" Near="0.15" Far="1000" />
+    <Camera Fov="60" Near="0.15" Far="1000" Clear="Z" Lensflare="1">
+      <Skybox>
+        <MaterialState Ambient="0.5, 0.5, 0.5, 0.5" />
+        <PosZ>
+          <Texture Name="Front.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </PosZ>
+        <NegZ>
+          <Texture Name="Back.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </NegZ>
+        <PosX>
+          <Texture Name="Right.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </PosX>
+        <NegX>
+          <Texture Name="Left.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </NegX>
+        <PosY>
+          <Texture Name="Top.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </PosY>
+        <NegY>
+          <Texture Name="Bottom.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
+        </NegY>
+        <FogState Enabled="0" />
+        <ZBufferState Enabled="1" Writable="0" />
+      </Skybox>
+    </Camera>
     <Collider Shape="Character" Height="0" Radius="1.5" Slope="45" Step="0.5" Center="0, 0, 0" />
     <Node Name="Gun" Pos="-0.5, -0.5, 0.75" Rot="0.9952466, -0.0434534, -0.08707278, -0.00380168" Scale="0.0254, 0.0254, 0.0254">
       <Node Name="Gun">
@@ -915,26 +971,4 @@
     <Mesh Name="Sphere002" />
     <Material Name="Probe Robot_lit" />
   </Node>
-  <Skybox>
-    <MaterialState Ambient="0.5, 0.5, 0.5, 0.5" />
-    <PosZ>
-      <Texture Name="Front.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </PosZ>
-    <NegZ>
-      <Texture Name="Back.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </NegZ>
-    <PosX>
-      <Texture Name="Right.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </PosX>
-    <NegX>
-      <Texture Name="Left.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </NegX>
-    <PosY>
-      <Texture Name="Top.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </PosY>
-    <NegY>
-      <Texture Name="Bottom.png" FilterMode="Bilinear" AnisoLevel="1" WrapMode="Clamp" Mipmaps="1" Usage="STATIC_DISCARD_ON_BIND" />
-    </NegY>
-  <FogState Enabled="0" />
-  </Skybox>
 </Node>

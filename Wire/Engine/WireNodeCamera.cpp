@@ -90,7 +90,7 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		NodeCamera* pNodeCamera = rNodeCameras[i];
 		WIRE_ASSERT(pNodeCamera);
 		Node* pSkybox = pNodeCamera->mspSkybox;
-		if (pSkybox)
+		if (pSkybox && pNodeCamera->IsEnabled())
 		{
 			tempCullingModes[i] = pSkybox->Culling;
 			pSkybox->Culling = Spatial::CULL_ALWAYS;
@@ -101,6 +101,11 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 	{
 		NodeCamera* pNodeCamera = rNodeCameras[i];
 		WIRE_ASSERT(pNodeCamera && pNodeCamera->Get());
+		if (!pNodeCamera->IsEnabled())
+		{
+			continue;
+		}
+
 		Camera* pCamera = pNodeCamera->Get();
 
 		rCuller.SetCamera(pCamera);
@@ -158,7 +163,7 @@ void NodeCamera::Draw(TArray<NodeCamera*>& rNodeCameras, Spatial* pRoot,
 		NodeCamera* pNodeCamera = rNodeCameras[i];
 		WIRE_ASSERT(pNodeCamera);
 		Node* pSkybox = pNodeCamera->mspSkybox;
-		if (pSkybox)
+		if (pSkybox && pNodeCamera->IsEnabled())
 		{
 			pSkybox->Culling = tempCullingModes[i];
 		}

@@ -77,3 +77,15 @@ inline Node* NodeCamera::GetSkybox() const
 {
 	return mspSkybox;
 }
+
+//----------------------------------------------------------------------------
+inline void NodeCamera::SetSupportsLensFlare(Bool supportsLensFlare)
+{
+	mSupportsLensFlare = supportsLensFlare;
+}
+
+//----------------------------------------------------------------------------
+inline Bool NodeCamera::SupportsLensFlare() const
+{
+	return mSupportsLensFlare;
+}

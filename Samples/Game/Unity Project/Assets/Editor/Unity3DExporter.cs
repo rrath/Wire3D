@@ -1239,6 +1239,8 @@ public class Unity3DExporter : EditorWindow
             viewport = " Left=\"" + left + "\" Right=\"" + right + "\" Top=\"" + top + "\" Bottom=\"" + bottom + "\"";
         }
 
+        string lensFlare = camera.gameObject.GetComponent("FlareLayer") == null ? "" : " Lensflare=\"1\"";
+        string enabled = camera.enabled ? "" : " Enabled=\"0\"";
         string mask = camera.cullingMask == ~0 ? "" : " Mask=\"" + camera.cullingMask.ToString("X") + "\"";
         string depth = camera.depth == 0 ? "" : " Depth=\"" + camera.depth + "\"";
         string clear = string.Empty;
@@ -1277,7 +1279,7 @@ public class Unity3DExporter : EditorWindow
         }
 
 		outFile.Write(indent + "  " + "<Camera Fov=\"" + fieldOfView + "\" Near=\"" +
-            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + viewport + clear + clearColor + depth + mask);
+            camera.nearClipPlane + "\" Far=\"" + camera.farClipPlane + "\"" + enabled + viewport + clear + clearColor + depth + mask +lensFlare);
         if (skyboxMaterial != null)
         {
             outFile.WriteLine(">");

@@ -93,6 +93,7 @@
     <ClInclude Include="..\..\Engine\WireNodeBillboard.h" />
     <ClInclude Include="..\..\Engine\WireNodeCamera.h" />
     <ClInclude Include="..\..\Engine\WireNodeDLod.h" />
+    <ClInclude Include="..\..\Engine\WireNodeLensflare.h" />
     <ClInclude Include="..\..\Engine\WireNodeLight.h" />
     <ClInclude Include="..\..\Engine\WireNodeSkybox.h" />
     <ClInclude Include="..\..\Engine\WireNodeSwitch.h" />
@@ -305,6 +306,7 @@
     <ClCompile Include="..\..\Engine\WireNodeBillboard.cpp" />
     <ClCompile Include="..\..\Engine\WireNodeCamera.cpp" />
     <ClCompile Include="..\..\Engine\WireNodeDLod.cpp" />
+    <ClCompile Include="..\..\Engine\WireNodeLensflare.cpp" />
     <ClCompile Include="..\..\Engine\WireNodeLight.cpp" />
     <ClCompile Include="..\..\Engine\WireNodeSkybox.cpp" />
     <ClCompile Include="..\..\Engine\WireNodeSwitch.cpp" />

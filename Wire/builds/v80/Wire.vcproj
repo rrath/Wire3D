@@ -1156,6 +1156,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\Engine\WireNodeLensflare.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\Engine\WireNodeLight.h"
 					>
 				</File>
@@ -1449,6 +1453,10 @@
 				</File>
 				<File
 					RelativePath="..\..\Engine\WireNodeDLod.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\Engine\WireNodeLensflare.cpp"
 					>
 				</File>
 				<File

@@ -258,6 +258,9 @@
     <ClInclude Include="..\..\Engine\WireNodeDLod.h">
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Engine\WireNodeLensflare.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Engine\WireNodeLight.h">
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
@@ -842,6 +845,9 @@
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Engine\WireNodeDLod.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\WireNodeLensflare.cpp">
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Engine\WireNodeLight.cpp">

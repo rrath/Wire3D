@@ -213,7 +213,6 @@ void Game::OnRunning(Double time, Double deltaTime)
 	mspPhysicsWorld->StepSimulation(deltaTime, 10);
 
 	mspScene->UpdateGS(time);
-	mSortingCuller.ComputeVisibleSet(mspScene);
 
 	mspGUI->UpdateGS(time);
 	mspGUICamera->SetFrustum(0, GetWidthF(), 0, GetHeightF(), 0, 1);
@@ -222,8 +221,9 @@ void Game::OnRunning(Double time, Double deltaTime)
 
 	GetRenderer()->GetStatistics()->Reset();
 	GetRenderer()->ClearBuffers();
-	GetRenderer()->PreDraw(mspSceneCamera);
-	GetRenderer()->Draw(mSortingCuller.GetVisibleSets());
+	GetRenderer()->PreDraw();
+
+	NodeCamera::Draw(mSceneCameras, mspScene, mSortingCuller, GetRenderer());
 
 	GetRenderer()->SetCamera(mspGUICamera);
 	GetRenderer()->Draw(mCuller.GetVisibleSets());
@@ -353,10 +353,10 @@ Node* Game::LoadAndInitializeScene()
 		return NULL;
 	}
 
-	NodeCamera* pCameraNode = pScene->FindChild<NodeCamera>();
-	WIRE_ASSERT(pCameraNode /* No Camera in scene.xml */);
-	mspSceneCamera = pCameraNode->Get();
-	mSortingCuller.SetCamera(mspSceneCamera);
+	pScene->FindChildren<NodeCamera>(mSceneCameras);
+	WIRE_ASSERT(mSceneCameras.GetQuantity() > 0 /* No Camera in scene.xml */);
+	NodeCamera::SortByDepth(mSceneCameras);
+	mSortingCuller.SetCamera(mSceneCameras[0]->Get());
 
 	// The maximum number of objects that are going to be culled is the
 	// number of objects we imported. If we don't set the size of the set now,
@@ -381,7 +381,7 @@ Node* Game::LoadAndInitializeScene()
 	pParent->DetachChild(spRedHealthBar);
 	pBillboard->AttachChild(spRedHealthBar);
 
-	Spatial* pPlayerSpatial = pScene->FindChild("Player");
+	Node* pPlayerSpatial = DynamicCast<Node>(pScene->FindChild("Player"));
 	WIRE_ASSERT(pPlayerSpatial /* No Player in Scene.xml */);
 
 	mspProbeRobot = WIRE_NEW ProbeRobot(mspPhysicsWorld, pPlayerSpatial,
@@ -389,7 +389,9 @@ Node* Game::LoadAndInitializeScene()
 	pProbeRobotSpatial->AttachController(mspProbeRobot);
 
 	// Create and configure player controller
-	mspPlayer = WIRE_NEW Player(mspSceneCamera, mspPhysicsWorld);
+	NodeCamera* pPlayerCamera = pPlayerSpatial->FindChild<NodeCamera>();
+	WIRE_ASSERT(pPlayerCamera);
+	mspPlayer = WIRE_NEW Player(pPlayerCamera->Get(), mspPhysicsWorld);
 	pPlayerSpatial->AttachController(mspPlayer);
 
  	Spatial* pPlatform = pScene->FindChild("Platform");

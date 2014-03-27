@@ -51,7 +51,7 @@ private:
 
 	// scene
 	Wire::NodePtr mspScene;
-	Wire::CameraPtr mspSceneCamera;
+	Wire::TArray<Wire::NodeCamera*> mSceneCameras;
 	Wire::SpatialPtr mspCrosshair;
 	PhysicsWorldPtr mspPhysicsWorld;
 
