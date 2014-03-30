@@ -391,6 +391,10 @@ Char* Importer::Load(const Char* pFilename, Int& rSize)
 	hasSucceeded = System::Load(pFilename, pBuffer, rSize);
 	if (!hasSucceeded)
 	{
+		// If you are using VS2005/VS2008 and start your application from
+		// the Visual Studio IDE and this assert hits, then your working
+		// directory is probably not set up correctly. Edit the properties
+		// of your project (Debugging->Working Directory) accordingly.
 		WIRE_ASSERT(false /* Could not load file */);
 		return NULL;
 	}
