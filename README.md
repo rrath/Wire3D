@@ -16,7 +16,7 @@ Wire3D is a multiplatform 3D engine written in C++, featuring:
   * Object system and containers
   * Input system handling/emulating Wiimote and Nunchuk
 
-  * [Unity3D exporter](http://code.google.com/p/wire3d/wiki/Unity3DExporter) (assets, scene graph, physics properties, ...)
+  * [Unity3D exporter](https://github.com/rrath/Wire3D/wiki/Unity3D-Exporter) (assets, scene graph, physics properties, ...)
   * Importer (xml, png, ttf et al.)
   * Bullet Physics engine integration
 
