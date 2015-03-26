@@ -25,4 +25,5 @@ Wire3D is a multiplatform 3D engine written in C++, featuring:
     * PC: Visual Studio 2005 (2008), 2010, 2012, 2013
   * Includes [Sample](https://github.com/rrath/Wire3D/wiki/Samples) programs that serve as tutorials
 
-Check out [this guide](https://github.com/rrath/Wire3D/wiki/Getting-Started) on how to setup the framewor.k
+Use [this guide](https://github.com/rrath/Wire3D/wiki/Getting-Started) on how to setup the framework.
+Check out the [Wiki](https://github.com/rrath/Wire3D/wiki/Wire3D-Wiki).
