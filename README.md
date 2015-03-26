@@ -21,10 +21,8 @@ Wire3D is a multiplatform 3D engine written in C++, featuring:
   * Bullet Physics engine integration
 
   * Project files for
-    * Wii: Visual Studio 2005 (2008), 2010 (2012, 2013), Programmer's Notepad 2 and Makefiles
-    * PC: Visual Studio 2005 (2008) and 2010 (2012, 2013)
+    * Wii: Visual Studio 2005 (2008), 2010, 2012, 2013 and Makefiles
+    * PC: Visual Studio 2005 (2008), 2010, 2012, 2013
   * Includes [Sample](http://code.google.com/p/wire3d/wiki/Samples) programs that serve as tutorials
 
-Check out [this guide](http://code.google.com/p/wire3d/wiki/GettingStarted) on how to setup the framework.
-
-The project is also hosted at [Google Code](http://wire3d.googlecode.com) using SVN.
+Check out [this guide](https://github.com/rrath/Wire3D/wiki/Getting-Started) on how to setup the framewor.k
