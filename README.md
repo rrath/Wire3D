@@ -1,5 +1,4 @@
-Wire3D
-======
+#![Wire3D Logo](https://github.com/rrath/Wire3D/wiki/logo.png)
 
 Wire3D is a multiplatform 3D engine written in C++, featuring:
 
