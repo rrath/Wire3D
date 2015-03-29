@@ -53,9 +53,11 @@ static const Char DefaultVertexProgram[] =
 //----------------------------------------------------------------------------
 PdrShader::PdrShader(Renderer* pRenderer, const Shader* pShader)
 	:
-	mpConstantTable(NULL),
 	mpPixelShader(NULL),
-	mpVertexShader(NULL),
+	mpVertexShader(NULL)
+#ifdef WIRE_USE_SHADERS
+	,
+	mpConstantTable(NULL),
 	mModelViewProjection(NULL),
 	mModelView(NULL),
 	mProjection(NULL)
@@ -141,6 +143,12 @@ PdrShader::PdrShader(Renderer* pRenderer, const Shader* pShader)
 		pBufferErrors->Release();
 	}
 }
+#else
+{
+	(void)pRenderer;
+	(void)pShader;
+}
+#endif
 
 //----------------------------------------------------------------------------
 PdrShader::~PdrShader()
@@ -155,7 +163,9 @@ PdrShader::~PdrShader()
 		mpVertexShader->Release();
 	}
 
+#ifdef WIRE_USE_SHADERS
 	mpConstantTable->Release();
+#endif
 }
 
 //----------------------------------------------------------------------------
@@ -197,6 +207,7 @@ void PdrShader::Disable(Renderer* pRenderer)
 //----------------------------------------------------------------------------
 void PdrShader::SetBuiltInVariables(Renderer* pRenderer)
 {
+#ifdef WIRE_USE_SHADERS
 	PdrRendererData* pData = pRenderer->GetRendererData();
 	IDirect3DDevice9*& rDevice = pData->D3DDevice;
 
@@ -217,48 +228,74 @@ void PdrShader::SetBuiltInVariables(Renderer* pRenderer)
 		mpConstantTable->SetMatrix(rDevice, mProjection,
 			reinterpret_cast<D3DXMATRIX*>(&pData->Projection));
 	}
+#else
+	(void)pRenderer;
+#endif
 }
 
 //----------------------------------------------------------------------------
 void PdrShader::SetMatrix(Renderer* pRenderer, const Char* pName,
 	const Matrix4F* pMatrix)
 {
+#ifdef WIRE_USE_SHADERS
 	WIRE_ASSERT(pRenderer && pName && pMatrix && mpConstantTable);
+
 	IDirect3DDevice9*& rDevice = pRenderer->GetRendererData()->D3DDevice;
 	mpConstantTable->SetMatrix(rDevice, pName, reinterpret_cast<const
 		D3DXMATRIX*>(pMatrix));
+#else
+	(void)pRenderer;
+	(void)pName;
+	(void)pMatrix;
+#endif
 }
 
 //----------------------------------------------------------------------------
 void PdrShader::SetFloat4(Renderer* pRenderer, const Char* pName,
 	const Vector4F* pFloat4)
 {
+#ifdef WIRE_USE_SHADERS
 	WIRE_ASSERT(pRenderer && pName && pFloat4 && mpConstantTable);
 	IDirect3DDevice9*& rDevice = pRenderer->GetRendererData()->D3DDevice;
 	mpConstantTable->SetVector(rDevice, pName, reinterpret_cast<const
 		D3DXVECTOR4*>(pFloat4));
+#else
+	(void)pRenderer;
+	(void)pName;
+	(void)pFloat4;
+#endif
 }
 
 //----------------------------------------------------------------------------
 void PdrShader::SetFloat(Renderer* pRenderer, const Char* pName, Float value)
 {
+#ifdef WIRE_USE_SHADERS
 	WIRE_ASSERT(pRenderer && pName && mpConstantTable);
 	IDirect3DDevice9*& rDevice = pRenderer->GetRendererData()->D3DDevice;
 	mpConstantTable->SetFloat(rDevice, pName, value);
+#else
+	(void)pRenderer;
+	(void)pName;
+	(void)value;
+#endif
 }
 
 //----------------------------------------------------------------------------
 void PdrShader::InitBuiltInVariableHandles()
 {
+#ifdef WIRE_USE_SHADERS
 	mModelViewProjection = mpConstantTable->GetConstantByName(NULL,
 		"WIRE_MATRIX_MVP");
 	mModelView = mpConstantTable->GetConstantByName(NULL, "WIRE_MATRIX_MV");
 	mProjection = mpConstantTable->GetConstantByName(NULL, "WIRE_MATRIX_P");
+#endif
 }
 
 //----------------------------------------------------------------------------
 void PdrShader::ParseSamplerNames(const Shader* pShader)
 {
+#ifdef WIRE_USE_SHADERS
+
 	WIRE_ASSERT(mpConstantTable);
 
 	String program(pShader->GetProgram());
@@ -319,6 +356,9 @@ void PdrShader::ParseSamplerNames(const Shader* pShader)
 			}
 		}
 	}
+#else
+	(void)pShader;
+#endif
 }
 
 //----------------------------------------------------------------------------

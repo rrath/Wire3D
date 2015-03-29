@@ -13,7 +13,9 @@
 #include <Windows.h>
 
 #pragma comment(lib,"d3d9.lib")
+#ifdef WIRE_USE_SHADERS
 #pragma comment(lib,"d3dx9.lib")  // only used for D3DXCompileShader
+#endif
 
 using namespace Wire;
 

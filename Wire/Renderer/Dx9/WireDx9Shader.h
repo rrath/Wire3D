@@ -42,13 +42,16 @@ private:
 	void ParseSamplerNames(const Shader* pShader);
 	void SkipWhitespace(String& rStr, UInt& rFrom);
 
+    LPDIRECT3DPIXELSHADER9 mpPixelShader;
+    LPDIRECT3DVERTEXSHADER9 mpVertexShader;
+
+#ifdef WIRE_USE_SHADERS
 	LPD3DXCONSTANTTABLE mpConstantTable;
-	LPDIRECT3DPIXELSHADER9 mpPixelShader;
-	LPDIRECT3DVERTEXSHADER9 mpVertexShader;
 
 	D3DXHANDLE mModelViewProjection;
 	D3DXHANDLE mModelView;
 	D3DXHANDLE mProjection;
+#endif
 };
 
 }

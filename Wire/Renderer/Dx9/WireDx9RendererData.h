@@ -14,7 +14,9 @@
 #include "WireTArray.h"
 #include "WireTHashTable.h"
 #include <d3d9.h>
+#ifdef WIRE_USE_SHADERS
 #include <d3dx9.h> // only used for D3DXCompileShader
+#endif
 
 namespace Wire
 {

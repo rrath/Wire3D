@@ -5,7 +5,9 @@
 #include <Windows.h>
 
 #pragma comment(lib,"d3d9.lib")
+#ifdef WIRE_USE_SHADERS
 #pragma comment(lib,"d3dx9.lib")
+#endif
 
 using namespace Wire;
 
