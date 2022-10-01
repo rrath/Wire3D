@@ -1415,9 +1415,18 @@ public class Unity3DExporter : EditorWindow
 
 		if (!isLightmap)
         {
-			Byte[] bytes = texture.EncodeToPNG();
-			File.WriteAllBytes (mPath + "/" + texName, bytes);
-			mStatistics.TexturesTotalSizeOnDisk += bytes.Length;
+
+            try {
+                Byte[] bytes = 
+                    assetPath.ToLower().EndsWith(".png") ?
+                    File.ReadAllBytes(assetPath) : texture.EncodeToPNG();
+
+                File.WriteAllBytes (mPath + "/" + texName, bytes);
+                mStatistics.TexturesTotalSizeOnDisk += bytes.Length;
+            }
+			catch(Exception e) {
+                Debug.Log("Unable to save "+texName+" to PNG.");
+            }
 		}
         else
         {
