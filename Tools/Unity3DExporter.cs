@@ -1075,8 +1075,13 @@ public class Unity3DExporter : EditorWindow
 
     private void WriteMeshColliderAttributes(MeshCollider meshCollider, StreamWriter outFile, string indent)
     {
-        string convex = meshCollider.convex ? " Convex=\"1\"" : "";
-        outFile.Write("Mesh=\"" + meshCollider.sharedMesh.name + "\"" + convex);
+        
+        //Condition added to void NPE on meshCollider.sharedMesh
+        if(meshCollider != null && meshCollider.sharedMesh != null) {
+            string convex = meshCollider.convex ? " Convex=\"1\"" : "";
+            outFile.Write("Mesh=\"" + meshCollider.sharedMesh.name + "\"" + convex);
+        }
+        
     }
 
     private void WriteRigidbody(GameObject gameObject, StreamWriter outFile, string indent)
