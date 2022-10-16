@@ -1075,8 +1075,13 @@ public class Unity3DExporter : EditorWindow
 
     private void WriteMeshColliderAttributes(MeshCollider meshCollider, StreamWriter outFile, string indent)
     {
-        string convex = meshCollider.convex ? " Convex=\"1\"" : "";
-        outFile.Write("Mesh=\"" + meshCollider.sharedMesh.name + "\"" + convex);
+        
+        //Condition added to void NPE on meshCollider.sharedMesh
+        if(meshCollider != null && meshCollider.sharedMesh != null) {
+            string convex = meshCollider.convex ? " Convex=\"1\"" : "";
+            outFile.Write("Mesh=\"" + meshCollider.sharedMesh.name + "\"" + convex);
+        }
+        
     }
 
     private void WriteRigidbody(GameObject gameObject, StreamWriter outFile, string indent)
@@ -1410,9 +1415,18 @@ public class Unity3DExporter : EditorWindow
 
 		if (!isLightmap)
         {
-			Byte[] bytes = texture.EncodeToPNG();
-			File.WriteAllBytes (mPath + "/" + texName, bytes);
-			mStatistics.TexturesTotalSizeOnDisk += bytes.Length;
+
+            try {
+                Byte[] bytes = 
+                    assetPath.ToLower().EndsWith(".png") ?
+                    File.ReadAllBytes(assetPath) : texture.EncodeToPNG();
+
+                File.WriteAllBytes (mPath + "/" + texName, bytes);
+                mStatistics.TexturesTotalSizeOnDisk += bytes.Length;
+            }
+			catch(Exception e) {
+                Debug.Log("Unable to save "+texName+" to PNG.");
+            }
 		}
         else
         {
